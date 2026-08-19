@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISTS UX Offsite — Designing the City Behind the City</title>
+<style>
+:root {
+  --navy: #1B2D45;
+  --navy-light: #243B5A;
+  --amber: #C8820A;
+  --amber-bg: #FFF8EC;
+  --amber-mid: #FDECC7;
+  --blue: #1B5FAA;
+  --blue-bg: #EBF2FF;
+  --green: #15803D;
+  --green-bg: #DCFCE7;
+  --yellow: #92400E;
+  --yellow-bg: #FEF3C7;
+  --red: #991B1B;
+  --red-bg: #FEE2E2;
+  --text: #1A2533;
+  --text-mid: #3D4F60;
+  --muted: #64748B;
+  --border: #DDE4EE;
+  --bg: #F2F5F9;
+  --white: #FFFFFF;
+  --sidebar-w: 256px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w);
+  height: 100vh; background: var(--navy); overflow-y: auto;
+  display: flex; flex-direction: column; z-index: 100;
+}
+.sidebar-brand {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar-brand .tag {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--amber); font-weight: 600; display: block; margin-bottom: 6px;
+}
+.sidebar-brand h1 { font-size: 15px; color: #fff; font-weight: 700; line-height: 1.3; }
+.sidebar-brand p { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 4px; }
+.nav-section { padding: 16px 0 4px; }
+.nav-label {
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); padding: 0 20px; margin-bottom: 4px; display: block;
+}
+.nav-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 20px; font-size: 13px; color: rgba(255,255,255,0.6);
+  text-decoration: none; border-left: 2px solid transparent;
+  transition: all 0.15s;
+}
+.nav-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.nav-link.active { color: var(--amber); border-left-color: var(--amber); background: rgba(200,130,10,0.08); }
+.nav-link .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.nav-day-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 4px; font-size: 10px;
+  font-weight: 700; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+
+/* MAIN */
+.main { margin-left: var(--sidebar-w); min-height: 100vh; }
+
+/* HERO */
+.hero {
+  background: var(--navy); color: white; padding: 56px 56px 48px;
+  border-bottom: 3px solid var(--amber);
+}
+.hero .eyebrow {
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--amber); font-weight: 600; margin-bottom: 14px;
+}
+.hero h2 { font-size: 36px; font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
+.hero .subtitle { font-size: 17px; color: rgba(255,255,255,0.6); max-width: 560px; margin-bottom: 28px; }
+.hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+.stat { }
+.stat-value { font-size: 26px; font-weight: 700; color: var(--amber); line-height: 1; }
+.stat-label { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+.core-question {
+  margin-top: 28px; padding: 16px 20px; background: rgba(200,130,10,0.12);
+  border-left: 3px solid var(--amber); border-radius: 0 6px 6px 0;
+  font-size: 16px; font-style: italic; color: rgba(255,255,255,0.85); max-width: 620px;
+}
+
+/* SECTIONS */
+.section { padding: 52px 56px; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section-header { margin-bottom: 32px; }
+.section-eyebrow {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--amber); font-weight: 600; margin-bottom: 8px;
+}
+.section-header h2 { font-size: 26px; font-weight: 700; color: var(--text); }
+.section-header p { font-size: 15px; color: var(--muted); margin-top: 6px; max-width: 640px; }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+/* CARDS */
+.card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; padding: 24px;
+}
+.card-sm { padding: 18px 20px; }
+.card h3 { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+.card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+/* PURPOSE LIST */
+.purpose-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.purpose-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15px; color: var(--text-mid);
+}
+.purpose-list li::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--amber); flex-shrink: 0; margin-top: 7px;
+}
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; padding: 10px 14px; background: var(--navy); color: rgba(255,255,255,0.9); font-size: 12px; letter-spacing: 0.5px; }
+th:first-child { border-radius: 6px 0 0 0; }
+th:last-child { border-radius: 0 6px 0 0; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #FAFBFC; }
+td strong { color: var(--navy); }
+
+/* EVIDENCE BADGES */
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;
+}
+.badge-know { background: var(--green-bg); color: var(--green); }
+.badge-believe { background: var(--yellow-bg); color: var(--yellow); }
+.badge-dontknow { background: var(--red-bg); color: var(--red); }
+.badge-amber { background: var(--amber-bg); color: var(--amber); }
+.badge-blue { background: var(--blue-bg); color: var(--blue); }
+.badge-navy { background: rgba(27,45,69,0.08); color: var(--navy); }
+
+/* EVIDENCE FRAMEWORK */
+.evidence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+.evidence-card {
+  border-radius: 10px; padding: 18px;
+  border: 1px solid transparent;
+}
+.evidence-card.know { background: var(--green-bg); border-color: #BBF7D0; }
+.evidence-card.believe { background: var(--yellow-bg); border-color: #FDE68A; }
+.evidence-card.dontknow { background: var(--red-bg); border-color: #FECACA; }
+.evidence-card .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.evidence-card.know .label { color: var(--green); }
+.evidence-card.believe .label { color: var(--yellow); }
+.evidence-card.dontknow .label { color: var(--red); }
+.evidence-card p { font-size: 13px; line-height: 1.5; color: var(--text-mid); }
+
+/* DAY HEADER */
+.day-header {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 36px;
+  padding: 20px 24px; background: var(--navy); border-radius: 10px; color: white;
+}
+.day-badge {
+  width: 48px; height: 48px; border-radius: 10px; background: var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: var(--navy); flex-shrink: 0;
+}
+.day-header h2 { font-size: 20px; font-weight: 700; }
+.day-header p { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+/* SCHEDULE TABLE */
+.schedule-bar {
+  display: grid; grid-template-columns: 120px 1fr; gap: 0;
+  border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 32px;
+}
+.schedule-bar .row { display: contents; }
+.schedule-bar .time-cell {
+  padding: 8px 14px; background: #F7F9FC; border-bottom: 1px solid var(--border);
+  font-size: 12px; font-weight: 600; color: var(--muted); display: flex; align-items: center;
+}
+.schedule-bar .label-cell {
+  padding: 8px 14px; border-bottom: 1px solid var(--border);
+  font-size: 13px; color: var(--text); display: flex; align-items: center;
+}
+.schedule-bar .row:last-child .time-cell,
+.schedule-bar .row:last-child .label-cell { border-bottom: none; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+  width: 2px; background: var(--border);
+}
+.tl-item { position: relative; margin-bottom: 28px; }
+.tl-item:last-child { margin-bottom: 0; }
+.tl-dot {
+  position: absolute; left: -22px; top: 18px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--amber); z-index: 1;
+}
+.tl-dot.setup { border-color: var(--border); }
+.tl-dot.tour { border-color: var(--blue); }
+.tl-dot.break { border-color: var(--border); }
+.session-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+.session-card.facilitator-only { opacity: 0.7; }
+.session-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; border-bottom: 1px solid var(--border);
+  background: #FAFBFC;
+}
+.session-head h3 { font-size: 15px; font-weight: 600; color: var(--text); }
+.session-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: 12px; }
+.time-chip {
+  font-size: 12px; font-weight: 600; color: var(--amber);
+  background: var(--amber-bg); padding: 3px 10px; border-radius: 20px;
+}
+.time-chip.blue { color: var(--blue); background: var(--blue-bg); }
+.dur-chip {
+  font-size: 11px; color: var(--muted);
+  background: #F1F5F9; padding: 3px 8px; border-radius: 20px;
+}
+.format-chip {
+  font-size: 11px; color: var(--navy);
+  background: rgba(27,45,69,0.07); padding: 3px 8px; border-radius: 20px;
+}
+.session-body { padding: 20px; }
+.session-body > * + * { margin-top: 14px; }
+.prompt-block {
+  background: var(--amber-bg); border-left: 3px solid var(--amber);
+  border-radius: 0 8px 8px 0; padding: 14px 16px;
+  font-size: 14px; font-style: italic; color: var(--text-mid);
+}
+.prompt-block strong { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--amber); font-style: normal; margin-bottom: 4px; }
+
+.info-block {
+  background: var(--blue-bg); border-left: 3px solid var(--blue);
+  border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: var(--text-mid);
+}
+.note-block {
+  background: #F8F9FA; border-radius: 6px;
+  padding: 12px 16px; font-size: 13px; color: var(--text-mid); border: 1px solid var(--border);
+}
+.note-block strong { color: var(--text); }
+ul.dot-list { list-style: none; padding: 0; }
+ul.dot-list li {
+  display: flex; gap: 10px; font-size: 14px; color: var(--text-mid);
+  padding: 3px 0;
+}
+ul.dot-list li::before {
+  content: '–'; color: var(--amber); flex-shrink: 0; font-weight: 700;
+}
+h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+
+/* BUILDING TABLE */
+.building-table { border-radius: 8px; overflow: hidden; }
+.building-table th { background: var(--navy-light); }
+
+/* OUTPUT CARDS */
+.outputs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.output-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+  padding: 24px; border-top: 4px solid var(--amber);
+}
+.output-card .num {
+  width: 32px; height: 32px; border-radius: 8px; background: var(--amber);
+  color: var(--navy); font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+}
+.output-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.output-card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; }
+.portfolio-item {
+  border-radius: 8px; padding: 14px 16px; border: 1px solid transparent;
+}
+.portfolio-item.quick { background: var(--green-bg); border-color: #BBF7D0; }
+.portfolio-item.six { background: var(--blue-bg); border-color: #BFDBFE; }
+.portfolio-item.strategic { background: var(--amber-bg); border-color: #FDE68A; }
+.portfolio-item.research { background: var(--red-bg); border-color: #FECACA; }
+.portfolio-item .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.portfolio-item.quick .label { color: var(--green); }
+.portfolio-item.six .label { color: var(--blue); }
+.portfolio-item.strategic .label { color: var(--yellow); }
+.portfolio-item.research .label { color: var(--red); }
+.portfolio-item p { font-size: 13px; color: var(--text-mid); }
+
+/* ACCORDION */
+.accordion { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.acc-item { border-bottom: 1px solid var(--border); }
+.acc-item:last-child { border-bottom: none; }
+.acc-btn {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px; background: var(--white); border: none; cursor: pointer;
+  text-align: left; transition: background 0.15s;
+}
+.acc-btn:hover { background: #FAFBFC; }
+.acc-btn.open { background: #FAFBFC; }
+.acc-btn h3 { font-size: 14px; font-weight: 600; color: var(--text); }
+.acc-btn .acc-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: 12px; }
+.acc-icon {
+  width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; color: var(--muted); transition: transform 0.2s; flex-shrink: 0;
+}
+.acc-btn.open .acc-icon { transform: rotate(45deg); border-color: var(--amber); color: var(--amber); }
+.acc-body {
+  display: none; padding: 20px; background: #FAFBFC;
+  border-top: 1px solid var(--border);
+}
+.acc-body.open { display: block; }
+.acc-body > * + * { margin-top: 14px; }
+
+/* PHRASE BLOCK */
+.phrase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.phrase-item {
+  padding: 10px 14px; border-radius: 6px; font-size: 13px; font-style: italic;
+}
+.phrase-use { background: var(--green-bg); color: var(--green); }
+.phrase-avoid { background: var(--red-bg); color: var(--red); }
+.phrase-item .tag {
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+  font-style: normal; display: block; margin-bottom: 4px; opacity: 0.7;
+}
+
+/* DYNAMICS */
+.dynamics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.dynamic-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 16px;
+}
+.dynamic-card h4 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.dynamic-card h4::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
+.dynamic-card p { font-size: 13px; color: var(--text-mid); margin-bottom: 8px; }
+.dynamic-card .response {
+  font-size: 12px; font-style: italic; color: var(--blue);
+  background: var(--blue-bg); padding: 8px 10px; border-radius: 6px;
+}
+
+/* FAILURE MODES TABLE */
+.failure-table { border-radius: 8px; overflow: hidden; }
+.failure-table th { background: var(--navy); }
+.failure-table td:first-child { color: var(--red); font-weight: 500; }
+.failure-table td:nth-child(2) { color: var(--muted); font-style: italic; }
+.failure-table td:nth-child(3) { font-style: italic; color: var(--blue); }
+
+/* PLANNING TIMELINE */
+.plan-timeline { display: flex; flex-direction: column; gap: 0; }
+.plan-item {
+  display: grid; grid-template-columns: 140px 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.plan-item:last-child { border-bottom: none; }
+.plan-when {
+  padding: 16px 14px; background: var(--navy); color: rgba(255,255,255,0.8);
+  font-size: 12px; font-weight: 600; display: flex; align-items: flex-start;
+  border-right: none;
+}
+.plan-what { padding: 16px 20px; background: var(--white); }
+.plan-what h4 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.plan-what ul { list-style: none; padding: 0; }
+.plan-what ul li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; color: var(--text-mid); padding: 2px 0;
+}
+.plan-what ul li::before { content: '☐'; color: var(--amber); flex-shrink: 0; }
+
+/* TABS */
+.tab-bar { display: flex; gap: 4px; border-bottom: 2px solid var(--border); margin-bottom: 0; }
+.tab-btn {
+  padding: 10px 16px; font-size: 13px; font-weight: 500; color: var(--muted);
+  background: transparent; border: none; cursor: pointer; border-bottom: 2px solid transparent;
+  margin-bottom: -2px; transition: all 0.15s;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--amber); border-bottom-color: var(--amber); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* EMAIL */
+.email-wrapper {
+  background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+  overflow: hidden; margin-top: 16px;
+}
+.email-header {
+  padding: 14px 20px; background: #F7F9FC; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.email-header .subject { font-size: 13px; font-weight: 600; color: var(--text); }
+.email-header .send-to { font-size: 12px; color: var(--muted); }
+.copy-btn {
+  padding: 6px 14px; background: var(--navy); color: white; border: none;
+  border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: background 0.15s; flex-shrink: 0;
+}
+.copy-btn:hover { background: var(--navy-light); }
+.copy-btn.copied { background: var(--green); }
+.email-body {
+  padding: 20px; font-size: 13.5px; line-height: 1.8; color: var(--text-mid);
+  white-space: pre-wrap; font-family: inherit; max-height: 480px; overflow-y: auto;
+  border: none; width: 100%; resize: none; background: var(--white);
+  outline: none; cursor: default;
+}
+.email-note {
+  padding: 12px 20px; background: var(--yellow-bg); border-top: 1px solid #FDE68A;
+  font-size: 12px; color: var(--yellow); font-style: italic;
+}
+
+/* PRINT CARD */
+.print-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.print-card {
+  background: var(--white); border: 2px solid var(--navy);
+  border-radius: 10px; overflow: hidden;
+}
+.print-card-header {
+  background: var(--navy); color: white; padding: 14px 18px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.print-card-header h3 { font-size: 13px; font-weight: 700; }
+.print-card-header .face { font-size: 11px; color: rgba(255,255,255,0.4); }
+.print-card-body { padding: 18px; }
+.print-card-body > * + * { margin-top: 12px; }
+.card-q { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.card-qs { list-style: decimal; padding-left: 18px; }
+.card-qs li { font-size: 13px; color: var(--text-mid); padding: 3px 0; }
+.print-note { font-size: 11px; color: var(--muted); font-style: italic; }
+.print-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; background: var(--navy); color: white;
+  border: none; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; margin-top: 16px; transition: background 0.15s;
+}
+.print-btn:hover { background: var(--navy-light); }
+
+/* MATERIALS */
+.materials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.mat-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+  padding: 20px;
+}
+.mat-card h3 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.mat-card h3 .icon { width: 28px; height: 28px; border-radius: 6px; background: var(--amber-bg); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.check-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.check-list li { font-size: 13px; color: var(--text-mid); display: flex; gap: 10px; align-items: flex-start; }
+.check-list li::before { content: '□'; color: var(--amber); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+/* SCROLL SPY */
+.section { scroll-margin-top: 20px; }
+
+/* PRINT */
+@media print {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+  .hero { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .day-header { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .acc-body { display: block !important; }
+  .tab-panel { display: block !important; }
+  .copy-btn, .print-btn { display: none; }
+  .section { break-inside: avoid; }
+  .tl-item { break-inside: avoid; }
+}
+
+@media (max-width: 900px) {
+  .sidebar { transform: translateX(-100%); transition: transform 0.2s; }
+  .sidebar.open { transform: translateX(0); }
+  .main { margin-left: 0; }
+  .hero { padding: 32px 24px; }
+  .section { padding: 36px 24px; }
+  .grid-2, .grid-3, .outputs-grid, .materials-grid, .print-cards, .dynamics-grid { grid-template-columns: 1fr; }
+  .evidence-grid { grid-template-columns: 1fr; }
+  .phrase-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .hero h2 { font-size: 26px; }
+  .hamburger { display: flex; }
+}
+
+.hamburger {
+  display: none; position: fixed; top: 14px; right: 14px; z-index: 200;
+  width: 40px; height: 40px; background: var(--navy); border-radius: 8px;
+  border: none; cursor: pointer; flex-direction: column; align-items: center;
+  justify-content: center; gap: 5px;
+}
+.hamburger span { width: 20px; height: 2px; background: white; border-radius: 2px; }
+
+/* Divider */
+.divider { height: 1px; background: var(--border); margin: 24px 0; }
+.h4 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.small-muted { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <span class="tag">LEGO® Serious Play®</span>
+    <h1>Designing the City Behind the City</h1>
+    <p>ISTS UX Offsite</p>
+  </div>
+  <nav>
+    <div class="nav-section">
+      <span class="nav-label">Workshop</span>
+      <a href="#overview" class="nav-link active"><span class="dot"></span> Overview</a>
+      <a href="#outputs" class="nav-link"><span class="dot"></span> Final Outputs</a>
+    </div>
+    <div class="nav-section">
+      <span class="nav-label">Agenda</span>
+      <a href="#day1" class="nav-link"><span class="nav-day-chip">1</span> Day 1 — Discovery</a>
+      <a href="#day2" class="nav-link"><span class="nav-day-chip">2</span> Day 2 — Direction</a>
+    </div>
+    <div class="nav-section">
+      <span class="nav-label">Facilitation</span>
+      <a href="#facilitation" class="nav-link"><span class="dot"></span> Facilitation Guide</a>
+      <a href="#dynamics" class="nav-link"><span class="dot"></span> Group Dynamics</a>
+      <a href="#failures" class="nav-link"><span class="dot"></span> Failure Modes</a>
+    </div>
+    <div class="nav-section">
+      <span class="nav-label">Before the Offsite</span>
+      <a href="#planning" class="nav-link"><span class="dot"></span> Pre-Work &amp; Planning</a>
+      <a href="#communications" class="nav-link"><span class="dot"></span> Email Templates</a>
+      <a href="#materials" class="nav-link"><span class="dot"></span> Materials Checklist</a>
+      <a href="#printcards" class="nav-link"><span class="dot"></span> Print Cards</a>
+    </div>
+  </nav>
+</aside>
+
+<main class="main">
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+  <div class="eyebrow">ISTS UX Offsite · LEGO® Serious Play®</div>
+  <h2>Designing the City<br>Behind the City</h2>
+  <p class="subtitle">A 2-day workshop using Chicago architecture as a lens for understanding how we design the invisible systems that power developer work.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-value">2</div><div class="stat-label">Full Days</div></div>
+    <div class="stat"><div class="stat-value">12K</div><div class="stat-label">Developers served</div></div>
+    <div class="stat"><div class="stat-value">15</div><div class="stat-label">Participants</div></div>
+    <div class="stat"><div class="stat-value">10</div><div class="stat-label">Workshop sessions</div></div>
+    <div class="stat"><div class="stat-value">4</div><div class="stat-label">Artifacts out the door</div></div>
+  </div>
+  <div class="core-question">"How do we design the invisible systems that help 12,000 developers do their best work?"</div>
+</div>
+
+<!-- ═══════════ OVERVIEW ═══════════ -->
+<section class="section" id="overview">
+  <div class="section-header">
+    <div class="section-eyebrow">Workshop Purpose</div>
+    <h2>What We're Here to Do</h2>
+    <p>Not a presentation about UX. An experience of design thinking — through building, storytelling, and shared discovery.</p>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:32px;">
+    <div class="card">
+      <h3>Five Goals</h3>
+      <ul class="purpose-list">
+        <li>Build shared understanding of what UX Design can contribute to ISTS</li>
+        <li>Surface the most meaningful user and organizational challenges</li>
+        <li>Bring business stakeholders and designers into the same problem space</li>
+        <li>Identify where design can drive measurable impact across infrastructure, DevSecOps, operational services, and developer experience</li>
+        <li>Leave with a small number of opportunity areas worth pursuing</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Facilitator's North Star</h3>
+      <p style="margin-bottom:12px;">The goal is <strong>not</strong> to teach UX. It is to let stakeholders <em>experience</em> design thinking by doing it.</p>
+      <div class="note-block">
+        <strong>The recurring question for both days:</strong><br>
+        Every time someone describes a user problem, the room asks: <em>"How do we know this is true?"</em> — and places it into one of three buckets.
+      </div>
+      <div class="evidence-grid" style="margin-top:14px;">
+        <div class="evidence-card know"><div class="label">We Know</div><p>Evidence exists — data, research, direct user feedback</p></div>
+        <div class="evidence-card believe"><div class="label">We Believe</div><p>Strong assumption — not yet validated by evidence</p></div>
+        <div class="evidence-card dontknow"><div class="label">We Don't Know</div><p>Genuine gap — research needed before acting</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>The Metaphor: Chicago Architecture</h3>
+    <p style="margin-bottom:16px;">The morning tour grounds the workshop in a physical metaphor. Every building maps to something in ISTS.</p>
+    <table>
+      <thead><tr><th>City Element</th><th>ISTS Equivalent</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Historic buildings</strong></td><td>Legacy systems and processes</td></tr>
+        <tr><td><strong>Infrastructure</strong></td><td>Invisible services that support everything</td></tr>
+        <tr><td><strong>New architecture</strong></td><td>Innovation and modernization</td></tr>
+        <tr><td><strong>City residents</strong></td><td>Developers and internal users</td></tr>
+        <tr><td><strong>Urban planners</strong></td><td>ISTS leaders</td></tr>
+        <tr><td><strong>Architects &amp; designers</strong></td><td>UX and product teams</td></tr>
+        <tr><td><strong>Utilities &amp; transportation</strong></td><td>Infrastructure platforms, DevSecOps, tooling, security</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ DAY 1 ═══════════ -->
+<section class="section" id="day1">
+  <div class="day-header">
+    <div class="day-badge">D1</div>
+    <div>
+      <h2>Day 1 — Discovery</h2>
+      <p>Field experience · LEGO warm-up · Build the current city · Find the fault lines · Day 1 synthesis</p>
+    </div>
+  </div>
+
+  <div class="card card-sm" style="margin-bottom:28px;">
+    <div style="display:grid;grid-template-columns:120px 1fr;border-radius:6px;overflow:hidden;border:1px solid var(--border);">
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:00am</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--muted);font-style:italic;">Facilitator setup (no participants)</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:30am</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Welcome &amp; Pre-Tour Briefing</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--blue);border-bottom:1px solid var(--border);">10:00–12:30</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--blue);font-weight:500;">Chicago Icons Architecture Tour · 111 E. Wacker Dr.</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">12:30–1:15</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--muted);">Lunch + Informal Debrief</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">1:15–2:00</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">LEGO Warm-Up <span style="color:var(--muted);font-size:11px;margin-left:6px;">45 min — extended for 15 people</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">2:00–3:30</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 1: Build Our Current City <span style="color:var(--muted);font-size:11px;margin-left:6px;">90 min — 2-min timebox per share-out</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">3:30–4:35</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 2: Finding the Fault Lines <span style="color:var(--muted);font-size:11px;margin-left:6px;">65 min — 3 groups of 5 present</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);">4:35–5:00</div>
+      <div style="padding:8px 14px;font-size:13px;">Session 3: Day 1 Synthesis + Reflection</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Pre-Tour Briefing</h3>
+          <div class="session-meta">
+            <span class="time-chip">9:30am</span>
+            <span class="dur-chip">30 min</span>
+            <span class="format-chip">Full group</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <p style="font-size:14px;color:var(--text-mid);">Frame the tour as <strong>fieldwork, not sightseeing</strong>. Distribute observation cards and sticky notes. Ask everyone to collect at least 5 observations.</p>
+          <div class="prompt-block">
+            <strong>Opening framing to read aloud</strong>
+            "We are walking through a metaphor. Every building you see today maps to something we are dealing with in ISTS. Collect specific observations — write down what you see, not what you think."
+          </div>
+          <h4 class="sub">Observation card prompts</h4>
+          <ul class="dot-list">
+            <li>What makes this city usable for the people who live and work in it?</li>
+            <li>What infrastructure do people rely on but never think about?</li>
+            <li>Where does old and new coexist well — and where does it create friction?</li>
+            <li>What would a first-time visitor find confusing, overwhelming, or invisible?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot tour"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Chicago Icons: Connecting Past and Present</h3>
+          <div class="session-meta">
+            <span class="time-chip blue">10:00–12:30</span>
+            <span class="dur-chip">~1.75 hrs walking</span>
+            <span class="format-chip">7 stops</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="info-block">
+            <strong>Meet:</strong> Chicago Architecture Center, 111 E. Wacker Dr. &nbsp;·&nbsp; <strong>Format:</strong> Walking tour, flat paved route &nbsp;·&nbsp; <strong>Access:</strong> Wheelchair accessible via alternate routes
+          </div>
+          <table class="building-table" style="margin-top:14px;">
+            <thead><tr><th>Building</th><th>What to notice</th><th>ISTS parallel</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Reliance Building</strong> <span style="color:var(--muted);font-size:12px;">1895</span></td><td>Steel-frame construction — invisible, but makes everything after it possible</td><td>Foundational infrastructure developers depend on without knowing it</td></tr>
+              <tr><td><strong>City Hall</strong> <span style="color:var(--muted);font-size:12px;">1911</span></td><td>Built to project authority; hard to navigate if you don't know the system</td><td>Governance, approval workflows — necessary but often opaque</td></tr>
+              <tr><td><strong>Marina City</strong> <span style="color:var(--muted);font-size:12px;">1964</span></td><td>"City within a city" — residential, commercial, entertainment in one structure</td><td>The developer platform ideal: all services discoverable in one place</td></tr>
+              <tr><td><strong>Daley Plaza / Picasso</strong></td><td>Public-facing surface; the sculpture has divided people since 1967</td><td>Interfaces that require interpretation; what we show vs. what's underneath</td></tr>
+              <tr><td><strong>Pritzker Pavilion</strong> <span style="color:var(--muted);font-size:12px;">2004</span></td><td>Distributed speaker grid under 36 acres of lawn — invisible but essential</td><td><strong>The closest parallel:</strong> hidden services that enable the experience</td></tr>
+              <tr><td><strong>LondonHouse</strong> <span style="color:var(--muted);font-size:12px;">1923/2016</span></td><td>1923 bank building transformed into modern hotel — façade kept, interior rebuilt</td><td>Legacy modernization: when to preserve vs. rebuild</td></tr>
+            </tbody>
+          </table>
+          <div class="note-block">
+            <strong>Pritzker Pavilion is the key metaphor.</strong> Most people don't know there's a distributed speaker grid under the lawn across 36 acres. Without it, no one hears the music. That is exactly what ISTS provides — infrastructure that disappears when it works and becomes a crisis when it doesn't.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot break"></div>
+      <div class="session-card facilitator-only">
+        <div class="session-head">
+          <h3>Lunch + Informal Debrief</h3>
+          <div class="session-meta">
+            <span class="time-chip">12:30pm</span>
+            <span class="dur-chip">45 min</span>
+            <span class="format-chip">Unstructured</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <p style="font-size:14px;color:var(--text-mid);">No agenda. Let people talk about what they saw. The facilitator listens and takes notes — themes that surface here often become the most important ones in the afternoon sessions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>LEGO Warm-Up</h3>
+          <div class="session-meta">
+            <span class="time-chip">1:15pm</span>
+            <span class="dur-chip">45 min</span>
+            <span class="format-chip">Individual builds</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <p style="font-size:14px;color:var(--text-mid);">Remove self-consciousness before serious work begins. Keep energy light. Do not skip the duck. With 15 people, manage share-outs carefully — not everyone speaks to the full room every time.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px;">
+            <div class="note-block"><strong>1. Build a duck</strong><br><span style="font-size:12px;color:var(--muted);">3 min build · go around the room, one word each (1 min) · total: 4 min</span></div>
+            <div class="note-block"><strong>2. Build good collaboration</strong><br><span style="font-size:12px;color:var(--muted);">5 min build · 3 volunteers share to full room (60 sec each) · total: 8 min</span></div>
+            <div class="note-block"><strong>3. Build your biggest work frustration</strong><br><span style="font-size:12px;color:var(--muted);">5 min build · share within your table first · then 1 observation per table to full room · total: 18 min</span></div>
+          </div>
+          <div class="info-block" style="margin-top:12px;"><strong>Why the table-share format on exercise 3:</strong> With 15 people doing 60-sec stories, share-out alone takes 15 min. Table shares compress this to 5–6 min while still surfacing the most important themes to the full room.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 1: Build Our Current City</h3>
+          <div class="session-meta">
+            <span class="time-chip">2:00pm</span>
+            <span class="dur-chip">90 min</span>
+            <span class="format-chip">Individual → Group merge</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="prompt-block">
+            <strong>Build Prompt</strong>
+            Build a model representing ISTS today — from the perspective of the people we serve.
+          </div>
+          <p style="font-size:14px;color:var(--text-mid);">Include: developers, product teams, security, operations, infrastructure, dependencies, barriers, pain points, workarounds.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px;">
+            <div class="note-block"><strong>Phase 1 — Build</strong><br><span style="font-size:12px;color:var(--muted);">20 min · individual · silent</span></div>
+            <div class="note-block"><strong>Phase 2 — Share-out</strong><br><span style="font-size:12px;color:var(--muted);">50 min · strict 2-min timebox per person · visible timer · 15 × 2 min = 30 min + facilitation = ~50 min</span></div>
+            <div class="note-block"><strong>Phase 3 — Group merge</strong><br><span style="font-size:12px;color:var(--muted);">20 min · 3 tables merge individually first, then bring tables together</span></div>
+          </div>
+          <div class="info-block"><strong>15-person timebox rule:</strong> Use a visible 2-minute timer for every share-out. When it sounds, the speaker wraps up regardless. This is not rude — it is the only way everyone gets a voice. Tell the room this before starting.</div>
+          <h4 class="sub">Discussion questions</h4>
+          <ul class="dot-list">
+            <li>What works well in this city?</li>
+            <li>What is invisible until it breaks?</li>
+            <li>What is overcomplicated?</li>
+            <li>Where do people get stuck?</li>
+            <li>What do we assume users already know?</li>
+          </ul>
+          <div class="info-block" style="margin-top:12px;">
+            <strong>Reliance Building callback:</strong> "What is the steel frame in your model — the foundation developers stand on without knowing it's there?"
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 2: Finding the Fault Lines</h3>
+          <div class="session-meta">
+            <span class="time-chip">3:30pm</span>
+            <span class="dur-chip">65 min</span>
+            <span class="format-chip">3 groups of 5</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="prompt-block">
+            <strong>Build Prompt</strong>
+            If a major earthquake hit our city, where would it crack first?
+          </div>
+          <p style="font-size:14px;color:var(--text-mid);">Groups of 5 work on the shared city model simultaneously. Each group is responsible for a section of the map: <strong>Group A</strong> — developer-facing friction · <strong>Group B</strong> — cross-team dependencies and handoffs · <strong>Group C</strong> — infrastructure and ops pain. Build time: 20 min. Each group presents their fault lines to the full room: 3 × 10 min = 30 min. Whiteboard clustering + evidence labeling: 15 min.</p>
+          <div class="info-block">With 15 people, group-based builds are more effective than 15 individual builds for this session — you get richer models and the share-outs are manageable (3 group presentations instead of 15 individual ones).</div>
+          <h4 class="sub">Capture on whiteboard — cluster into</h4>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+            <span class="badge badge-red" style="justify-content:center;padding:8px;">User pain</span>
+            <span class="badge badge-amber" style="justify-content:center;padding:8px;">Employee pain</span>
+            <span class="badge badge-navy" style="justify-content:center;padding:8px;">Org pain</span>
+            <span class="badge badge-blue" style="justify-content:center;padding:8px;">Strategic risks</span>
+          </div>
+          <div class="note-block" style="margin-top:12px;"><strong>Apply the evidence test to every fault line as it surfaces.</strong> Write We know / We believe / We don't know next to each theme in a different color.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 3: Day 1 Synthesis + Reflection</h3>
+          <div class="session-meta">
+            <span class="time-chip">4:35pm</span>
+            <span class="dur-chip">25 min</span>
+            <span class="format-chip">Full group</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <p style="font-size:14px;color:var(--text-mid);">Fast close. The goal is to land the day, not debrief it. Keep this tight — the room is tired.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div class="note-block"><strong>5 min — Lock evidence labels</strong><br><span style="font-size:12px;color:var(--muted);">Facilitator quickly reads each whiteboard theme. Room calls out: Know, Believe, or Don't Know. Move fast.</span></div>
+            <div class="note-block"><strong>5 min — Dot vote on top fault lines</strong><br><span style="font-size:12px;color:var(--muted);">1 dot per person. Which 3 problems are worth exploring tomorrow? Circle the winners. These anchor Day 2.</span></div>
+          </div>
+          <h4 class="sub">10 min — Reflection round</h4>
+          <ul class="dot-list">
+            <li>What surprised you today?</li>
+            <li>What is one problem worth going deeper on tomorrow?</li>
+            <li><em>Optional:</em> Which building from this morning best represents ISTS right now — and which represents where you want to be?</li>
+          </ul>
+          <div class="note-block" style="margin-top:12px;">
+            <strong>Facilitator close (5 min):</strong> "Tomorrow we go from what we found to what we should do about it. We'll look at these problems through the eyes of the people who live with them — and we'll build what a better city actually looks like."
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /timeline -->
+</section>
+
+<!-- ═══════════ DAY 2 ═══════════ -->
+<section class="section" id="day2">
+  <div class="day-header">
+    <div class="day-badge">D2</div>
+    <div>
+      <h2>Day 2 — Direction</h2>
+      <p>Developer journey · User empathy · Future city · Prioritization · Opportunity statements</p>
+    </div>
+  </div>
+
+  <div class="card card-sm" style="margin-bottom:28px;">
+    <div style="display:grid;grid-template-columns:120px 1fr;border-radius:6px;overflow:hidden;border:1px solid var(--border);">
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">8:30am</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--muted);font-style:italic;">Facilitator setup (no participants)</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:00–9:15</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Opening &amp; Day 1 Recap</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:15–10:40</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 3: Build the Developer Journey <span style="color:var(--muted);font-size:11px;margin-left:6px;">85 min — 3 groups of 5 each present</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">10:40–11:40</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 4: The User We Rarely See <span style="color:var(--muted);font-size:11px;margin-left:6px;">60 min — gallery walk format</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">11:40–12:55</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 5: Build the Future City <span style="color:var(--muted);font-size:11px;margin-left:6px;">75 min — 3 groups of 5</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">12:55–1:30</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--muted);">Lunch</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">1:30–2:35</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 6: Opportunity Landscape</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">2:35–3:15</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 7: Where Design Creates Leverage</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">3:15–3:45</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 8: Write Opportunity Statements</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);">3:45–4:00</div>
+      <div style="padding:8px 14px;font-size:13px;">Closing &amp; Next Steps</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 3: Build the Developer Journey</h3>
+          <div class="session-meta">
+            <span class="time-chip">9:15am</span>
+            <span class="dur-chip">85 min</span>
+            <span class="format-chip">3 groups of 5</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="prompt-block">
+            <strong>Build Prompt</strong>
+            Build the end-to-end experience of a developer interacting with ISTS — from the moment they need something to the moment they have it.
+          </div>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 25 min build → each group presents their journey to the room (12 min × 3 = 36 min) → 24 min full-group themes and synthesis</div>
+          <h4 class="sub">Assign one scenario per group</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+            <div class="note-block"><strong>Group A</strong> Onboarding a new developer and setting up their environment</div>
+            <div class="note-block"><strong>Group B</strong> A team requesting infrastructure for a product launch</div>
+            <div class="note-block"><strong>Group C</strong> A developer going through a security review and release</div>
+          </div>
+          <h4 class="sub">Discussion questions</h4>
+          <ul class="dot-list">
+            <li>Where is effort highest in this journey?</li>
+            <li>Where is uncertainty highest?</li>
+            <li>Where are the handoffs — and what falls through the gaps?</li>
+            <li>What does the developer not understand that ISTS assumes they do?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 4: The User We Rarely See</h3>
+          <div class="session-meta">
+            <span class="time-chip">10:40am</span>
+            <span class="dur-chip">60 min</span>
+            <span class="format-chip">Individual → gallery walk</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="prompt-block">
+            <strong>Build Prompt</strong>
+            Build the user whose problems we least understand. Not the user you know well — the one you have assumptions about but rarely talk to.
+          </div>
+          <p style="font-size:14px;color:var(--text-mid);">Candidates: new developer who figured things out alone · platform engineer maintaining services nobody thanks · product owner navigating security requirements · security partner trying to enable but experienced as a blocker · support engineer triaging incidents at 2am.</p>
+          <div class="note-block" style="margin-bottom:8px;"><strong>Timing (60 min):</strong> 12 min individual build → 15 min gallery walk (everyone circulates, leaves a sticky note on any model that surprises them) → facilitator highlights 3–4 models that drew the most notes (23 min share-out) → 10 min whiteboard synthesis</div>
+          <div class="note-block"><strong>Key output of this session:</strong> A dedicated whiteboard section titled "Before we build anything for this person, we need to know…" — filled during share-outs. This becomes the research agenda.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 5: Build the Future City</h3>
+          <div class="session-meta">
+            <span class="time-chip">11:40am</span>
+            <span class="dur-chip">75 min</span>
+            <span class="format-chip">3 groups of 5</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="prompt-block">
+            <strong>Build Prompt</strong>
+            It is three years from now. ISTS is recognized as a model organization. Build that city.
+          </div>
+          <p style="font-size:14px;color:var(--text-mid);">Build <strong>experiences, workflows, relationships, behaviors</strong> — not technology. If someone builds "a new portal," ask: <em>"What does a developer feel when they use it?"</em></p>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (75 min):</strong> 25 min group build → 3 groups present (13 min each = 39 min) → 11 min cross-group synthesis: what futures do all three cities share?</div>
+          <h4 class="sub">Discussion questions</h4>
+          <ul class="dot-list">
+            <li>What is different from the city we built yesterday?</li>
+            <li>What disappeared entirely?</li>
+            <li>What became easy that was hard?</li>
+            <li>What does the developer relationship with ISTS feel like here?</li>
+          </ul>
+          <div class="note-block"><strong>Photograph every model</strong> — these will be referenced in the synthesis document.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot break"></div>
+      <div class="session-card facilitator-only">
+        <div class="session-head">
+          <h3>Lunch</h3>
+          <div class="session-meta"><span class="time-chip">12:55pm</span><span class="dur-chip">35 min</span></div>
+        </div>
+        <div class="session-body">
+          <p style="font-size:14px;color:var(--text-mid);">Facilitator: review morning themes, finalize opportunity mapping wall, note recurring themes across groups.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 6: Opportunity Landscape</h3>
+          <div class="session-meta">
+            <span class="time-chip">1:30pm</span>
+            <span class="dur-chip">65 min</span>
+            <span class="format-chip">Full group mapping</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <p style="font-size:14px;color:var(--text-mid);">Map surfaced opportunities across two dimensions: <strong>User Pain vs. Org Readiness</strong>. Each card also gets a circle (high design influence) or square (systemic problem) marker, and an evidence dot (red = don't know, green = know).</p>
+          <h4 class="sub">Seed opportunity areas from Days 1–2</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;">
+            <span class="badge badge-navy">Developer onboarding</span>
+            <span class="badge badge-navy">Infrastructure requests</span>
+            <span class="badge badge-navy">Service discoverability</span>
+            <span class="badge badge-navy">Self-service workflows</span>
+            <span class="badge badge-navy">DevSecOps friction</span>
+            <span class="badge badge-navy">Operational transparency</span>
+            <span class="badge badge-navy">Knowledge management</span>
+            <span class="badge badge-navy">Internal developer portal</span>
+            <span class="badge badge-navy">Support &amp; incident response</span>
+          </div>
+          <div class="note-block" style="margin-top:12px;"><strong>Disagreement is the product of this session.</strong> When two people place the same card in different quadrants, don't resolve it immediately — ask why. That tension is the signal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 7: Where Design Creates Leverage</h3>
+          <div class="session-meta">
+            <span class="time-chip">2:35pm</span>
+            <span class="dur-chip">40 min</span>
+            <span class="format-chip">Dot vote + discussion</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="prompt-block">
+            <strong>Vote Prompt</strong>
+            If UX could only invest meaningfully in three areas in the next year, which three would create the most impact for the most people?
+          </div>
+          <p style="font-size:14px;color:var(--text-mid);">3 dots per person (can stack). After voting, score top 5–7 against: size of user pain · users affected · strategic importance · cross-functional appetite · design influence.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Session 8: Write the Opportunity Statements</h3>
+          <div class="session-meta">
+            <span class="time-chip">3:15pm</span>
+            <span class="dur-chip">30 min</span>
+            <span class="format-chip">5 groups of 3</span>
+          </div>
+        </div>
+        <div class="session-body">
+          <div class="prompt-block">
+            <strong>Statement Format</strong>
+            [User] struggle to [do / understand / access] [something] because [root cause or structural condition].
+          </div>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (30 min):</strong> Assign each group one of the top-voted opportunity areas. 10 min to draft → each group reads their statement aloud (2 min each = 10 min) → 10 min full-group refinement and read-back. Target: 5 statements leave the room.</div>
+          <h4 class="sub">Examples</h4>
+          <ul class="dot-list">
+            <li>Developers struggle to understand which infrastructure services they need because documentation is fragmented across teams and tools.</li>
+            <li>Security requirements are experienced as blockers rather than enablers because expectations surface too late in the workflow.</li>
+            <li>New engineers require excessive peer support during onboarding because critical knowledge is distributed and difficult to find.</li>
+          </ul>
+          <div class="note-block"><strong>Specificity test:</strong> Could someone read this statement and know immediately who to talk to and what to ask? If not, it needs more work.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot break"></div>
+      <div class="session-card">
+        <div class="session-head">
+          <h3>Closing &amp; Next Steps</h3>
+          <div class="session-meta"><span class="time-chip">3:45pm</span><span class="dur-chip">15 min</span></div>
+        </div>
+        <div class="session-body">
+          <p style="font-size:14px;color:var(--text-mid);">Name a single owner for the opportunity portfolio before the room leaves. Confirm when synthesis and photo documentation will be shared back (within 5 business days). End with one word from each person: how they feel leaving the room.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ OUTPUTS ═══════════ -->
+<section class="section" id="outputs">
+  <div class="section-header">
+    <div class="section-eyebrow">Workshop Outputs</div>
+    <h2>Four Artifacts Leave the Room</h2>
+    <p>Everything else is process. These are the deliverables that matter after the offsite.</p>
+  </div>
+
+  <div class="outputs-grid">
+    <div class="output-card">
+      <div class="num">1</div>
+      <h3>Current State City</h3>
+      <p>A shared, photographed model of how ISTS works today — annotated with fault lines and evidence levels. The baseline everything else is measured against.</p>
+    </div>
+    <div class="output-card">
+      <div class="num">2</div>
+      <h3>Future State City</h3>
+      <p>A shared vision of what a model ISTS organization looks like in 3 years. Focused on experience and relationships, not technology platforms.</p>
+    </div>
+    <div class="output-card">
+      <div class="num">3</div>
+      <h3>Top User Problems</h3>
+      <p>5–10 prioritized problem areas, each tagged with evidence level, user affected, and domain. The <span class="badge badge-dontknow" style="font-size:11px;vertical-align:middle;">We don't know</span> items become the research agenda.</p>
+    </div>
+    <div class="output-card">
+      <div class="num">4</div>
+      <h3>UX Opportunity Portfolio</h3>
+      <p>Opportunities categorized by horizon and readiness. The input for design team planning after the offsite.</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item quick"><div class="label">Quick Wins</div><p>High readiness + real pain + under 6 months</p></div>
+        <div class="portfolio-item six"><div class="label">6-Month</div><p>Moderate complexity + cross-functional appetite</p></div>
+        <div class="portfolio-item strategic"><div class="label">Strategic Bets</div><p>1–2 year horizon + high business value</p></div>
+        <div class="portfolio-item research"><div class="label">Research Needed</div><p>Strong assumption + thin evidence — don't design yet</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FACILITATION ═══════════ -->
+<section class="section" id="facilitation">
+  <div class="section-header">
+    <div class="section-eyebrow">Facilitation Guide</div>
+    <h2>Running the Room</h2>
+    <p>For the workshop lead and any co-facilitators. Read before the offsite. Bring it with you.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;border-left:4px solid var(--amber);">
+    <h3>The Facilitator's Core Job</h3>
+    <p style="margin-bottom:12px;">Your job is not to teach, present, or guide people to the right answer. Your job is to:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div class="note-block"><strong>Protect the process</strong> — keep people building and storytelling, not presenting and debating</div>
+      <div class="note-block"><strong>Surface what's real</strong> — ask questions that expose genuine insight, not rehearsed positions</div>
+      <div class="note-block"><strong>Hold the evidence bar</strong> — keep pressing on whether things are known or assumed</div>
+      <div class="note-block"><strong>Keep the room safe</strong> — create conditions where someone can say "I don't actually know our users" without career risk</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <h3>LSP Method — Three Things to Know</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;">
+      <div class="note-block">
+        <strong>1. Build first, talk second</strong><br>
+        <span style="font-size:13px;color:var(--text-mid);">Every exercise: prompt → quiet build → share-out. Never skip the build. If someone starts talking instead: <em>"Before you tell us — can you show us?"</em></span>
+      </div>
+      <div class="note-block">
+        <strong>2. Respond to models, not people</strong><br>
+        <span style="font-size:13px;color:var(--text-mid);">You are asking about the object, not evaluating the person. Always: <em>"Tell us about your model"</em> — never <em>"What did you build?"</em></span>
+      </div>
+      <div class="note-block">
+        <strong>3. Silence is building time</strong><br>
+        <span style="font-size:13px;color:var(--text-mid);">You'll feel the urge to fill silence. Don't. If someone is stuck: <em>"Start with one piece that feels right and see where it goes."</em> Then walk away.</span>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h4 class="h4">Phrases to use vs. avoid</h4>
+    <div class="phrase-grid">
+      <div class="phrase-item phrase-use"><span class="tag">Use</span>"Tell us about your model."</div>
+      <div class="phrase-item phrase-avoid"><span class="tag">Avoid</span>"What did you build?" (too closed)</div>
+      <div class="phrase-item phrase-use"><span class="tag">Use</span>"What does this piece represent?"</div>
+      <div class="phrase-item phrase-avoid"><span class="tag">Avoid</span>"That's interesting." (evaluative)</div>
+      <div class="phrase-item phrase-use"><span class="tag">Use</span>"What happens if we remove this?"</div>
+      <div class="phrase-item phrase-avoid"><span class="tag">Avoid</span>"I like that." (evaluative)</div>
+      <div class="phrase-item phrase-use"><span class="tag">Use</span>"Who else is in this story?"</div>
+      <div class="phrase-item phrase-avoid"><span class="tag">Avoid</span>"Right." / "Exactly." (signals correct answer)</div>
+    </div>
+  </div>
+
+  <div class="accordion" style="margin-bottom:24px;">
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)">
+        <h3>Session-by-Session Notes</h3>
+        <div class="acc-meta"><span class="badge badge-amber">8 sessions</span><span class="acc-icon">+</span></div>
+      </button>
+      <div class="acc-body">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+
+          <div class="note-block">
+            <strong>Pre-Tour Briefing</strong> — Success: people leave curious, not briefed. Avoid overloading with LSP theory. Just frame it as fieldwork and let the city do the work.
+          </div>
+
+          <div class="note-block">
+            <strong>LEGO Warm-Up</strong> — The room should be laughing by the end of the duck. Senior leaders sometimes resist — say: <em>"The duck is non-negotiable. It's 3 minutes and it removes the part of your brain that thinks building has to be serious."</em> The third exercise (biggest frustration) is where real content starts. Listen carefully.
+          </div>
+
+          <div class="note-block">
+            <strong>Session 1: Current City</strong> — Failure: everyone builds an org chart. Prevent it by emphasizing <em>"from the perspective of the people we serve."</em> If you see boxes and arrows: <em>"Where is the developer in this model? What are they doing right now?"</em> The group merge is where politics surface — if one person's model dominates, redirect: <em>"Before we add that — what does [quieter person]'s model contribute here?"</em>
+          </div>
+
+          <div class="note-block">
+            <strong>Session 2: Fault Lines</strong> — The earthquake metaphor gives people permission to criticize systems they helped build. Apply the evidence test to every fault line as it surfaces. If most things land in "we believe" and "we don't know" — that is a finding, and a useful one for positioning UX.
+          </div>
+
+          <div class="note-block">
+            <strong>Session 3: Developer Journey</strong> — Watch for models that are too smooth. If the journey is a clean flow with no friction: <em>"Where does the developer not know what to do next? Show me that moment."</em> Handoffs are usually the most important finding.
+          </div>
+
+          <div class="note-block">
+            <strong>Session 4: User We Rarely See</strong> — Success: at least 2–3 models generate genuine uncertainty. Watch for the confident build — probe it: <em>"When did you last talk to someone like this? What did they tell you?"</em> The goal is not to embarrass anyone. It is to show where UX research closes the gap.
+          </div>
+
+          <div class="note-block">
+            <strong>Session 5: Future City</strong> — Most common failure: people build technology. Redirect: <em>"What does a developer feel when they use this? Can you add that to your model?"</em> If people say the future is too ambitious: <em>"It doesn't have to be fully built in three years — but the shape of it should be visible."</em>
+          </div>
+
+          <div class="note-block">
+            <strong>Session 6: Opportunity Landscape</strong> — Disagreement is the product of this session. Watch for everything clustering toward "high readiness" — apply pressure: <em>"Is this actually ready to act on, or do we wish it were?"</em>
+          </div>
+
+          <div class="note-block">
+            <strong>Session 7: Leverage</strong> — If voting is fragmented (everyone votes for their own domain): <em>"Vote for the problem that affects the most people in the worst way — not the problem in your domain."</em>
+          </div>
+
+          <div class="note-block">
+            <strong>Session 8: Opportunity Statements</strong> — Push for specificity. If a statement is too broad, ask: <em>"Which developer? What specifically can't they do? What specifically causes that?"</em> Read statements aloud before the session ends — hearing reveals vagueness that reading doesn't.
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc(this)" id="dynamics">
+        <h3>The Evidence Framework in Practice</h3>
+        <div class="acc-meta"><span class="acc-icon">+</span></div>
+      </button>
+      <div class="acc-body">
+        <p style="font-size:14px;color:var(--text-mid);margin-bottom:14px;">The single most important facilitation tool in this workshop. Use it consistently throughout both days — every time someone makes a claim about user behavior, user problems, or organizational challenges.</p>
+        <div class="prompt-block">
+          <strong>How to introduce it (Day 1, Fault Lines session)</strong>
+          "Every time we identify a problem or insight, we're going to ask: how do we know this is true? We have three categories: we know — evidence, data, or direct research. We believe — strong assumption, no formal evidence. We don't know — a genuine gap. None of these is wrong. 'We don't know' just tells us where we need to do more work."
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Sample language</h4>
+        <ul class="dot-list">
+          <li>"How do we know this is true?"</li>
+          <li>"Is that a 'we know' or a 'we believe'?"</li>
+          <li>"What would we need to see to move this from 'we believe' to 'we know'?"</li>
+          <li>"The fact that we don't know that — is that a problem?"</li>
+        </ul>
+        <div class="note-block" style="margin-top:14px;"><strong>At the end of Day 2:</strong> The "we don't know" bucket is your research agenda. Name it explicitly: "These are not failures. These are the places where UX research can change what ISTS knows about its users before it builds something."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ DYNAMICS ═══════════ -->
+<section class="section" id="dynamics">
+  <div class="section-header">
+    <div class="section-eyebrow">Facilitation Guide</div>
+    <h2>Managing Group Dynamics</h2>
+  </div>
+  <div class="dynamics-grid">
+    <div class="dynamic-card">
+      <h4>The Dominant Voice</h4>
+      <p>One or two people — usually senior leaders — will tend to speak for everyone. Don't ask them to yield. Redirect.</p>
+      <div class="response">"What does your model say about that?" — directed at someone who hasn't spoken. Physical positioning: stand near the person you want to hear from next.</div>
+    </div>
+    <div class="dynamic-card">
+      <h4>The Quiet Expert</h4>
+      <p>The person with the most actual user knowledge often says the least. Individual contributor in a room of managers.</p>
+      <div class="response">"Your model had something the others didn't — can you walk us through this piece again?" Watch for models that are more detailed and grounded than others.</div>
+    </div>
+    <div class="dynamic-card">
+      <h4>The Skeptic</h4>
+      <p>Someone will think this is silly. Don't argue. Don't convert. Use it.</p>
+      <div class="response">"Can you build that for me? What does your skepticism look like as a model?" Skeptics almost always engage once their hands are moving.</div>
+    </div>
+    <div class="dynamic-card">
+      <h4>The Solution-Jumper</h4>
+      <p>"We should just build a unified portal." Usually technically oriented. Skipping the problem to get to the answer.</p>
+      <div class="response">"Before we get to solutions — can you build me the problem? What does the developer experience look like right now, before the portal exists?"</div>
+    </div>
+    <div class="dynamic-card">
+      <h4>The Manager Who Speaks for the Team</h4>
+      <p>"Our users all say that…" / "Developers don't really care about…"</p>
+      <div class="response">Apply the evidence test consistently: "How do we know that? Is this something we have data on, or a strong belief?" Do this without singling anyone out — the room starts applying it to themselves.</div>
+    </div>
+    <div class="dynamic-card">
+      <h4>The Person Who Won't Share</h4>
+      <p>"Mine is pretty simple / basically the same as what X said."</p>
+      <div class="response">"Every model gets a voice. What did you build?" Then wait. Do not fill the silence.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAILURE MODES ═══════════ -->
+<section class="section" id="failures">
+  <div class="section-header">
+    <div class="section-eyebrow">Facilitation Guide</div>
+    <h2>Common Failure Modes &amp; Recoveries</h2>
+  </div>
+  <table class="failure-table">
+    <thead><tr><th>What happens</th><th>Why it happens</th><th>Recovery</th></tr></thead>
+    <tbody>
+      <tr><td>People describe what they'll build instead of building</td><td>Verbal comfort zone; executives especially</td><td>"Before you tell us — can you show us?"</td></tr>
+      <tr><td>Share-outs become slide presentations</td><td>Room shifts back into meeting mode</td><td>"Tell us about your model" — return focus to the object</td></tr>
+      <tr><td>Shared city gets dominated by one domain</td><td>Power dynamics surface in the merge</td><td>Physically reposition less-represented pieces; ask what's missing</td></tr>
+      <tr><td>Nobody votes differently from the senior leader</td><td>Political safety</td><td>Anonymous dot voting — put dots on table, everyone places simultaneously</td></tr>
+      <tr><td>Opportunity statements come out too vague</td><td>People revert to strategy-speak</td><td>"Who specifically? What specifically can't they do? What specifically causes that?"</td></tr>
+      <tr><td>Energy crashes after Day 2 lunch</td><td>Happens in every workshop</td><td>Keep Opportunity Landscape active and physical — people moving, placing cards, disagreeing</td></tr>
+      <tr><td>Stakeholder derails Future City with constraints</td><td>Solution-mode resurfacing</td><td>"In this city, we're not worried about constraints yet. What would we build if we knew it was possible?"</td></tr>
+      <tr><td>Workshop ends without clear next steps</td><td>Nobody owns the output</td><td>Name a single owner before the room leaves. The output dies without one.</td></tr>
+    </tbody>
+  </table>
+  <div class="note-block" style="margin-top:20px;">
+    <strong>Before you walk in the room:</strong> Know who in the group knows their users well, who may be uncomfortable with the method, who is the most influential voice, and whether there are unresolved political tensions that could surface during the merge activities. You cannot control group dynamics — but knowing them going in means you are not surprised by them.
+  </div>
+</section>
+
+<!-- ═══════════ PLANNING ═══════════ -->
+<section class="section" id="planning">
+  <div class="section-header">
+    <div class="section-eyebrow">Pre-Work &amp; Planning</div>
+    <h2>Everything Before the Room Opens</h2>
+  </div>
+
+  <div class="plan-timeline" style="border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:28px;">
+    <div class="plan-item">
+      <div class="plan-when">6–8 weeks before</div>
+      <div class="plan-what">
+        <h4>Logistics &amp; Materials</h4>
+        <ul>
+          <li>Book architecture tour — call CAC at 111 E. Wacker Dr. If group >20, book a private tour</li>
+          <li>Confirm 10:00am start time and accessibility needs</li>
+          <li>Order LEGO: LSP Identity &amp; Landscape Kit (part #2000414) — 1 per person minimum. Not in retail stores — order from LEGO Education. 6-week lead time.</li>
+          <li>Book workshop venue for both days (moveable tables, 2 whiteboards, wall space, projector)</li>
+          <li>Confirm facilitator and co-facilitator</li>
+        </ul>
+      </div>
+    </div>
+    <div class="plan-item">
+      <div class="plan-when">4 weeks before</div>
+      <div class="plan-what">
+        <h4>Communications</h4>
+        <ul>
+          <li>Send stakeholder invitation email (see Email Templates)</li>
+          <li>Send separate design team briefing email</li>
+          <li>Confirm catering for both days</li>
+        </ul>
+      </div>
+    </div>
+    <div class="plan-item">
+      <div class="plan-when">2 weeks before</div>
+      <div class="plan-what">
+        <h4>Pre-Work</h4>
+        <ul>
+          <li>Send participant pre-work email to everyone</li>
+          <li>Confirm final headcount for architecture tour</li>
+          <li>Order remaining materials: sticky notes, markers, dot stickers, index cards, masking tape</li>
+        </ul>
+      </div>
+    </div>
+    <div class="plan-item">
+      <div class="plan-when">1 week before</div>
+      <div class="plan-what">
+        <h4>Facilitator Prep</h4>
+        <ul>
+          <li>Hold 60–90 min walkthrough with co-facilitator — say each prompt out loud</li>
+          <li>Agree on evidence framework language and consistent application</li>
+          <li>Identify 2–3 participants who might resist or dominate; plan responses</li>
+          <li>Print all materials (observation cards, metaphor reference cards, session prompts, evidence poster)</li>
+          <li>Plan opportunity mapping wall — where, what cards, when to reveal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="plan-item">
+      <div class="plan-when">Day before</div>
+      <div class="plan-what">
+        <h4>Room Setup</h4>
+        <ul>
+          <li>Tables in groups of 4–5 (not one large meeting table)</li>
+          <li>LEGO sets at each seat + extra bricks in center</li>
+          <li>Sticky notes and markers at every seat</li>
+          <li>Metaphor reference cards at each seat</li>
+          <li>Observation cards at the front (distributed at 9:30am, not in advance)</li>
+          <li>Evidence framework poster posted on wall</li>
+          <li>Session prompts set aside — post as each session begins</li>
+          <li>Opportunity mapping wall prepared but blank until Day 2 afternoon</li>
+          <li>Send day-before logistics email to all participants</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ COMMUNICATIONS ═══════════ -->
+<section class="section" id="communications">
+  <div class="section-header">
+    <div class="section-eyebrow">Email Templates</div>
+    <h2>Communications</h2>
+    <p>Four emails — ready to copy, customize, and send.</p>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab(this,'tab-stakeholder')">Stakeholder Invite</button>
+    <button class="tab-btn" onclick="switchTab(this,'tab-design')">Design Team Brief</button>
+    <button class="tab-btn" onclick="switchTab(this,'tab-prework')">Pre-Work Email</button>
+    <button class="tab-btn" onclick="switchTab(this,'tab-dayBefore')">Day-Before Logistics</button>
+  </div>
+
+  <div id="tab-stakeholder" class="tab-panel active">
+    <div class="email-wrapper">
+      <div class="email-header">
+        <div>
+          <div class="subject">Subject: [ISTS Offsite] Designing the City Behind the City — [Dates]</div>
+          <div class="send-to">To: Business stakeholders</div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this,'email-stakeholder')">Copy</button>
+      </div>
+      <textarea id="email-stakeholder" class="email-body" readonly>Hi [Name],
+
+I'm writing to invite you to a two-day offsite focused on one question: how do we design the invisible systems that help 12,000 developers do their best work?
+
+This isn't a design workshop in the traditional sense. We're not going to spend two days looking at wireframes or sitting through presentations. Instead, we're going to use a method called LEGO Serious Play — a structured, research-backed approach that uses physical building and storytelling to surface insights that rarely come up in meeting rooms.
+
+We're combining it with something a little unusual: a guided architecture tour of Chicago's iconic buildings on the morning of Day 1.
+
+Here's what we're trying to accomplish together:
+
+- Build a shared picture of how ISTS delivers services and what that experience is really like for the developers and teams who depend on us
+- Surface the biggest opportunities for meaningful improvement — not incremental fixes, but the areas where a more intentional, user-centered approach could change things fundamentally
+- Leave with a clear portfolio of problems worth pursuing, prioritized by user impact and organizational readiness
+
+Why Chicago architecture?
+
+Chicago is one of the best places in the world to study the challenge we face: how do you build systems that serve people without making the infrastructure visible? How do old and new coexist? How do you design something that a first-time user can navigate without a manual?
+
+We're going to walk through buildings from the 1890s through today and use what we see as a lens for thinking about our own systems. The parallel is closer than it sounds.
+
+What I need from you before we meet:
+
+I'll send a short pre-work assignment about two weeks before the offsite. It will take about 30 minutes. It's designed to help you walk in ready to contribute something specific — not to prepare a presentation.
+
+Details:
+- Date: [Date]
+- Day 1: Meet at [location] at 9:30am; we walk to the Chicago Architecture Center together
+- Day 2: [Venue and address]
+- What to wear: Comfortable shoes for Day 1 (we'll be walking for about 2 hours)
+- What to bring: Yourself and whatever you actually know about the people who rely on ISTS every day
+
+Please confirm your attendance by [date].
+
+[Your name]</textarea>
+    </div>
+  </div>
+
+  <div id="tab-design" class="tab-panel">
+    <div class="email-wrapper">
+      <div class="email-header">
+        <div>
+          <div class="subject">Subject: Offsite briefing — what we're trying to accomplish and how you can help</div>
+          <div class="send-to">To: Design team only</div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this,'email-design')">Copy</button>
+      </div>
+      <textarea id="email-design" class="email-body" readonly>Hi team,
+
+Before the offsite, I want to give you more context so you can play an active role rather than just participating.
+
+The real goals of this workshop:
+
+The explicit goal is to identify where UX design can have the most impact across ISTS. But underneath that, we're trying to do something harder: build the conditions for a longer-term partnership between design and the business. That means:
+
+1. Helping stakeholders experience design thinking by doing it, not by hearing about it
+2. Understanding how much these stakeholders actually know about their users — and where the gaps are
+3. Getting everyone into the same problem space before anyone starts proposing solutions
+4. Leaving with a shared language for talking about user problems and design opportunities
+
+Your role during the workshop:
+
+You are participating as peers alongside the stakeholders. Your design instincts are valuable, but use them as questions, not corrections.
+
+When a stakeholder describes a user problem, your most powerful move is not "here's how we'd solve that" — it's "how do we know that's true?" and "what would we need to understand before we could help?"
+
+A few specific things to watch for:
+- Who in the room knows their users genuinely well vs. who is speaking from assumption?
+- Which problems appear in multiple models independently (this signals something real)?
+- What vocabulary does each stakeholder use for users? Do they use names, roles, specific scenarios — or do they say "the business" and "our customers"?
+- What fault lines exist between teams that nobody is naming directly?
+
+After the workshop:
+
+I'll synthesize the outputs within a week. I'll need your help connecting what we heard to existing research or identifying where we need to start new research. Come prepared to connect dots.
+
+[Your name]</textarea>
+    </div>
+  </div>
+
+  <div id="tab-prework" class="tab-panel">
+    <div class="email-wrapper">
+      <div class="email-header">
+        <div>
+          <div class="subject">Subject: [ISTS Offsite] Pre-work — 30 minutes, before [date]</div>
+          <div class="send-to">To: Everyone — stakeholders and design team</div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this,'email-prework')">Copy</button>
+      </div>
+      <textarea id="email-prework" class="email-body" readonly>Hi [Name],
+
+We're two weeks out from the offsite. Before you arrive, I'd like you to do one thing. It should take about 30 minutes and it will make your time there significantly more useful.
+
+Your pre-work assignment:
+
+Between now and [date], have one conversation with someone who uses or depends on ISTS services. This could be a developer, a platform engineer, a product owner, a security partner, or a support engineer — anyone whose work involves interacting with the systems, tools, or processes your team provides.
+
+Ask them one question:
+
+"What is the most frustrating or confusing part of working with [the specific thing your team provides]?"
+
+Then listen. Do not explain, defend, or fix. Just write down what they say — ideally in their words, not your interpretation.
+
+Bring those notes to the offsite.
+
+If you genuinely cannot have that conversation before we meet, come prepared to answer this question yourself: What do I know — with evidence — about the people who depend on ISTS, and what am I assuming?
+
+That's it. No slides, no preparation, no reading list.
+
+One more thing:
+
+On the morning of Day 1, we are walking about 2 hours through downtown Chicago. Please wear comfortable shoes. We meet at [location] at 9:30am.
+
+See you [date].
+
+[Your name]</textarea>
+      <div class="email-note">The pre-work is intentionally light. The goal is not to brief people — it is to activate curiosity and give them something specific to contribute. People who walk in with a real quote from a real user change the quality of the room.</div>
+    </div>
+  </div>
+
+  <div id="tab-dayBefore" class="tab-panel">
+    <div class="email-wrapper">
+      <div class="email-header">
+        <div>
+          <div class="subject">Subject: Tomorrow — logistics for Day 1</div>
+          <div class="send-to">To: Everyone · Send evening before Day 1</div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this,'email-daybefore')">Copy</button>
+      </div>
+      <textarea id="email-daybefore" class="email-body" readonly>Hi all,
+
+Quick logistics for tomorrow:
+
+Morning:
+- Meet at [location] at 9:30am sharp
+- We walk to the Chicago Architecture Center (111 E. Wacker Dr.) as a group
+- Tour begins at 10:00am — late arrivals cannot join mid-tour
+- Wear comfortable shoes; the route is flat and about 2 miles round trip
+- [Add weather note if relevant: bring a layer / umbrella]
+
+Afternoon:
+- We return to [workshop venue] for lunch at approximately 12:30pm
+- Workshop sessions run until 5:00pm
+- Bring any notes from your pre-work conversation
+
+Day 2:
+- Meet at [workshop venue], [address]
+- Start time: 9:00am
+- End time: approximately 5:30pm
+- Lunch is provided
+
+If you have questions or can't make it, contact [name] at [contact].
+
+See you at 9:30.
+
+[Your name]</textarea>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MATERIALS ═══════════ -->
+<section class="section" id="materials">
+  <div class="section-header">
+    <div class="section-eyebrow">Checklist</div>
+    <h2>Materials</h2>
+  </div>
+  <div class="materials-grid">
+    <div class="mat-card">
+      <h3><span class="icon">🧱</span> LEGO</h3>
+      <ul class="check-list">
+        <li>LSP Identity &amp; Landscape Kit (#2000414) — 1 per person (preferred)</li>
+        <li>Or Window Exploration Bag (#2000409) + supplement with standard sets</li>
+        <li>Extra base plates for city-building sessions</li>
+        <li>Extra loose bricks in center of each table</li>
+      </ul>
+    </div>
+    <div class="mat-card">
+      <h3><span class="icon">🖨️</span> Print</h3>
+      <ul class="check-list">
+        <li>Observation cards — 1 per person, double-sided</li>
+        <li>Chicago metaphor reference cards — 1 per person, stays on table both days</li>
+        <li>Session prompts — large format, posted as each session begins</li>
+        <li>Evidence framework poster — large enough to read across the room</li>
+      </ul>
+    </div>
+    <div class="mat-card">
+      <h3><span class="icon">🏠</span> Room</h3>
+      <ul class="check-list">
+        <li>Large moveable tables (groups of 4–5, not fixed boardroom)</li>
+        <li>2 whiteboards or 1 whiteboard + flip chart</li>
+        <li>Wall space for opportunity mapping (Day 2)</li>
+        <li>Projector or screen for Day 2 morning (Day 1 photos)</li>
+        <li>Catering: Day 1 lunch, Day 2 lunch + coffee/snacks</li>
+      </ul>
+    </div>
+    <div class="mat-card">
+      <h3><span class="icon">✏️</span> Supplies</h3>
+      <ul class="check-list">
+        <li>Sticky notes — at least 3 colors, multiple pads</li>
+        <li>Markers — thick enough to read from 3 feet</li>
+        <li>Dot stickers — 3 colors (vote dots, red = don't know, green = know)</li>
+        <li>Index cards for opportunity mapping wall</li>
+        <li>Masking tape for 2×2 axes</li>
+        <li>Camera or phone for documentation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PRINT CARDS ═══════════ -->
+<section class="section" id="printcards">
+  <div class="section-header">
+    <div class="section-eyebrow">Print Materials</div>
+    <h2>Participant Cards</h2>
+    <p>Print one of each per participant. The observation card is distributed at 9:30am on Day 1. The reference card stays on the table for both days.</p>
+  </div>
+
+  <div class="print-cards">
+    <div class="print-card">
+      <div class="print-card-header">
+        <h3>Observation Card — Tour</h3>
+        <span class="face">Front / Back · Half-sheet</span>
+      </div>
+      <div class="print-card-body">
+        <p class="card-q"><strong>Chicago Icons: Connecting Past and Present</strong><br><span style="font-size:12px;color:var(--muted);">Your fieldwork prompts — one observation per sticky note, collect at least 5</span></p>
+        <ol class="card-qs">
+          <li>What makes this city usable for the people who live and work in it?</li>
+          <li>What infrastructure do people rely on but never think about?</li>
+          <li>Where does old and new coexist well — and where does it create friction?</li>
+          <li>What would a first-time visitor find confusing, overwhelming, or invisible?</li>
+        </ol>
+        <div class="divider"></div>
+        <p class="card-q"><strong>What you're looking at and why</strong></p>
+        <table style="font-size:12px;">
+          <thead><tr><th>Building</th><th>ISTS parallel</th></tr></thead>
+          <tbody>
+            <tr><td>Reliance Building (1895)</td><td>Invisible foundational infrastructure</td></tr>
+            <tr><td>City Hall (1911)</td><td>Governance and approval processes</td></tr>
+            <tr><td>Marina City (1964)</td><td>Unified developer platform ideal</td></tr>
+            <tr><td>Daley Plaza</td><td>Developer-facing interfaces</td></tr>
+            <tr><td>Pritzker Pavilion</td><td>Hidden services that enable experience</td></tr>
+            <tr><td>LondonHouse</td><td>Legacy system modernization</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="print-card">
+      <div class="print-card-header">
+        <h3>Chicago Metaphor Reference Card</h3>
+        <span class="face">Full-sheet · Keep on table both days</span>
+      </div>
+      <div class="print-card-body">
+        <p class="card-q"><strong>Designing the City Behind the City</strong></p>
+        <table style="font-size:12px;margin-bottom:14px;">
+          <thead><tr><th>City element</th><th>ISTS equivalent</th></tr></thead>
+          <tbody>
+            <tr><td>Historic buildings</td><td>Legacy systems and processes</td></tr>
+            <tr><td>Infrastructure</td><td>Invisible services that support everything</td></tr>
+            <tr><td>New architecture</td><td>Innovation and modernization</td></tr>
+            <tr><td>City residents</td><td>Developers and internal users</td></tr>
+            <tr><td>Urban planners</td><td>ISTS leaders</td></tr>
+            <tr><td>Architects &amp; designers</td><td>UX and product teams</td></tr>
+            <tr><td>Utilities &amp; transportation</td><td>Infrastructure platforms, DevSecOps, tooling</td></tr>
+          </tbody>
+        </table>
+        <p class="card-q"><strong>Evidence framework — ask this about every insight</strong></p>
+        <table style="font-size:12px;">
+          <thead><tr><th>Label</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge badge-know" style="font-size:11px;">We know</span></td><td>Evidence exists — data, research, direct feedback</td></tr>
+            <tr><td><span class="badge badge-believe" style="font-size:11px;">We believe</span></td><td>Strong assumption — not yet validated</td></tr>
+            <tr><td><span class="badge badge-dontknow" style="font-size:11px;">We don't know</span></td><td>Genuine gap — research needed before acting</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print this page
+  </button>
+</section>
+
+</main><!-- /main -->
+
+<script>
+// Accordion
+function toggleAcc(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+
+// Tabs
+function switchTab(btn, panelId) {
+  const container = btn.closest('section');
+  container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  container.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+
+// Copy email
+function copyEmail(btn, textareaId) {
+  const ta = document.getElementById(textareaId);
+  ta.select();
+  ta.setSelectionRange(0, 99999);
+  try {
+    navigator.clipboard.writeText(ta.value).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  } catch(e) {
+    document.execCommand('copy');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  }
+}
+
+// Hamburger
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+
+// Scroll spy
+const sections = document.querySelectorAll('section[id], div[id="overview"]');
+const navLinks = document.querySelectorAll('.nav-link');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
