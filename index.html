@@ -26,6 +26,9 @@
   --bg: #F2F5F9;
   --white: #FFFFFF;
   --sidebar-w: 256px;
+  --teal: #0F766E;
+  --teal-bg: #CCFBF1;
+  --teal-border: #99F6E4;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -496,6 +499,19 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
 .divider { height: 1px; background: var(--border); margin: 24px 0; }
 .h4 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
 .small-muted { font-size: 12px; color: var(--muted); }
+
+/* HYBRID */
+.hybrid-block {
+  background: var(--teal-bg); border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: var(--text-mid);
+}
+.hybrid-block strong { color: var(--teal); }
+.badge-teal { background: var(--teal-bg); color: var(--teal); }
+.hybrid-session-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600;
+  background: var(--teal-bg); color: var(--teal); margin-left: 6px;
+}
 </style>
 </head>
 <body>
@@ -515,6 +531,10 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       <span class="nav-label">Workshop</span>
       <a href="#overview" class="nav-link active"><span class="dot"></span> Overview</a>
       <a href="#outputs" class="nav-link"><span class="dot"></span> Final Outputs</a>
+    </div>
+    <div class="nav-section">
+      <span class="nav-label">Hybrid</span>
+      <a href="#hybrid" class="nav-link"><span class="dot" style="background:var(--teal);"></span> Hybrid Setup</a>
     </div>
     <div class="nav-section">
       <span class="nav-label">Agenda</span>
@@ -541,7 +561,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
 
 <!-- ═══════════ HERO ═══════════ -->
 <div class="hero">
-  <div class="eyebrow">ISTS UX Offsite · LEGO® Serious Play®</div>
+  <div class="eyebrow">ISTS UX Offsite · LEGO® Serious Play® · <span style="color:#5EEAD4;">Hybrid Format</span></div>
   <h2>Designing the City<br>Behind the City</h2>
   <p class="subtitle">A 2-day workshop using Chicago architecture as a lens for understanding how we design the invisible systems that power developer work.</p>
   <div class="hero-stats">
@@ -601,6 +621,134 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <tr><td><strong>Urban planners</strong></td><td>ISTS leaders</td></tr>
         <tr><td><strong>Architects &amp; designers</strong></td><td>UX and product teams</td></tr>
         <tr><td><strong>Utilities &amp; transportation</strong></td><td>Infrastructure platforms, DevSecOps, tooling, security</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════ HYBRID ═══════════ -->
+<section class="section" id="hybrid">
+  <div class="section-header">
+    <div class="section-eyebrow" style="color:var(--teal);">Hybrid Format</div>
+    <h2>Running with Virtual Attendees</h2>
+    <p>Some participants will attend remotely. This section covers what stays the same, what changes, and how to keep both groups working on the same problem in parallel.</p>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:28px;">
+    <div class="card" style="border-left:4px solid var(--green);">
+      <h3>What Stays the Same</h3>
+      <ul class="purpose-list">
+        <li>All Day 2 sessions — Developer Journey, User We Rarely See, Future City, Opportunity Landscape, Leverage, Opportunity Statements</li>
+        <li>The evidence framework — virtual attendees apply it identically</li>
+        <li>Group assignments — virtual attendees are assigned to working groups and participate as peers</li>
+        <li>Dot voting and prioritization — done on the shared Miro board</li>
+        <li>All four output artifacts</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid var(--teal);">
+      <h3>What Changes</h3>
+      <ul class="purpose-list">
+        <li>LEGO builds → Miro LEGO board (virtual attendees build digitally in parallel)</li>
+        <li>Architecture tour → virtual attendees join at 12:30pm; receive photo summary at lunch</li>
+        <li>Physical share-outs → room camera on LEGO tables; virtual attendees screen-share Miro builds</li>
+        <li>Gallery walk (Session 4) → virtual attendees navigate Miro board and drop digital sticky notes</li>
+        <li>Physical dot votes → Miro voting tool for virtual attendees simultaneously</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <h3>Virtual LEGO — Miro Board</h3>
+    <p style="margin-bottom:14px;font-size:14px;color:var(--text-mid);">A Miro board version of LEGO Serious Play has been created for virtual attendees. They build using a digital brick library in parallel with in-room physical builds. Each workshop session has a dedicated Miro frame matching the physical prompt.</p>
+    <div class="grid-2">
+      <div>
+        <h4 class="sub">Before the workshop</h4>
+        <ul class="dot-list">
+          <li>Share the Miro board link with virtual attendees at least 3 days in advance</li>
+          <li>Ask them to open the board and verify edit access before Day 1</li>
+          <li>Send a 2-minute Miro orientation: frame navigation, how to add and move bricks, how to add sticky notes</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="sub">During sessions</h4>
+        <ul class="dot-list">
+          <li>Virtual attendees build in their own labeled section of each frame</li>
+          <li>During share-outs, ask virtual attendees to screen-share their Miro section</li>
+          <li>At the end of each physical build phase, photograph each table's model and drop it into the corresponding Miro frame before share-outs begin</li>
+          <li>Group merge activities: virtual attendees move their Miro pieces into the shared group frame</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hybrid-block" style="margin-top:14px;">
+      <strong>Sync rule:</strong> Before every share-out, pause 60 seconds to upload photos of physical builds into Miro. This gives virtual attendees the same visual context as the people in the room — both groups should be looking at the same thing when someone is talking.
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <h3>Room A/V Requirements</h3>
+    <p style="margin-bottom:14px;font-size:14px;color:var(--text-mid);">A/V is load-bearing for this workshop. Budget time to test it thoroughly the day before. A bad audio setup will effectively exclude virtual attendees from discussions even when they are technically connected.</p>
+    <div class="grid-3" style="margin-bottom:14px;">
+      <div class="note-block">
+        <strong>Camera</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Dedicated wide-angle camera (not a laptop webcam) on a tripod, pointed at the LEGO tables. Virtual attendees need to clearly see physical builds. Reposition between sessions if needed.</span>
+      </div>
+      <div class="note-block">
+        <strong>Room microphone</strong><br>
+        <span style="font-size:12px;color:var(--muted);">USB conference speaker (Jabra Speak, Meeting Owl, or equivalent) placed centrally. Test voice pickup from the far corner of the room. Echos and one-sided audio are the most common failure.</span>
+      </div>
+      <div class="note-block">
+        <strong>Playback speaker</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Virtual attendees' audio must be audible to the full in-room group — not just whoever is seated near the laptop. Use an external speaker at room volume. Test this first.</span>
+      </div>
+    </div>
+    <div class="note-block">
+      <strong>Assign a dedicated tech host.</strong> Someone whose only job is monitoring the video call, managing virtual attendee audio, and flagging when a remote participant is trying to speak. The facilitator cannot do this and run the room simultaneously. This role is non-negotiable for a hybrid session.
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <h3>Architecture Tour — Virtual Attendees</h3>
+    <p style="margin-bottom:12px;font-size:14px;color:var(--text-mid);">Virtual attendees skip the walking tour and join Day 1 at 12:30pm, at the start of lunch. The metaphor still works for them — it just needs to be handed to them directly rather than experienced in person.</p>
+    <div class="grid-2">
+      <div>
+        <h4 class="sub">Send before Day 1</h4>
+        <ul class="dot-list">
+          <li>The Chicago metaphor reference card (PDF) — same as in-room participants receive on the day</li>
+          <li>The building-by-building table and ISTS parallels (from the Overview section)</li>
+          <li>The observation card prompts — ask virtual attendees to write 3–5 answers before Day 1 starts, based on the metaphor description</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="sub">During the tour and at lunch</h4>
+        <ul class="dot-list">
+          <li>Designate one in-room person to photograph 2–3 key moments at each building stop</li>
+          <li>Post photos to the Miro board during the 12:30pm lunch break — before the 1:15pm warm-up</li>
+          <li>At 1:15pm, before the LEGO warm-up begins, spend 5 minutes orienting virtual attendees: one sentence per building and its ISTS parallel</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hybrid-block" style="margin-top:12px;">
+      The key is that everyone enters the afternoon sharing the same reference: Pritzker Pavilion as invisible infrastructure that disappears when it works and becomes a crisis when it doesn't. Virtual attendees can hold that metaphor without the walk.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Session-by-Session Hybrid Notes</h3>
+    <table style="margin-top:14px;">
+      <thead><tr><th>Session</th><th>In-room</th><th>Virtual</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Pre-Tour Briefing</strong></td><td>As written — observation cards, tour framing</td><td>Skips. Receives metaphor reference card and observation prompts in advance.</td></tr>
+        <tr><td><strong>Architecture Tour</strong></td><td>As written — 7-stop walking tour</td><td>Skips. Joins at 12:30pm; receives Miro photo summary at lunch.</td></tr>
+        <tr><td><strong>LEGO Warm-Up</strong></td><td>Physical builds — duck, collaboration, frustration</td><td>Miro board — same three prompts, dedicated warm-up frames. Screen-shares each build during share-out.</td></tr>
+        <tr><td><strong>Session 1: Current City</strong></td><td>Physical individual build → group merge</td><td>Miro — individual frame → moves pieces into group merge frame. Screen-shares during 2-min share-out.</td></tr>
+        <tr><td><strong>Session 2: Fault Lines</strong></td><td>Groups of 5 on shared city model</td><td>Assigned to a group; works in Miro alongside their group's physical section. Tech host uploads physical photos at phase end.</td></tr>
+        <tr><td><strong>Day 1 Synthesis</strong></td><td>Physical dot vote on whiteboard themes</td><td>Miro voting on the same themes (tech host mirrors physical whiteboard themes into Miro before voting begins).</td></tr>
+        <tr><td><strong>Session 3: Developer Journey</strong></td><td>Physical group build — 3 scenarios</td><td>Assigned to one of the three groups; builds scenario in Miro group frame.</td></tr>
+        <tr><td><strong>Session 4: User We Rarely See</strong></td><td>Individual build + physical gallery walk with sticky notes</td><td>Individual Miro frame; navigates the board gallery-style; drops digital sticky notes on others' frames instead of physical notes.</td></tr>
+        <tr><td><strong>Session 5: Future City</strong></td><td>Physical group build</td><td>Assigned to a group; builds in Miro group frame.</td></tr>
+        <tr><td><strong>Session 6: Opportunity Landscape</strong></td><td>Physical card placement on 2×2 wall</td><td>Miro 2×2 matrix frame — places and repositions cards digitally.</td></tr>
+        <tr><td><strong>Session 7: Leverage</strong></td><td>Physical dot stickers on wall cards</td><td>Miro voting tool on same opportunity cards.</td></tr>
+        <tr><td><strong>Session 8: Opportunity Statements</strong></td><td>Small group drafting, share-out aloud</td><td>Assigned to a group; co-drafts statement in Miro text frame or shared doc.</td></tr>
       </tbody>
     </table>
   </div>
@@ -667,6 +815,9 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             <li>Where does old and new coexist well — and where does it create friction?</li>
             <li>What would a first-time visitor find confusing, overwhelming, or invisible?</li>
           </ul>
+          <div class="hybrid-block" style="margin-top:14px;">
+            <strong>Hybrid:</strong> Virtual attendees skip this session. They receive the metaphor reference card and observation prompts before Day 1 and complete them independently. They join at 12:30pm.
+          </div>
         </div>
       </div>
     </div>
@@ -699,6 +850,9 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           </table>
           <div class="note-block">
             <strong>Pritzker Pavilion is the key metaphor.</strong> Most people don't know there's a distributed speaker grid under the lawn across 36 acres. Without it, no one hears the music. That is exactly what ISTS provides — infrastructure that disappears when it works and becomes a crisis when it doesn't.
+          </div>
+          <div class="hybrid-block" style="margin-top:12px;">
+            <strong>Hybrid:</strong> Virtual attendees skip the tour. Designate someone to photograph 2–3 moments at each stop. Post to Miro during lunch. At 1:15pm, give a 5-minute tour recap to orient virtual attendees before the warm-up begins.
           </div>
         </div>
       </div>
@@ -740,6 +894,9 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             <div class="note-block"><strong>3. Build your biggest work frustration</strong><br><span style="font-size:12px;color:var(--muted);">5 min build · share within your table first · then 1 observation per table to full room · total: 18 min</span></div>
           </div>
           <div class="info-block" style="margin-top:12px;"><strong>Why the table-share format on exercise 3:</strong> With 15 people doing 60-sec stories, share-out alone takes 15 min. Table shares compress this to 5–6 min while still surfacing the most important themes to the full room.</div>
+          <div class="hybrid-block" style="margin-top:12px;">
+            <strong>Hybrid:</strong> Virtual attendees complete all three warm-up prompts on the Miro board in dedicated frames. They screen-share their builds during share-outs. The duck still goes around the room — virtual attendees call out their one word the same as everyone else.
+          </div>
         </div>
       </div>
     </div>
@@ -1366,6 +1523,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <ul>
           <li>Send stakeholder invitation email (see Email Templates)</li>
           <li>Send separate design team briefing email</li>
+          <li>Send virtual attendee email with Miro link and metaphor context (see Email Templates → Virtual Attendee)</li>
           <li>Confirm catering for both days</li>
         </ul>
       </div>
@@ -1391,6 +1549,8 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <li>Identify 2–3 participants who might resist or dominate; plan responses</li>
           <li>Print all materials (observation cards, metaphor reference cards, session prompts, evidence poster)</li>
           <li>Plan opportunity mapping wall — where, what cards, when to reveal</li>
+          <li>Brief tech host on their role — test video call, camera, and room audio together</li>
+          <li>Confirm virtual attendees have Miro access and can edit the board</li>
         </ul>
       </div>
     </div>
@@ -1427,6 +1587,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
     <button class="tab-btn" onclick="switchTab(this,'tab-design')">Design Team Brief</button>
     <button class="tab-btn" onclick="switchTab(this,'tab-prework')">Pre-Work Email</button>
     <button class="tab-btn" onclick="switchTab(this,'tab-dayBefore')">Day-Before Logistics</button>
+    <button class="tab-btn" onclick="switchTab(this,'tab-virtual')" style="color:var(--teal);">Virtual Attendee</button>
   </div>
 
   <div id="tab-stakeholder" class="tab-panel active">
@@ -1557,6 +1718,64 @@ See you [date].
     </div>
   </div>
 
+  <div id="tab-virtual" class="tab-panel">
+    <div class="email-wrapper">
+      <div class="email-header">
+        <div>
+          <div class="subject">Subject: [ISTS Offsite] Joining virtually — what you need to know</div>
+          <div class="send-to">To: Virtual attendees only · Send 1 week before Day 1</div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(this,'email-virtual')">Copy</button>
+      </div>
+      <textarea id="email-virtual" class="email-body" readonly>Hi [Name],
+
+You're joining the ISTS offsite virtually, and I want to make sure your experience is as close as possible to being in the room.
+
+Here's everything you need to know before we start.
+
+What you'll be doing:
+
+The workshop uses LEGO Serious Play — a structured method where you build physical models and tell stories about them. Since you'll be remote, we've set up a Miro board version so you can participate in every session. You'll build using a digital brick library, share your screen during share-outs, and work in the same shared frames as in-room participants.
+
+Your Miro board: [LINK]
+Please open this before Day 1 and verify that you have edit access. If you get a view-only prompt, reply to this email so we can fix it before the session.
+
+What to do before Day 1:
+
+1. Complete the pre-work assignment (see separate email) — same as everyone else.
+
+2. Review the Chicago metaphor context below. In-room participants will walk through Chicago architecture on Day 1 morning as a metaphor for ISTS systems. You'll skip the tour, but you need to know the metaphor going in.
+
+   Key parallel: The Pritzker Pavilion in Millennium Park has a distributed speaker grid running under 36 acres of lawn. No one who sits on the lawn knows it's there — but without it, no one hears the music. That is what ISTS provides: infrastructure that disappears when it works and becomes a crisis when it doesn't.
+
+3. Do the observation exercise independently: read the prompts below and write 3–5 answers before Day 1.
+   - What makes a city usable for the people who live and work in it?
+   - What infrastructure do people rely on but never think about?
+   - Where does old and new coexist — and where does that create friction?
+   - What would a first-time visitor find confusing or invisible?
+
+When you join:
+
+Day 1: Join at 12:30pm CT. The morning is an in-person architecture tour. I'll share photos from the tour in Miro at lunch so you have the same reference points.
+
+Day 2: Join at 9:00am CT. You'll be in every session.
+
+Video call link: [LINK]
+
+A few practical notes:
+
+- Keep your video on during share-outs when you're presenting — it helps the room see you and makes the conversation feel less one-directional.
+- When you want to speak, use the raise-hand function or type in chat — someone in the room is designated to watch for virtual hands and flag them to the facilitator.
+- During build phases, your audio can be muted. Unmute when sharing.
+- You'll be assigned to working groups the same as in-room participants. Your group will coordinate with you directly.
+
+See you [date].
+
+[Your name]</textarea>
+      <div class="email-note">Send this in addition to the standard pre-work email — virtual attendees need both. The Miro link and metaphor context here replace the in-person tour briefing.</div>
+    </div>
+  </div>
+
   <div id="tab-dayBefore" class="tab-panel">
     <div class="email-wrapper">
       <div class="email-header">
@@ -1641,6 +1860,18 @@ See you at 9:30.
         <li>Index cards for opportunity mapping wall</li>
         <li>Masking tape for 2×2 axes</li>
         <li>Camera or phone for documentation</li>
+      </ul>
+    </div>
+    <div class="mat-card" style="border-left:4px solid var(--teal);">
+      <h3><span class="icon">💻</span> Hybrid Tech</h3>
+      <ul class="check-list">
+        <li>Miro board created, all sessions framed — share link with virtual attendees 3 days before</li>
+        <li>Wide-angle camera on tripod covering LEGO tables — tested day before</li>
+        <li>USB conference speaker/mic (Jabra, Owl, or equivalent) — audio tested from far corner of room</li>
+        <li>External room speaker so virtual audio reaches full group</li>
+        <li>Video call link confirmed and tested — separate from Miro</li>
+        <li>Tech host assigned (not the facilitator) — monitors virtual attendees throughout</li>
+        <li>Phone or second camera designated for photographing physical builds and uploading to Miro</li>
       </ul>
     </div>
   </div>
@@ -1767,7 +1998,7 @@ document.getElementById('hamburger').addEventListener('click', () => {
 });
 
 // Scroll spy
-const sections = document.querySelectorAll('section[id], div[id="overview"]');
+const sections = document.querySelectorAll('section[id], div[id="overview"], section[id="hybrid"]');
 const navLinks = document.querySelectorAll('.nav-link');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
