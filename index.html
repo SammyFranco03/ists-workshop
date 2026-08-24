@@ -544,6 +544,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       <span class="nav-label">Agenda</span>
       <a href="#day1" class="nav-link"><span class="nav-day-chip">1</span> Day 1 — Discovery</a>
       <a href="#day2" class="nav-link"><span class="nav-day-chip">2</span> Day 2 — Direction</a>
+      <a href="#breakout-groups" class="nav-link"><span class="dot" style="background:var(--blue);"></span> Breakout Groups</a>
     </div>
     <div class="nav-section">
       <span class="nav-label">Facilitation</span>
@@ -932,7 +933,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">2:15–3:45</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 1: Build Our Current City <span style="color:var(--muted);font-size:11px;margin-left:6px;">90 min — 2-min timebox, all ~20 share</span></div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">3:45–5:00</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 2: Finding the Fault Lines <span style="color:var(--muted);font-size:11px;margin-left:6px;">75 min — 4 groups of 5 present</span></div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 2: Finding the Fault Lines <span style="color:var(--muted);font-size:11px;margin-left:6px;">75 min — 5 groups of 4 by journey stage</span></div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">5:00–5:30</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 3: Day 1 Synthesis + Reflection</div>
       <div style="background:#FFF8EC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--amber);border-bottom:1px solid var(--border);">5:45pm</div>
@@ -1178,7 +1179,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div class="session-meta">
             <span class="time-chip">3:45pm</span>
             <span class="dur-chip">75 min</span>
-            <span class="format-chip">4 groups of 5</span>
+            <span class="format-chip">5 groups of 4 — by journey stage</span>
           </div>
         </div>
         <div class="session-body">
@@ -1186,8 +1187,8 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             <strong>Build Prompt</strong>
             If a major earthquake hit our city, where would it crack first?
           </div>
-          <p style="font-size:14px;color:var(--text-mid);">Groups of 5 work on the shared city model simultaneously. Each group is responsible for a section of the map: <strong>Group A</strong> — developer-facing friction · <strong>Group B</strong> — cross-team dependencies and handoffs · <strong>Group C</strong> — infrastructure and ops pain · <strong>Group D</strong> — tooling, onboarding, and documentation gaps. Build time: 20 min. Each group presents their fault lines to the full room: 4 × 10 min = 40 min. Whiteboard clustering + evidence labeling: 15 min.</p>
-          <div class="info-block">With ~20 people, group-based builds are more effective than 20 individual builds for this session — you get richer models and the share-outs are manageable (4 group presentations instead of 20 individual ones). Every person contributes to their group's build and story.</div>
+          <p style="font-size:14px;color:var(--text-mid);">Groups of 4 each find fault lines in one stage of the developer journey. <strong>Group A</strong> — Getting Started (onboarding, access, env setup) · <strong>Group B</strong> — Build Loop: Backend &amp; Platform (CI/CD, build pipeline, AI-assisted dev) · <strong>Group C</strong> — Build Loop: Mobile (Mac build agents, signing, App Store, device lab) · <strong>Group D</strong> — Changing the City (change management, approvals, deployment) · <strong>Group E</strong> — When the City Floods (incidents, observability, data access, AI/ML). Build time: 20 min. Each group presents: 5 × 8 min = 40 min. Whiteboard clustering + evidence labeling: 15 min.</p>
+          <div class="info-block">Groups are organized by <strong>developer journey stage</strong>, not by team ownership — this forces every group to build from the resident's perspective, not the city planner's. Every person contributes to their group's build and story. See the <a href="#breakout-groups" style="color:var(--blue);">Breakout Groups guide</a> for full composition and city metaphors.</div>
           <h4 class="sub">Capture on whiteboard — cluster into</h4>
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
             <span class="badge badge-red" style="justify-content:center;padding:8px;">User pain</span>
@@ -1284,11 +1285,11 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:00–9:15</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Opening &amp; Day 1 Recap</div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:15–10:40</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 3: Build the Developer Journey <span style="color:var(--muted);font-size:11px;margin-left:6px;">85 min — 3 groups of 5 each present</span></div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 3: Build the Developer Journey <span style="color:var(--muted);font-size:11px;margin-left:6px;">85 min — 5 groups, one journey scenario each</span></div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">10:40–11:40</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 4: The User We Rarely See <span style="color:var(--muted);font-size:11px;margin-left:6px;">60 min — gallery walk format</span></div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">11:40–12:55</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 5: Build the Future City <span style="color:var(--muted);font-size:11px;margin-left:6px;">75 min — 3 groups of 5</span></div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 5: Build the Future City <span style="color:var(--muted);font-size:11px;margin-left:6px;">75 min — 5 groups, one city domain each</span></div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">12:55–1:30</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--muted);">Lunch</div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">1:30–2:35</div>
@@ -1312,26 +1313,29 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div class="session-meta">
             <span class="time-chip">9:15am</span>
             <span class="dur-chip">85 min</span>
-            <span class="format-chip">3 groups of 5</span>
+            <span class="format-chip">5 groups — one journey scenario each</span>
           </div>
         </div>
         <div class="session-body">
           <div class="prompt-block">
             <strong>Build Prompt</strong>
-            Build the end-to-end experience of a developer interacting with ISTS — from the moment they need something to the moment they have it.
+            Build the journey of a real developer — someone you talked to before today. From the moment they need something to the moment they either have it or gave up trying. Build the actual path, not the happy path.
           </div>
-          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 25 min build → each group presents their journey to the room (12 min × 3 = 36 min) → 24 min full-group themes and synthesis</div>
-          <h4 class="sub">Assign one scenario per group</h4>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 20 min build → each group presents (12 min × 5 = 60 min) → 5 min full-group synthesis. Keep presentations tight — use a visible timer.</div>
+          <h4 class="sub">One scenario per group — drawn from pre-work conversations</h4>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
-            <div class="note-block"><strong>Group A</strong> Onboarding a new developer and setting up their environment</div>
-            <div class="note-block"><strong>Group B</strong> A team requesting infrastructure for a product launch</div>
-            <div class="note-block"><strong>Group C</strong> A developer going through a security review and release</div>
+            <div class="note-block"><strong>Group A — Getting Started</strong><br><span style="font-size:12px;color:var(--muted);">A new hire or developer starting a new project: environment setup, access, tooling, first build</span></div>
+            <div class="note-block"><strong>Group B — Build Loop: Backend</strong><br><span style="font-size:12px;color:var(--muted);">A backend engineer's daily loop: write → CI → security scan → build artifact → iterate. Include AI-assisted dev moments.</span></div>
+            <div class="note-block"><strong>Group C — Build Loop: Mobile</strong><br><span style="font-size:12px;color:var(--muted);">A mobile developer's release journey: build on Mac agent → sign → TestFlight → App Store → wait → (can't hotfix)</span></div>
+            <div class="note-block"><strong>Group D — Change &amp; Deploy</strong><br><span style="font-size:12px;color:var(--muted);">An engineer getting code to production: change request → approvals → deploy → validate → rollback if needed</span></div>
+            <div class="note-block"><strong>Group E — Data &amp; Incident</strong><br><span style="font-size:12px;color:var(--muted);">Two moments: a data scientist requesting data access + a backend engineer being paged at 2am</span></div>
           </div>
-          <h4 class="sub">Discussion questions</h4>
+          <div class="info-block">Put Groups B and C back-to-back in the share-out order. The contrast — backend ships on merge, mobile ships when Apple approves — is one of the most productive tensions you can surface. Let the room sit with it before moving on.</div>
+          <h4 class="sub">Discussion questions (full group, after all 5 present)</h4>
           <ul class="dot-list">
-            <li>Where is effort highest in this journey?</li>
-            <li>Where is uncertainty highest?</li>
+            <li>Where is effort highest in these journeys — and is it effort that produces value, or just friction?</li>
             <li>Where are the handoffs — and what falls through the gaps?</li>
+            <li>Which journey is most different from what you assumed before today?</li>
             <li>What does the developer not understand that ISTS assumes they do?</li>
           </ul>
         </div>
@@ -1369,16 +1373,23 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div class="session-meta">
             <span class="time-chip">11:40am</span>
             <span class="dur-chip">75 min</span>
-            <span class="format-chip">3 groups of 5</span>
+            <span class="format-chip">5 groups — one city domain each</span>
           </div>
         </div>
         <div class="session-body">
           <div class="prompt-block">
             <strong>Build Prompt</strong>
-            It is three years from now. ISTS is recognized as a model organization. Build that city.
+            It is three years from now. ISTS is recognized as a model organization. Build your district of that city — the part you own. What does it feel like to live and work in it?
           </div>
           <p style="font-size:14px;color:var(--text-mid);">Build <strong>experiences, workflows, relationships, behaviors</strong> — not technology. If someone builds "a new portal," ask: <em>"What does a developer feel when they use it?"</em></p>
-          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (75 min):</strong> 25 min group build → 3 groups present (13 min each = 39 min) → 11 min cross-group synthesis: what futures do all three cities share?</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0;">
+            <div class="note-block"><strong>Group A</strong> — Future of Getting Started<br><span style="font-size:12px;color:var(--muted);">Onboarding, access, provisioning — what does week one feel like?</span></div>
+            <div class="note-block"><strong>Group B</strong> — Future Build Loop (Backend + AI)<br><span style="font-size:12px;color:var(--muted);">CI/CD, AI-assisted dev, build reliability — what does the daily loop feel like?</span></div>
+            <div class="note-block"><strong>Group C</strong> — Future Build Loop (Mobile)<br><span style="font-size:12px;color:var(--muted);">Build agents, signing, release — what does mobile development feel like?</span></div>
+            <div class="note-block"><strong>Group D</strong> — Future Change &amp; Deploy<br><span style="font-size:12px;color:var(--muted);">Change management, deployment, rollback — what does shipping feel like?</span></div>
+            <div class="note-block"><strong>Group E</strong> — Future Operations, Data &amp; AI<br><span style="font-size:12px;color:var(--muted);">Observability, incidents, data access, ML platform — what does building with data feel like?</span></div>
+          </div>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (75 min):</strong> 20 min group build → 5 groups present (10 min each = 50 min) → 5 min cross-group synthesis: what futures do all five districts share?</div>
           <h4 class="sub">Discussion questions</h4>
           <ul class="dot-list">
             <li>What is different from the city we built yesterday?</li>
@@ -1535,6 +1546,181 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       </div>
     </div>
   </div>
+</section>
+
+<!-- ═══════════ BREAKOUT GROUPS ═══════════ -->
+<section class="section" id="breakout-groups">
+  <div class="section-header">
+    <div class="section-eyebrow" style="color:var(--blue);">Breakout Groups</div>
+    <h2>Developer Journey Map &amp; Group Assignments</h2>
+    <p>Groups are organized by <strong>developer journey stage</strong>, not by team ownership. Each group builds from the resident's perspective — not the city planner's. Domains are seeded across groups to ensure cross-functional perspective in every build.</p>
+  </div>
+
+  <!-- Journey map -->
+  <div class="card" style="margin-bottom:24px;">
+    <h3 style="margin-bottom:16px;">The Developer Journey — 5 Moments</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;">
+      <div class="note-block" style="border-top:3px solid var(--blue);">
+        <strong style="color:var(--blue);">1 — Get Started</strong><br>
+        <span style="font-size:12px;color:var(--muted);">New project, new hire. Access, env setup, certs, tooling, data provisioning. Highest friction for developers who don't know the system yet.</span>
+      </div>
+      <div class="note-block" style="border-top:3px solid var(--green);">
+        <strong style="color:var(--green);">2a — Build: Backend</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Daily dev loop: write → CI → security scan → artifact. Also: AI-assisted dev (Claude) — access, trust, integration with internal context.</span>
+      </div>
+      <div class="note-block" style="border-top:3px solid var(--teal);">
+        <strong style="color:var(--teal);">2b — Build: Mobile</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Mac build agents, code signing, device lab, simulator. App Store review = third-party gate. Can't hotfix once shipped.</span>
+      </div>
+      <div class="note-block" style="border-top:3px solid var(--amber);">
+        <strong style="color:var(--amber);">3 — Change &amp; Deploy</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Change request, approval chain, deployment, rollback. Where enterprise friction concentrates. The Thompson Center moment.</span>
+      </div>
+      <div class="note-block" style="border-top:3px solid var(--red);">
+        <strong style="color:var(--red);">4+5 — Run &amp; Learn</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Alerts, incidents, MTTR, postmortems. Plus: data access, ML builds, model deployment. City wasn't designed for what it's being asked to do.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 groups -->
+  <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:24px;">
+
+    <div class="card card-sm" style="border-left:4px solid var(--blue);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:4px;">Group A</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">Getting Into the City</h3>
+          <span class="badge badge-blue">Onboarding &amp; Access</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"Moving into a new apartment. Keys exist — but some doors take weeks to open."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">First-week and new-project experience for both backend and mobile developers. Where do they wait? What do they give up on? What have they learned to work around before anyone else notices?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Infrastructure Services</span>
+            <span class="badge badge-navy">Security ✓</span>
+            <span class="badge badge-navy">Developer Tools</span>
+            <span class="badge badge-navy">Mobile Dev Tools</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sm" style="border-left:4px solid var(--green);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:4px;">Group B</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">Building in the City</h3>
+          <span class="badge" style="background:var(--green-bg);color:var(--green);">Backend &amp; Platform</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"The roads and transit network. Faster and more reliable = less anyone thinks about them."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Backend daily dev loop: CI/CD speed, build reliability, security scan integration, pipeline failures. Also the AI-assisted development moment — is Claude accessible, trusted, and connected to internal context?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Developer Tools</span>
+            <span class="badge badge-navy">Infrastructure Services</span>
+            <span class="badge badge-navy">Observability</span>
+            <span class="badge badge-navy">Security ✓</span>
+            <span class="badge" style="background:#EDE9FE;color:#5B21B6;font-weight:700;">Claude Product Owner ★</span>
+          </div>
+          <div class="note-block" style="margin-top:10px;font-size:12px;"><strong>Claude product owner note:</strong> Pair with someone who has friction with the current AI tooling experience. The build question is what the experience looks like for a developer using Claude inside ISTS today — including what doesn't work.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sm" style="border-left:4px solid var(--teal);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:4px;">Group C</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">Building in the City</h3>
+          <span class="badge badge-teal">Mobile</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"Construction sites on the edge of town. Different rules, different equipment, answer to a landlord the city doesn't control."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Mac build agent availability, Xcode build times, code signing reliability, device lab access, App Store review gate. What does it feel like to be a mobile developer waiting for a build — or waiting for Apple?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Mobile Developer Tools</span>
+            <span class="badge badge-navy">Infrastructure Services</span>
+            <span class="badge badge-navy">Security ✓</span>
+            <span class="badge badge-navy">Developer Tools (shared)</span>
+          </div>
+          <div class="info-block" style="margin-top:10px;font-size:12px;"><strong>Present back-to-back with Group B.</strong> The contrast — backend ships on merge, mobile ships when Apple approves — is one of the most productive tensions in the room.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sm" style="border-left:4px solid var(--amber);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber);margin-bottom:4px;">Group D</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">Changing the City</h3>
+          <span class="badge badge-amber">Change &amp; Deploy</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"The Thompson Center. Designed for oversight and transparency. Experienced as a maze."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Change request process, approval chains, deployment mechanics, rollback. This group should feel the gap between how fast a confident engineer <em>could</em> ship vs. how long the process <em>actually</em> takes.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Incident / Change Mgmt</span>
+            <span class="badge badge-navy">Infrastructure Services</span>
+            <span class="badge badge-navy">Security ✓</span>
+            <span class="badge badge-navy">Observability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sm" style="border-left:4px solid var(--red);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:4px;">Group E</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">When the City Floods</h3>
+          <span class="badge" style="background:var(--red-bg);color:var(--red);">Incidents + Data &amp; AI</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"The flood channels and new neighborhoods — infrastructure the city is still figuring out."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Two pain zones that share a theme — the city wasn't designed for what it's being asked to do. Incident response (alert → triage → resolve → learn) and the data/AI developer journey (access → build → deploy → monitor).</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Observability</span>
+            <span class="badge badge-navy">Incident / Change Mgmt</span>
+            <span class="badge badge-navy">Data Lake</span>
+            <span class="badge badge-navy">AI / ML Ops</span>
+            <span class="badge badge-navy">Security ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Composition matrix -->
+  <div class="card">
+    <h3 style="margin-bottom:16px;">Composition Matrix</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th style="text-align:center;color:#93C5FD;">A — Get Started</th>
+          <th style="text-align:center;color:#86EFAC;">B — Build (Backend)</th>
+          <th style="text-align:center;color:#5EEAD4;">C — Build (Mobile)</th>
+          <th style="text-align:center;color:#FCD34D;">D — Change</th>
+          <th style="text-align:center;color:#FCA5A5;">E — Incidents + Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Developer Tools</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓ (shared)</td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr>
+        <tr><td><strong>Mobile Developer Tools</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;"></td><td style="text-align:center;">✓</td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr>
+        <tr><td><strong>Infrastructure Services</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;"></td></tr>
+        <tr><td><strong>Incident / Change Mgmt</strong></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong>Data Lake</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong>AI / ML Ops</strong></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong>Observability</strong></td><td style="text-align:center;"></td><td style="text-align:center;">✓</td><td style="text-align:center;"></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong>Security</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong style="color:#5B21B6;">Claude Product Owner</strong></td><td style="text-align:center;"></td><td style="text-align:center;font-weight:700;color:#5B21B6;">★</td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr>
+      </tbody>
+    </table>
+    <div class="note-block" style="margin-top:14px;"><strong>Security seeds one person per group</strong> — every journey stage has a security friction point, and that perspective is most valuable embedded in each group, not isolated in one.</div>
+  </div>
+
 </section>
 
 <!-- ═══════════ LSP FULL SCRIPT ═══════════ -->
@@ -1698,7 +1884,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-meta">
           <span class="time-chip blue">3:45pm</span>
           <span class="dur-chip">75 min</span>
-          <span class="format-chip">4 groups of 5 · group builds</span>
+          <span class="format-chip">5 groups of 4 · by journey stage</span>
         </div>
       </div>
       <div class="session-body">
@@ -1706,7 +1892,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <strong>Challenge question — read this exactly</strong>
           "You've built the city as it is. Now: if a major earthquake hit this city tonight, where would it crack first? Build the fault lines. Not the cracks that already show — the ones that are hidden, waiting. Where is the city most fragile?"
         </div>
-        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Each group works on a specific domain: <strong>Group A</strong> — developer-facing friction · <strong>Group B</strong> — cross-team dependencies and handoffs · <strong>Group C</strong> — infrastructure and ops pain · <strong>Group D</strong> — tooling, onboarding, and documentation gaps. Build time: 20 min.</p>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Each group finds fault lines in one stage of the developer journey. <strong>Group A</strong> — Getting Started (onboarding, access, env setup) · <strong>Group B</strong> — Build Loop: Backend &amp; Platform (CI/CD, build pipeline, AI-assisted dev) · <strong>Group C</strong> — Build Loop: Mobile (Mac build agents, signing, App Store) · <strong>Group D</strong> — Changing the City (change management, approvals, deployment) · <strong>Group E</strong> — When the City Floods (incidents, observability, data access, AI/ML). Build time: 20 min.</p>
         <h4 class="sub" style="margin-top:14px;">Storytelling round — 4 groups present to full room, 10 min each</h4>
         <div class="prompt-block" style="margin-top:8px;">
           <strong>Group presentation prompt</strong>
@@ -1716,7 +1902,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <ul class="dot-list">
           <li>"Which fault line, if it broke, would affect the most people in the worst way?"</li>
           <li>"Which of these did you suspect but have never said out loud in a meeting until today?"</li>
-          <li>"Which fault lines connect — where does Group A's crack run into Group B's?"</li>
+          <li>"Which fault lines connect — where does Group A's crack run into Group D's? Where does Group C's release bottleneck show up in Group E's incident data?"</li>
         </ul>
       </div>
     </div>
@@ -1731,7 +1917,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-meta">
           <span class="time-chip blue">Day 2 · 9:15am</span>
           <span class="dur-chip">85 min</span>
-          <span class="format-chip">3 groups of 5 · scenarios</span>
+          <span class="format-chip">5 groups of 4 · one scenario each</span>
         </div>
       </div>
       <div class="session-body">
