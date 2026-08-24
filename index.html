@@ -528,6 +528,10 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
   </div>
   <nav>
     <div class="nav-section">
+      <span class="nav-label">Proposal</span>
+      <a href="#proposal" class="nav-link"><span class="dot" style="background:var(--amber);"></span> Client Proposal</a>
+    </div>
+    <div class="nav-section">
       <span class="nav-label">Workshop</span>
       <a href="#overview" class="nav-link active"><span class="dot"></span> Overview</a>
       <a href="#outputs" class="nav-link"><span class="dot"></span> Final Outputs</a>
@@ -540,9 +544,11 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       <span class="nav-label">Agenda</span>
       <a href="#day1" class="nav-link"><span class="nav-day-chip">1</span> Day 1 — Discovery</a>
       <a href="#day2" class="nav-link"><span class="nav-day-chip">2</span> Day 2 — Direction</a>
+      <a href="#breakout-groups" class="nav-link"><span class="dot" style="background:var(--blue);"></span> Breakout Groups</a>
     </div>
     <div class="nav-section">
       <span class="nav-label">Facilitation</span>
+      <a href="#lsp-script" class="nav-link"><span class="dot" style="background:var(--blue);"></span> LSP Full Script</a>
       <a href="#facilitation" class="nav-link"><span class="dot"></span> Facilitation Guide</a>
       <a href="#dynamics" class="nav-link"><span class="dot"></span> Group Dynamics</a>
       <a href="#failures" class="nav-link"><span class="dot"></span> Failure Modes</a>
@@ -567,12 +573,161 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
   <div class="hero-stats">
     <div class="stat"><div class="stat-value">2</div><div class="stat-label">Full Days</div></div>
     <div class="stat"><div class="stat-value">12K</div><div class="stat-label">Developers served</div></div>
-    <div class="stat"><div class="stat-value">15</div><div class="stat-label">Participants</div></div>
+    <div class="stat"><div class="stat-value">~20</div><div class="stat-label">Participants</div></div>
     <div class="stat"><div class="stat-value">10</div><div class="stat-label">Workshop sessions</div></div>
     <div class="stat"><div class="stat-value">4</div><div class="stat-label">Artifacts out the door</div></div>
   </div>
   <div class="core-question">"How do we design the invisible systems that help 12,000 developers do their best work?"</div>
 </div>
+
+<!-- ═══════════ PROPOSAL ═══════════ -->
+<section class="section" id="proposal">
+  <div class="section-header">
+    <div class="section-eyebrow">Client Proposal</div>
+    <h2>ISTS UX Offsite — Workshop Proposal</h2>
+    <p>A two-day workshop using LEGO® Serious Play® to surface what developers experience, align stakeholders on where design creates leverage, and leave with a short list of opportunity areas the group built and owns together.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;border-left:4px solid var(--amber);">
+    <div class="section-eyebrow" style="font-size:10px;margin-bottom:8px;">1 — Our Understanding of Your Situation</div>
+    <h3 style="font-size:18px;margin-bottom:12px;">You build the infrastructure 12,000 developers depend on — but most of them don't know your name until something breaks.</h3>
+    <p style="font-size:14px;color:var(--text-mid);margin-bottom:12px;">ISTS designs and maintains the systems that power developer work across CVS Health — infrastructure, DevSecOps tooling, security, operational services. The work is largely invisible when it functions well, and highly visible when it doesn't.</p>
+    <p style="font-size:14px;color:var(--text-mid);margin-bottom:12px;">The UX function within ISTS has an opportunity to demonstrate its strategic value — not through design artifacts alone, but by helping the organization see what developers actually experience, reason about that together, and focus investment on the problems that matter most.</p>
+    <p style="font-size:14px;color:var(--text-mid);">The challenge isn't that the work isn't happening. It's that there is no shared language yet for what "good" looks like from the developer's perspective — and no shared experience of reasoning about that together across stakeholders and designers.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="section-eyebrow" style="font-size:10px;margin-bottom:8px;">2 — Objectives and Success Criteria</div>
+    <h3 style="margin-bottom:16px;">What we're here to do — and how we'll know it worked</h3>
+    <div class="grid-2">
+      <div>
+        <h4 class="sub">Objectives</h4>
+        <ul class="purpose-list">
+          <li>Build shared understanding of what UX design contributes to ISTS</li>
+          <li>Surface the most meaningful user and organizational challenges</li>
+          <li>Bring stakeholders and designers into the same problem space</li>
+          <li>Identify where design can drive measurable impact across infrastructure, DevSecOps, operational services, and developer experience</li>
+          <li>Leave with a small number of opportunity areas worth pursuing</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="sub">Success looks like</h4>
+        <div class="note-block" style="margin-bottom:10px;"><strong>Shared ownership.</strong> A prioritized list of opportunity areas the group built together — not a deck prepared in advance. The room owns the outputs because the room created them.</div>
+        <div class="note-block"><strong>A common map.</strong> Stakeholders and designers leave with the same picture of developer challenges, labeled by evidence level, and a shared sense of where to focus next.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="section-eyebrow" style="font-size:10px;margin-bottom:8px;">3 — The Approach</div>
+    <h3 style="margin-bottom:12px;">Why LEGO® Serious Play® — written plainly</h3>
+    <p style="font-size:14px;color:var(--text-mid);margin-bottom:14px;">Most strategy workshops ask people to discuss problems. LEGO Serious Play asks them to build models of those problems first — then discuss what they built. That sequence changes what surfaces in the room.</p>
+    <div class="grid-3" style="margin-bottom:14px;">
+      <div class="note-block"><strong>Concrete thinking</strong><br><span style="font-size:12px;color:var(--muted);">You cannot build a vague LEGO model. Every brick is a decision. For a technical audience skeptical of "soft" workshops, this is precisely why it works — vagueness has nowhere to hide.</span></div>
+      <div class="note-block"><strong>Equal voice</strong><br><span style="font-size:12px;color:var(--muted);">100% participation. Everyone builds, everyone shares. The person who talks least in a meeting often builds the most specific model. LSP surfaces that contribution.</span></div>
+      <div class="note-block"><strong>Shared ownership</strong><br><span style="font-size:12px;color:var(--muted);">When a group builds a conclusion together, they own it. Decisions made this way are more durable than conclusions handed down from a slide deck.</span></div>
+    </div>
+    <div class="info-block"><strong>The Chicago metaphor:</strong> A guided architecture tour on Day 1 morning grounds the method in something the room can touch. Every building maps to something in ISTS — invisible infrastructure that disappears when it works, systems designed for openness that users find unusable, legacy modernized from the inside. The tour gives the room shared language before a single brick is placed.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="section-eyebrow" style="font-size:10px;margin-bottom:8px;">4 — The Sessions at a Glance</div>
+    <h3 style="margin-bottom:16px;">Two days · ~20 participants · Chicago, IL</h3>
+    <div class="grid-2">
+      <div>
+        <h4 class="sub" style="margin-bottom:10px;">Day 1 — Discovery</h4>
+        <table><thead><tr><th>Time</th><th>Activity</th></tr></thead><tbody>
+          <tr><td>9:00am</td><td>Welcome &amp; Tour Briefing</td></tr>
+          <tr><td>9:30am</td><td>Walk to Chicago Architecture Center</td></tr>
+          <tr><td>10:00am</td><td>Chicago Icons Architecture Tour</td></tr>
+          <tr><td>12:30pm</td><td>Lunch + TED Talk</td></tr>
+          <tr><td>1:15pm</td><td>LEGO Warm-Up (tower + value)</td></tr>
+          <tr><td>2:15pm</td><td>Build Our Current City</td></tr>
+          <tr><td>3:45pm</td><td>Finding the Fault Lines</td></tr>
+          <tr><td>5:00pm</td><td>Day 1 Synthesis + dot voting</td></tr>
+          <tr><td style="color:var(--amber);font-weight:600;">5:45pm</td><td style="color:var(--amber);font-weight:600;">Water Taxi + Dinner in Chinatown</td></tr>
+        </tbody></table>
+      </div>
+      <div>
+        <h4 class="sub" style="margin-bottom:10px;">Day 2 — Direction</h4>
+        <table><thead><tr><th>Time</th><th>Activity</th></tr></thead><tbody>
+          <tr><td>9:00am</td><td>Opening &amp; Day 1 Recap</td></tr>
+          <tr><td>9:15am</td><td>Build the Developer Journey</td></tr>
+          <tr><td>10:40am</td><td>The User We Rarely See</td></tr>
+          <tr><td>11:40am</td><td>Build the Future City</td></tr>
+          <tr><td>12:55pm</td><td>Lunch</td></tr>
+          <tr><td>1:30pm</td><td>Opportunity Landscape</td></tr>
+          <tr><td>2:35pm</td><td>Where Design Creates Leverage</td></tr>
+          <tr><td>3:15pm</td><td>Opportunity Statements</td></tr>
+          <tr><td>3:45pm</td><td>Closing &amp; Next Steps</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="section-eyebrow" style="font-size:10px;margin-bottom:8px;">5 — Two Options</div>
+    <h3 style="margin-bottom:16px;">Choose the scope that fits your timeline</h3>
+    <div class="grid-2">
+      <div style="border:2px solid var(--amber);border-radius:10px;padding:20px;">
+        <div class="badge badge-amber" style="margin-bottom:12px;">Option A — Recommended</div>
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:8px;">Full Two-Day Offsite</h4>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Day 1 Discovery + Day 2 Direction</p>
+        <ul class="purpose-list">
+          <li>All four outputs: Current State City, Future State City, Top User Problems, UX Opportunity Portfolio</li>
+          <li>Group owns the map <em>and</em> the prioritization — built together, not handed down</li>
+          <li>Day 2 builds directly on Day 1 discoveries — the fault lines found on Day 1 become the user problems examined on Day 2</li>
+          <li>Leaves with opportunity statements ready to brief leadership</li>
+        </ul>
+      </div>
+      <div style="border:1px solid var(--border);border-radius:10px;padding:20px;">
+        <div class="badge badge-navy" style="margin-bottom:12px;">Option B</div>
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:8px;">Day 1 Only — Discovery</h4>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Fieldwork + LEGO builds + synthesis</p>
+        <ul class="purpose-list">
+          <li>Shared model of ISTS today from the developer's perspective</li>
+          <li>Prioritized list of fault lines, labeled by evidence level</li>
+          <li>Useful if you want to test the method with this group before committing to Day 2</li>
+          <li>Day 2 can be scheduled as a follow-on — the models and outputs carry forward</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="section-eyebrow" style="font-size:10px;margin-bottom:8px;">6 — Logistics and Investment</div>
+    <h3 style="margin-bottom:16px;">What to plan for</h3>
+    <div class="grid-2">
+      <table><tbody>
+        <tr><td><strong>Dates</strong></td><td>[FILL IN]</td></tr>
+        <tr><td><strong>Venue</strong></td><td>Chicago, IL — [FILL IN]</td></tr>
+        <tr><td><strong>Participants</strong></td><td>~20 (ISTS stakeholders + design team); virtual attendees accommodated via Miro</td></tr>
+        <tr><td><strong>Pre-work</strong></td><td>One 30-min user conversation per participant before Day 1</td></tr>
+        <tr><td><strong>Investment</strong></td><td>[FILL IN]</td></tr>
+      </tbody></table>
+      <table><tbody>
+        <tr><td><strong>LEGO kits</strong></td><td>1 LSP Identity &amp; Landscape Kit per person (#2000414)</td></tr>
+        <tr><td><strong>Architecture tour</strong></td><td>Chicago Architecture Center — book 6–8 weeks out</td></tr>
+        <tr><td><strong>Evening (Day 1)</strong></td><td>Water taxi + dinner in Chinatown (~20 people; reservation required)</td></tr>
+        <tr><td><strong>Hybrid tech</strong></td><td>Miro board, wide-angle camera, conference speaker, tech host</td></tr>
+        <tr><td><strong>Catering</strong></td><td>Day 1 &amp; Day 2 lunch, coffee/snacks</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <div class="section-eyebrow" style="font-size:10px;margin-bottom:8px;">7 — About Your Facilitator</div>
+    <h3 style="margin-bottom:12px;">[FILL IN]</h3>
+    <p style="font-size:14px;color:var(--text-mid);">[FILL IN — your background, LSP certification level, experience facilitating with technical or product organizations, and what specifically drew you to designing this workshop for ISTS.]</p>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--green);background:var(--green-bg);">
+    <div class="section-eyebrow" style="font-size:10px;color:var(--green);margin-bottom:8px;">8 — Next Steps</div>
+    <h3 style="margin-bottom:12px;">[FILL IN — one clear, easy action]</h3>
+    <p style="font-size:14px;color:var(--text-mid);">[FILL IN — e.g. "Reply to confirm you'd like to proceed with Option A. I'll schedule a 30-minute call to finalize the participant list and logistics, and send the pre-work assignment two weeks before Day 1."]</p>
+  </div>
+
+</section>
 
 <!-- ═══════════ OVERVIEW ═══════════ -->
 <section class="section" id="overview">
@@ -739,7 +894,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       <tbody>
         <tr><td><strong>Pre-Tour Briefing</strong></td><td>As written — observation cards, tour framing</td><td>Skips. Receives metaphor reference card and observation prompts in advance.</td></tr>
         <tr><td><strong>Architecture Tour</strong></td><td>As written — 7-stop walking tour</td><td>Skips. Joins at 12:30pm; receives Miro photo summary at lunch.</td></tr>
-        <tr><td><strong>LEGO Warm-Up</strong></td><td>Tower build (2 min) → Value build (8 min) → share-outs · Optional: Super Story extension</td><td>Miro board — Tower and Value frames. Text label for value Post-it. Super Story: positions model on shared canvas. Screen-shares during share-outs.</td></tr>
+        <tr><td><strong>LEGO Warm-Up</strong></td><td>Tower build (2 min) → Value build (8 min) → share-outs · Super Story extension</td><td>Miro board — Tower and Value frames. Text label for value Post-it. Super Story: positions model on shared canvas. Screen-shares during share-outs.</td></tr>
         <tr><td><strong>Session 1: Current City</strong></td><td>Physical individual build → group merge</td><td>Miro — individual frame → moves pieces into group merge frame. Screen-shares during 2-min share-out.</td></tr>
         <tr><td><strong>Session 2: Fault Lines</strong></td><td>Groups of 5 on shared city model</td><td>Assigned to a group; works in Miro alongside their group's physical section. Tech host uploads physical photos at phase end.</td></tr>
         <tr><td><strong>Day 1 Synthesis</strong></td><td>Physical dot vote on whiteboard themes</td><td>Miro voting on the same themes (tech host mirrors physical whiteboard themes into Miro before voting begins).</td></tr>
@@ -766,26 +921,28 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
 
   <div class="card card-sm" style="margin-bottom:28px;">
     <div style="display:grid;grid-template-columns:120px 1fr;border-radius:6px;overflow:hidden;border:1px solid var(--border);">
-      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:00am</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">8:30am</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--muted);font-style:italic;">Facilitator setup (no participants)</div>
-      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:30am</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:00am</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Welcome &amp; Pre-Tour Briefing</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:30am</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Walk to Chicago Architecture Center · 111 E. Wacker Dr.</div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--blue);border-bottom:1px solid var(--border);">10:00–12:30</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--blue);font-weight:500;">Chicago Icons Architecture Tour · 111 E. Wacker Dr.</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--blue);font-weight:500;">Chicago Icons Architecture Tour</div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">12:30–1:15</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--muted);">Lunch + Informal Debrief</div>
-      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">1:15–2:00</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">LEGO Warm-Up <span style="color:var(--muted);font-size:11px;margin-left:6px;">45 min — extended for 15 people</span></div>
-      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">2:00–3:30</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 1: Build Our Current City <span style="color:var(--muted);font-size:11px;margin-left:6px;">90 min — 2-min timebox per share-out</span></div>
-      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">3:30–4:35</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 2: Finding the Fault Lines <span style="color:var(--muted);font-size:11px;margin-left:6px;">65 min — 3 groups of 5 present</span></div>
-      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">4:35–5:00</div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">1:15–2:15</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">LEGO Warm-Up <span style="color:var(--muted);font-size:11px;margin-left:6px;">60 min — 4 tables, everyone builds &amp; shares</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">2:15–3:45</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 1: Build Our Current City <span style="color:var(--muted);font-size:11px;margin-left:6px;">90 min — 2-min timebox, all ~20 share</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">3:45–5:00</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 2: Finding the Fault Lines <span style="color:var(--muted);font-size:11px;margin-left:6px;">75 min — 5 groups of 4 by journey stage</span></div>
+      <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">5:00–5:30</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 3: Day 1 Synthesis + Reflection</div>
-      <div style="background:#FFF8EC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--amber);border-bottom:1px solid var(--border);">5:30pm</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--amber);font-weight:500;">🚢 Water Taxi — departs for Chinatown</div>
-      <div style="background:#FFF8EC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--amber);">6:15pm</div>
-      <div style="padding:8px 14px;font-size:13px;color:var(--amber);font-weight:500;">🍜 Dinner — Chinatown (location TBD)</div>
+      <div style="background:#FFF8EC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--amber);border-bottom:1px solid var(--border);">5:45pm</div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--amber);font-weight:500;">🚢 Water Taxi — departs for Chinatown (everyone)</div>
+      <div style="background:#FFF8EC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--amber);">6:30pm</div>
+      <div style="padding:8px 14px;font-size:13px;color:var(--amber);font-weight:500;">🍜 Dinner — Chinatown (location TBD, everyone)</div>
     </div>
   </div>
 
@@ -797,7 +954,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-head">
           <h3>Pre-Tour Briefing</h3>
           <div class="session-meta">
-            <span class="time-chip">9:30am</span>
+            <span class="time-chip">9:00am</span>
             <span class="dur-chip">30 min</span>
             <span class="format-chip">Full group</span>
           </div>
@@ -911,7 +1068,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <h3>LEGO Warm-Up</h3>
           <div class="session-meta">
             <span class="time-chip">1:15pm</span>
-            <span class="dur-chip">45 min</span>
+            <span class="dur-chip">60 min</span>
             <span class="format-chip">Individual builds</span>
           </div>
         </div>
@@ -921,11 +1078,11 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;margin-bottom:4px;">
             <div class="note-block">
               <strong>Exercise 1 — Build a Tower</strong><br>
-              <span style="font-size:12px;color:var(--muted);">2 min build · no instructions beyond "build a tower, anytime you like, as long as you're happy with it" · go around the room, each person shares briefly why they built what they built · 60 sec per person, table-share format · total: ~10 min</span>
+              <span style="font-size:12px;color:var(--muted);">2 min build · no instructions beyond "build a tower, anytime you like, as long as you're happy with it" · everyone shares within their table, 60 sec per person · 4 tables run simultaneously · total: ~15 min</span>
             </div>
             <div class="note-block">
               <strong>Exercise 2 — Build a Value</strong><br>
-              <span style="font-size:12px;color:var(--muted);">Deconstruct towers first · 8 min build · write the value on a Post-it and attach to model · share-out: table-share first (2 min per table), then one observation per table to full room · total: ~25 min</span>
+              <span style="font-size:12px;color:var(--muted);">Deconstruct towers first · 8 min build · write the value on a Post-it and attach to model · share-out: everyone shares within their table first (~8 min, 4 tables simultaneous), then one observation per table to full room (4 × 2 min) · total: ~30 min</span>
             </div>
           </div>
 
@@ -952,7 +1109,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div class="accordion" style="margin-top:16px;">
             <div class="acc-item">
               <button class="acc-btn" onclick="toggleAcc(this)">
-                <h3>Optional Extension — Super Story <span style="font-weight:400;color:var(--muted);font-size:13px;">(+15 min if time allows)</span></h3>
+                <h3>Super Story Extension <span style="font-weight:400;color:var(--muted);font-size:13px;">(+15 min — plan for this)</span></h3>
                 <div class="acc-meta"><span class="badge badge-amber">Group activity</span><span class="acc-icon">+</span></div>
               </button>
               <div class="acc-body">
@@ -985,7 +1142,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-head">
           <h3>Session 1: Build Our Current City</h3>
           <div class="session-meta">
-            <span class="time-chip">2:00pm</span>
+            <span class="time-chip">2:15pm</span>
             <span class="dur-chip">90 min</span>
             <span class="format-chip">Individual → Group merge</span>
           </div>
@@ -998,10 +1155,10 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <p style="font-size:14px;color:var(--text-mid);">Include: developers, product teams, security, operations, infrastructure, dependencies, barriers, pain points, workarounds.</p>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:4px;">
             <div class="note-block"><strong>Phase 1 — Build</strong><br><span style="font-size:12px;color:var(--muted);">20 min · individual · silent</span></div>
-            <div class="note-block"><strong>Phase 2 — Share-out</strong><br><span style="font-size:12px;color:var(--muted);">50 min · strict 2-min timebox per person · visible timer · 15 × 2 min = 30 min + facilitation = ~50 min</span></div>
+            <div class="note-block"><strong>Phase 2 — Share-out</strong><br><span style="font-size:12px;color:var(--muted);">50 min · strict 2-min timebox per person · visible timer · 20 × 2 min = 40 min + facilitation = ~50 min · everyone shares, no exceptions</span></div>
             <div class="note-block"><strong>Phase 3 — Group merge</strong><br><span style="font-size:12px;color:var(--muted);">20 min · 3 tables merge individually first, then bring tables together</span></div>
           </div>
-          <div class="info-block"><strong>15-person timebox rule:</strong> Use a visible 2-minute timer for every share-out. When it sounds, the speaker wraps up regardless. This is not rude — it is the only way everyone gets a voice. Tell the room this before starting.</div>
+          <div class="info-block"><strong>~20-person timebox rule:</strong> Use a visible 2-minute timer for every share-out. When it sounds, the speaker wraps up regardless. This is not rude — it is the only way everyone gets a voice. Every person shares — no skipping, no volunteers-only. Tell the room this before starting.</div>
           <h4 class="sub">Discussion questions</h4>
           <ul class="dot-list">
             <li>What works well in this city?</li>
@@ -1023,9 +1180,9 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-head">
           <h3>Session 2: Finding the Fault Lines</h3>
           <div class="session-meta">
-            <span class="time-chip">3:30pm</span>
-            <span class="dur-chip">65 min</span>
-            <span class="format-chip">3 groups of 5</span>
+            <span class="time-chip">3:45pm</span>
+            <span class="dur-chip">75 min</span>
+            <span class="format-chip">5 groups of 4 — by journey stage</span>
           </div>
         </div>
         <div class="session-body">
@@ -1033,8 +1190,8 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             <strong>Build Prompt</strong>
             If a major earthquake hit our city, where would it crack first?
           </div>
-          <p style="font-size:14px;color:var(--text-mid);">Groups of 5 work on the shared city model simultaneously. Each group is responsible for a section of the map: <strong>Group A</strong> — developer-facing friction · <strong>Group B</strong> — cross-team dependencies and handoffs · <strong>Group C</strong> — infrastructure and ops pain. Build time: 20 min. Each group presents their fault lines to the full room: 3 × 10 min = 30 min. Whiteboard clustering + evidence labeling: 15 min.</p>
-          <div class="info-block">With 15 people, group-based builds are more effective than 15 individual builds for this session — you get richer models and the share-outs are manageable (3 group presentations instead of 15 individual ones).</div>
+          <p style="font-size:14px;color:var(--text-mid);">Groups of 4 each find fault lines in one stage of the developer journey. <strong>Group A</strong> — Getting Started (onboarding, access, env setup) · <strong>Group B</strong> — Build Loop: Backend &amp; Platform (CI/CD, build pipeline, AI-assisted dev) · <strong>Group C</strong> — Build Loop: Mobile (Mac build agents, signing, App Store, device lab) · <strong>Group D</strong> — Changing the City (change management, approvals, deployment) · <strong>Group E</strong> — When the City Floods (incidents, observability, data access, AI/ML). Build time: 20 min. Each group presents: 5 × 8 min = 40 min. Whiteboard clustering + evidence labeling: 15 min.</p>
+          <div class="info-block">Groups are organized by <strong>developer journey stage</strong>, not by team ownership — this forces every group to build from the resident's perspective, not the city planner's. Every person contributes to their group's build and story. See the <a href="#breakout-groups" style="color:var(--blue);">Breakout Groups guide</a> for full composition and city metaphors.</div>
           <h4 class="sub">Capture on whiteboard — cluster into</h4>
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
             <span class="badge badge-red" style="justify-content:center;padding:8px;">User pain</span>
@@ -1053,8 +1210,8 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-head">
           <h3>Session 3: Day 1 Synthesis + Reflection</h3>
           <div class="session-meta">
-            <span class="time-chip">4:35pm</span>
-            <span class="dur-chip">25 min</span>
+            <span class="time-chip">5:00pm</span>
+            <span class="dur-chip">30 min</span>
             <span class="format-chip">Full group</span>
           </div>
         </div>
@@ -1068,7 +1225,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <ul class="dot-list">
             <li>What surprised you today?</li>
             <li>What is one problem worth going deeper on tomorrow?</li>
-            <li><em>Optional:</em> Which building from this morning best represents ISTS right now — and which represents where you want to be?</li>
+            <li>Which building from this morning best represents ISTS right now — and which represents where you want to be?</li>
           </ul>
           <div class="note-block" style="margin-top:12px;">
             <strong>Facilitator close (5 min):</strong> "Tomorrow we go from what we found to what we should do about it. We'll look at these problems through the eyes of the people who live with them — and we'll build what a better city actually looks like."
@@ -1083,12 +1240,12 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-head">
           <h3 style="color:var(--amber);">Evening — Water Taxi to Chinatown</h3>
           <div class="session-meta">
-            <span class="time-chip" style="background:var(--amber-bg);color:var(--amber);">5:30pm CT</span>
-            <span class="format-chip" style="background:var(--amber-bg);color:var(--amber);">Optional social</span>
+            <span class="time-chip" style="background:var(--amber-bg);color:var(--amber);">5:45pm CT</span>
+            <span class="format-chip" style="background:var(--amber-bg);color:var(--amber);">Everyone</span>
           </div>
         </div>
         <div class="session-body">
-          <p style="font-size:14px;color:var(--text-mid);">Water taxi departs at 5:30pm CT. The ride down the Chicago River and into the lake connects back to the day's themes — infrastructure you use without thinking about. Comfortable shoes still on; it's a short walk to the dock.</p>
+          <p style="font-size:14px;color:var(--text-mid);">Water taxi departs at 5:45pm CT — plan for everyone to go. The ride down the Chicago River and into the lake connects back to the day's themes — infrastructure you use without thinking about. Comfortable shoes still on; it's a short walk to the dock.</p>
           <div class="note-block" style="background:#FFF8EC;border-color:var(--amber);">Confirm departure dock location and boarding instructions closer to the date. Typical Chicago Water Taxi Chinatown route departs from Michigan Ave bridge area.</div>
         </div>
       </div>
@@ -1100,13 +1257,13 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-head">
           <h3 style="color:var(--amber);">Dinner — Chinatown</h3>
           <div class="session-meta">
-            <span class="time-chip" style="background:var(--amber-bg);color:var(--amber);">6:15pm CT</span>
-            <span class="format-chip" style="background:var(--amber-bg);color:var(--amber);">Location TBD</span>
+            <span class="time-chip" style="background:var(--amber-bg);color:var(--amber);">6:30pm CT</span>
+            <span class="format-chip" style="background:var(--amber-bg);color:var(--amber);">Everyone · Location TBD</span>
           </div>
         </div>
         <div class="session-body">
           <p style="font-size:14px;color:var(--text-mid);">Dinner in Chinatown. Location to be confirmed. No agenda — just let the conversations from the day continue without structure. The informal debrief over a meal is often where the most honest observations surface.</p>
-          <div class="note-block" style="background:#FFF8EC;border-color:var(--amber);">Book a reservation for 15 at least 3 weeks out. Chinatown restaurants popular for group dinners: MingHin Cuisine, Lao Sze Chuan, Katy's Dumpling House.</div>
+          <div class="note-block" style="background:#FFF8EC;border-color:var(--amber);">Book a reservation for ~20 at least 3 weeks out. Chinatown restaurants popular for group dinners: MingHin Cuisine, Lao Sze Chuan, Katy's Dumpling House.</div>
         </div>
       </div>
     </div>
@@ -1131,11 +1288,11 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:00–9:15</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Opening &amp; Day 1 Recap</div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">9:15–10:40</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 3: Build the Developer Journey <span style="color:var(--muted);font-size:11px;margin-left:6px;">85 min — 3 groups of 5 each present</span></div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 3: Build the Developer Journey <span style="color:var(--muted);font-size:11px;margin-left:6px;">85 min — 5 groups, one journey scenario each</span></div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">10:40–11:40</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 4: The User We Rarely See <span style="color:var(--muted);font-size:11px;margin-left:6px;">60 min — gallery walk format</span></div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">11:40–12:55</div>
-      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 5: Build the Future City <span style="color:var(--muted);font-size:11px;margin-left:6px;">75 min — 3 groups of 5</span></div>
+      <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);">Session 5: Build the Future City <span style="color:var(--muted);font-size:11px;margin-left:6px;">75 min — 5 groups, one city domain each</span></div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">12:55–1:30</div>
       <div style="padding:8px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--muted);">Lunch</div>
       <div style="background:#F7F9FC;padding:8px 14px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border);">1:30–2:35</div>
@@ -1159,26 +1316,29 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div class="session-meta">
             <span class="time-chip">9:15am</span>
             <span class="dur-chip">85 min</span>
-            <span class="format-chip">3 groups of 5</span>
+            <span class="format-chip">5 groups — one journey scenario each</span>
           </div>
         </div>
         <div class="session-body">
           <div class="prompt-block">
             <strong>Build Prompt</strong>
-            Build the end-to-end experience of a developer interacting with ISTS — from the moment they need something to the moment they have it.
+            Build the journey of a real developer — someone you talked to before today. From the moment they need something to the moment they either have it or gave up trying. Build the actual path, not the happy path.
           </div>
-          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 25 min build → each group presents their journey to the room (12 min × 3 = 36 min) → 24 min full-group themes and synthesis</div>
-          <h4 class="sub">Assign one scenario per group</h4>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 20 min build → each group presents (12 min × 5 = 60 min) → 5 min full-group synthesis. Keep presentations tight — use a visible timer.</div>
+          <h4 class="sub">One scenario per group — drawn from pre-work conversations</h4>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
-            <div class="note-block"><strong>Group A</strong> Onboarding a new developer and setting up their environment</div>
-            <div class="note-block"><strong>Group B</strong> A team requesting infrastructure for a product launch</div>
-            <div class="note-block"><strong>Group C</strong> A developer going through a security review and release</div>
+            <div class="note-block"><strong>Group A — Getting Started</strong><br><span style="font-size:12px;color:var(--muted);">A new hire or developer starting a new project: environment setup, access, tooling, first build</span></div>
+            <div class="note-block"><strong>Group B — Build Loop: Backend</strong><br><span style="font-size:12px;color:var(--muted);">A backend engineer's daily loop: write → CI → security scan → build artifact → iterate. Include AI-assisted dev moments.</span></div>
+            <div class="note-block"><strong>Group C — Build Loop: Mobile</strong><br><span style="font-size:12px;color:var(--muted);">A mobile developer's release journey: build on Mac agent → sign → TestFlight → App Store → wait → (can't hotfix)</span></div>
+            <div class="note-block"><strong>Group D — Change &amp; Deploy</strong><br><span style="font-size:12px;color:var(--muted);">An engineer getting code to production: change request → approvals → deploy → validate → rollback if needed</span></div>
+            <div class="note-block"><strong>Group E — Data &amp; Incident</strong><br><span style="font-size:12px;color:var(--muted);">Two moments: a data scientist requesting data access + a backend engineer being paged at 2am</span></div>
           </div>
-          <h4 class="sub">Discussion questions</h4>
+          <div class="info-block">Put Groups B and C back-to-back in the share-out order. The contrast — backend ships on merge, mobile ships when Apple approves — is one of the most productive tensions you can surface. Let the room sit with it before moving on.</div>
+          <h4 class="sub">Discussion questions (full group, after all 5 present)</h4>
           <ul class="dot-list">
-            <li>Where is effort highest in this journey?</li>
-            <li>Where is uncertainty highest?</li>
+            <li>Where is effort highest in these journeys — and is it effort that produces value, or just friction?</li>
             <li>Where are the handoffs — and what falls through the gaps?</li>
+            <li>Which journey is most different from what you assumed before today?</li>
             <li>What does the developer not understand that ISTS assumes they do?</li>
           </ul>
         </div>
@@ -1216,16 +1376,23 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div class="session-meta">
             <span class="time-chip">11:40am</span>
             <span class="dur-chip">75 min</span>
-            <span class="format-chip">3 groups of 5</span>
+            <span class="format-chip">5 groups — one city domain each</span>
           </div>
         </div>
         <div class="session-body">
           <div class="prompt-block">
             <strong>Build Prompt</strong>
-            It is three years from now. ISTS is recognized as a model organization. Build that city.
+            It is three years from now. ISTS is recognized as a model organization. Build your district of that city — the part you own. What does it feel like to live and work in it?
           </div>
           <p style="font-size:14px;color:var(--text-mid);">Build <strong>experiences, workflows, relationships, behaviors</strong> — not technology. If someone builds "a new portal," ask: <em>"What does a developer feel when they use it?"</em></p>
-          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (75 min):</strong> 25 min group build → 3 groups present (13 min each = 39 min) → 11 min cross-group synthesis: what futures do all three cities share?</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0;">
+            <div class="note-block"><strong>Group A</strong> — Future of Getting Started<br><span style="font-size:12px;color:var(--muted);">Onboarding, access, provisioning — what does week one feel like?</span></div>
+            <div class="note-block"><strong>Group B</strong> — Future Build Loop (Backend + AI)<br><span style="font-size:12px;color:var(--muted);">CI/CD, AI-assisted dev, build reliability — what does the daily loop feel like?</span></div>
+            <div class="note-block"><strong>Group C</strong> — Future Build Loop (Mobile)<br><span style="font-size:12px;color:var(--muted);">Build agents, signing, release — what does mobile development feel like?</span></div>
+            <div class="note-block"><strong>Group D</strong> — Future Change &amp; Deploy<br><span style="font-size:12px;color:var(--muted);">Change management, deployment, rollback — what does shipping feel like?</span></div>
+            <div class="note-block"><strong>Group E</strong> — Future Operations, Data &amp; AI<br><span style="font-size:12px;color:var(--muted);">Observability, incidents, data access, ML platform — what does building with data feel like?</span></div>
+          </div>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (75 min):</strong> 20 min group build → 5 groups present (10 min each = 50 min) → 5 min cross-group synthesis: what futures do all five districts share?</div>
           <h4 class="sub">Discussion questions</h4>
           <ul class="dot-list">
             <li>What is different from the city we built yesterday?</li>
@@ -1382,6 +1549,527 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       </div>
     </div>
   </div>
+</section>
+
+<!-- ═══════════ BREAKOUT GROUPS ═══════════ -->
+<section class="section" id="breakout-groups">
+  <div class="section-header">
+    <div class="section-eyebrow" style="color:var(--blue);">Breakout Groups</div>
+    <h2>Developer Journey Map &amp; Group Assignments</h2>
+    <p>Groups are organized by <strong>developer journey stage</strong>, not by team ownership. Each group builds from the resident's perspective — not the city planner's. Domains are seeded across groups to ensure cross-functional perspective in every build.</p>
+  </div>
+
+  <!-- Journey map -->
+  <div class="card" style="margin-bottom:24px;">
+    <h3 style="margin-bottom:16px;">The Developer Journey — 5 Moments</h3>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;">
+      <div class="note-block" style="border-top:3px solid var(--blue);">
+        <strong style="color:var(--blue);">1 — Get Started</strong><br>
+        <span style="font-size:12px;color:var(--muted);">New project, new hire. Access, env setup, certs, tooling, data provisioning. Highest friction for developers who don't know the system yet.</span>
+      </div>
+      <div class="note-block" style="border-top:3px solid var(--green);">
+        <strong style="color:var(--green);">2a — Build: Backend</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Daily dev loop: write → CI → security scan → artifact. Also: AI-assisted dev (Claude) — access, trust, integration with internal context.</span>
+      </div>
+      <div class="note-block" style="border-top:3px solid var(--teal);">
+        <strong style="color:var(--teal);">2b — Build: Mobile</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Mac build agents, code signing, device lab, simulator. App Store review = third-party gate. Can't hotfix once shipped.</span>
+      </div>
+      <div class="note-block" style="border-top:3px solid var(--amber);">
+        <strong style="color:var(--amber);">3 — Change &amp; Deploy</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Change request, approval chain, deployment, rollback. Where enterprise friction concentrates. The Thompson Center moment.</span>
+      </div>
+      <div class="note-block" style="border-top:3px solid var(--red);">
+        <strong style="color:var(--red);">4+5 — Run &amp; Learn</strong><br>
+        <span style="font-size:12px;color:var(--muted);">Alerts, incidents, MTTR, postmortems. Plus: data access, ML builds, model deployment. City wasn't designed for what it's being asked to do.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 groups -->
+  <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:24px;">
+
+    <div class="card card-sm" style="border-left:4px solid var(--blue);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:4px;">Group A</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">Getting Into the City</h3>
+          <span class="badge badge-blue">Onboarding &amp; Access</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"Moving into a new apartment. Keys exist — but some doors take weeks to open."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">First-week and new-project experience for both backend and mobile developers. Where do they wait? What do they give up on? What have they learned to work around before anyone else notices?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Infrastructure Services</span>
+            <span class="badge badge-navy">Security ✓</span>
+            <span class="badge badge-navy">Developer Tools</span>
+            <span class="badge badge-navy">Mobile Dev Tools</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sm" style="border-left:4px solid var(--green);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:4px;">Group B</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">Building in the City</h3>
+          <span class="badge" style="background:var(--green-bg);color:var(--green);">Backend &amp; Platform</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"The roads and transit network. Faster and more reliable = less anyone thinks about them."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Backend daily dev loop: CI/CD speed, build reliability, security scan integration, pipeline failures. Also the AI-assisted development moment — is Claude accessible, trusted, and connected to internal context?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Developer Tools</span>
+            <span class="badge badge-navy">Infrastructure Services</span>
+            <span class="badge badge-navy">Observability</span>
+            <span class="badge badge-navy">Security ✓</span>
+            <span class="badge" style="background:#EDE9FE;color:#5B21B6;font-weight:700;">Claude Product Owner ★</span>
+          </div>
+          <div class="note-block" style="margin-top:10px;font-size:12px;"><strong>Claude product owner note:</strong> Pair with someone who has friction with the current AI tooling experience. The build question is what the experience looks like for a developer using Claude inside ISTS today — including what doesn't work.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sm" style="border-left:4px solid var(--teal);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:4px;">Group C</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">Building in the City</h3>
+          <span class="badge badge-teal">Mobile</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"Construction sites on the edge of town. Different rules, different equipment, answer to a landlord the city doesn't control."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Mac build agent availability, Xcode build times, code signing reliability, device lab access, App Store review gate. What does it feel like to be a mobile developer waiting for a build — or waiting for Apple?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Mobile Developer Tools</span>
+            <span class="badge badge-navy">Infrastructure Services</span>
+            <span class="badge badge-navy">Security ✓</span>
+            <span class="badge badge-navy">Developer Tools (shared)</span>
+          </div>
+          <div class="info-block" style="margin-top:10px;font-size:12px;"><strong>Present back-to-back with Group B.</strong> The contrast — backend ships on merge, mobile ships when Apple approves — is one of the most productive tensions in the room.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sm" style="border-left:4px solid var(--amber);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber);margin-bottom:4px;">Group D</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">Changing the City</h3>
+          <span class="badge badge-amber">Change &amp; Deploy</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"The Thompson Center. Designed for oversight and transparency. Experienced as a maze."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Change request process, approval chains, deployment mechanics, rollback. This group should feel the gap between how fast a confident engineer <em>could</em> ship vs. how long the process <em>actually</em> takes.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Incident / Change Mgmt</span>
+            <span class="badge badge-navy">Infrastructure Services</span>
+            <span class="badge badge-navy">Security ✓</span>
+            <span class="badge badge-navy">Observability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-sm" style="border-left:4px solid var(--red);">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:4px;">Group E</div>
+          <h3 style="font-size:15px;margin-bottom:4px;">When the City Floods</h3>
+          <span class="badge" style="background:var(--red-bg);color:var(--red);">Incidents + Data &amp; AI</span>
+          <p style="font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;">"The flood channels and new neighborhoods — infrastructure the city is still figuring out."</p>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-mid);margin-bottom:10px;">Two pain zones that share a theme — the city wasn't designed for what it's being asked to do. Incident response (alert → triage → resolve → learn) and the data/AI developer journey (access → build → deploy → monitor).</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="badge badge-navy">Observability</span>
+            <span class="badge badge-navy">Incident / Change Mgmt</span>
+            <span class="badge badge-navy">Data Lake</span>
+            <span class="badge badge-navy">AI / ML Ops</span>
+            <span class="badge badge-navy">Security ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Composition matrix -->
+  <div class="card">
+    <h3 style="margin-bottom:16px;">Composition Matrix</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th style="text-align:center;color:#93C5FD;">A — Get Started</th>
+          <th style="text-align:center;color:#86EFAC;">B — Build (Backend)</th>
+          <th style="text-align:center;color:#5EEAD4;">C — Build (Mobile)</th>
+          <th style="text-align:center;color:#FCD34D;">D — Change</th>
+          <th style="text-align:center;color:#FCA5A5;">E — Incidents + Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Developer Tools</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓ (shared)</td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr>
+        <tr><td><strong>Mobile Developer Tools</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;"></td><td style="text-align:center;">✓</td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr>
+        <tr><td><strong>Infrastructure Services</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;"></td></tr>
+        <tr><td><strong>Incident / Change Mgmt</strong></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong>Data Lake</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong>AI / ML Ops</strong></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong>Observability</strong></td><td style="text-align:center;"></td><td style="text-align:center;">✓</td><td style="text-align:center;"></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong>Security</strong></td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td><td style="text-align:center;">✓</td></tr>
+        <tr><td><strong style="color:#5B21B6;">Claude Product Owner</strong></td><td style="text-align:center;"></td><td style="text-align:center;font-weight:700;color:#5B21B6;">★</td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr>
+      </tbody>
+    </table>
+    <div class="note-block" style="margin-top:14px;"><strong>Security seeds one person per group</strong> — every journey stage has a security friction point, and that perspective is most valuable embedded in each group, not isolated in one.</div>
+  </div>
+
+</section>
+
+<!-- ═══════════ LSP FULL SCRIPT ═══════════ -->
+<section class="section" id="lsp-script">
+  <div class="section-header">
+    <div class="section-eyebrow" style="color:var(--blue);">LSP Full Facilitation Script</div>
+    <h2>Word-for-Word Guide — Both Days</h2>
+    <p>Exact challenge questions, storytelling rounds, reflection questions, timings, and landscape instructions. Use these verbatim or adapt to your voice. The city metaphor runs throughout — ISTS as a city its residents (developers) live and work in.</p>
+  </div>
+
+  <!-- INTRODUCTION TO THE METHOD -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="left:6px;"></div>
+    <div class="session-card">
+      <div class="session-head">
+        <h3>Introduction to the Method</h3>
+        <div class="session-meta">
+          <span class="time-chip blue">9:00am</span>
+          <span class="dur-chip">10 min</span>
+          <span class="format-chip">Full group, before bricks are touched</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="prompt-block">
+          <strong>Say this verbatim</strong>
+          "Before we touch any bricks, I want to explain what we're actually doing today — because it probably looks strange from the outside.<br><br>
+          LEGO Serious Play is a method for thinking through complex problems by building physical models. Here is the key idea: when you build something with your hands, your brain engages differently than when you talk or write. Ideas that are hard to say out loud become easier to show in a model. And when your model is sitting on the table next to ten other models, the differences in how we each see the same system become visible.<br><br>
+          The method has three rules that I'll hold you to throughout both days. One: you build first, then talk. I will give you a prompt — you build silently, then we share. Two: only the person who built the model can say what it means. I will never interpret your model for you, and neither will anyone else. Questions are always directed at the model, not at you. Three: there are no right answers and no wrong models. The tallest tower is not the winner. The most complex build is not the winner. The model that says something true is the one that matters.<br><br>
+          We're going to start with a very simple build to get comfortable with the bricks. Then we'll build something real."
+        </div>
+        <div class="note-block"><strong>Do not skip this.</strong> The introduction calibrates the room and prevents the two most common failure modes: people waiting to be told what to build, and people deferring to whoever speaks loudest.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILD 1: TOWER -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="left:6px;"></div>
+    <div class="session-card">
+      <div class="session-head">
+        <h3>Build 1 — The Tower</h3>
+        <div class="session-meta">
+          <span class="time-chip blue">9:40am</span>
+          <span class="dur-chip">15 min</span>
+          <span class="format-chip">Individual · warm-up</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+          <div class="note-block"><strong>Setup (1 min)</strong><br><span style="font-size:12px;color:var(--muted);">Distribute bricks. Do not tell them how many to use. Do not show examples.</span></div>
+          <div class="note-block"><strong>Build time (2 min)</strong><br><span style="font-size:12px;color:var(--muted);">Silent. Say "start" and step back. Don't answer questions about how to do it — "just build what feels right."</span></div>
+        </div>
+        <div class="prompt-block">
+          <strong>Challenge question — read this exactly</strong>
+          "Build a tower. Any tower. Anytime you like, as long as you're happy with it."
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Storytelling round — 4 tables in parallel, 60 sec per person</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Facilitator prompt to open sharing</strong>
+          "When you're ready, go around your table. Each person: tell us about your tower. Not what it looks like — what it means to you. Why did you build it this way?"
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Reflection questions (pick 1–2 per table)</h4>
+        <ul class="dot-list">
+          <li>"What did you notice about building that surprised you?"</li>
+          <li>"Did your tower change while you were building it — and if so, why?"</li>
+          <li>"Is there anything about your tower that you couldn't have said in words before you built it?"</li>
+        </ul>
+        <div class="info-block" style="margin-top:12px;"><strong>Facilitation note:</strong> This build is not about towers. It is about establishing that everyone will share, that sharing is safe, and that the model carries meaning. A few people will build something elaborate. A few will build three bricks stacked. Both are fine — say so.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILD 2: VALUE -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="left:6px;"></div>
+    <div class="session-card">
+      <div class="session-head">
+        <h3>Build 2 — A Value That Matters to Our Team</h3>
+        <div class="session-meta">
+          <span class="time-chip blue">9:55am</span>
+          <span class="dur-chip">30 min</span>
+          <span class="format-chip">Individual builds · table share · full room</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="note-block" style="margin-bottom:12px;"><strong>Deconstruct towers first.</strong> Say: "Break down your tower — we're building something new." Wait until everyone has cleared their space.</div>
+        <div class="prompt-block">
+          <strong>Challenge question — read this exactly</strong>
+          "Build a model that represents a value that is important for our team. What does your team stand for — or what should it stand for? Build it."
+        </div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Build time: 8 min · silent · write the value on a Post-it and place it next to the model when done.</p>
+        <h4 class="sub" style="margin-top:14px;">Storytelling round — within tables first (8 min), then full room</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Table-level prompt</strong>
+          "Go around your table. Tell us about your model — what does it represent? What does this value look like in practice?"
+        </div>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Full-room prompt (after table shares)</strong>
+          "Each table: share one observation about what you heard. What value appeared more than once? What surprised you?"
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Reflection questions (full room, pick 2)</h4>
+        <ul class="dot-list">
+          <li>"Which value, if we lived it more fully, would change the most about how developers experience ISTS?"</li>
+          <li>"Where do you see these values showing up in the city we're about to build? Where are they missing?"</li>
+          <li>"Is there a value that appeared in a model today that you've never heard named out loud in a meeting?"</li>
+        </ul>
+        <div class="info-block" style="margin-top:12px;"><strong>Keep models on the table.</strong> They stay as a reference for both days. When the conversation gets abstract later, point back to them: "Which of these values is at stake here?"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILD 3: CURRENT CITY -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="left:6px;"></div>
+    <div class="session-card">
+      <div class="session-head">
+        <h3>Build 3 — Our Current City</h3>
+        <div class="session-meta">
+          <span class="time-chip blue">2:15pm</span>
+          <span class="dur-chip">90 min</span>
+          <span class="format-chip">Individual → group merge</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="prompt-block">
+          <strong>Challenge question — read this exactly</strong>
+          "Build a model representing ISTS today — from the perspective of the people who live and work in this city. The developers. The product teams. The engineers who file a ticket and wait. What does this city feel like to them? What works? What gets in the way? What's invisible until it breaks?"
+        </div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Build time: 20 min · individual · silent. Use a visible timer.</p>
+        <h4 class="sub" style="margin-top:14px;">Storytelling round — strict 2-min timebox, visible timer, every person</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Opening the share-out — say this</strong>
+          "We're going to go around the room. Each person has exactly 2 minutes. Tell us about your model — walk us through what you built. What is the city? Who lives in it? What does your model say about what it's like to be a developer in ISTS today? I'll keep time."
+        </div>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>After each model — ask one of these</strong>
+          "What is the strongest part of this city?" · "Where do people get stuck?" · "What is invisible until it breaks?" · "What did you put in your model that surprised you as you built it?"
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Group merge — 20 min</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Merge prompt — read this</strong>
+          "Now — we have 20 individual cities. We need to build one. Push your models to the center of your table. What belongs together? What connects? This is not about tidying up — it's about finding out what your table collectively believes the city looks like."
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Reflection questions (after merge)</h4>
+        <ul class="dot-list">
+          <li>"What disappeared in the merge that should have stayed — what got left out of the collective model?"</li>
+          <li>"What part of this merged city most closely resembles the Pritzker Pavilion — the infrastructure no one sees but everyone depends on?"</li>
+          <li>"If a developer walked through this city for the first time, what would confuse them?"</li>
+        </ul>
+        <div class="info-block" style="margin-top:12px;"><strong>Reliance Building callback:</strong> "Where is the steel frame in this city? What's load-bearing — the thing developers stand on without knowing it's there?"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILD 4: FAULT LINES -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="left:6px;"></div>
+    <div class="session-card">
+      <div class="session-head">
+        <h3>Build 4 — Finding the Fault Lines</h3>
+        <div class="session-meta">
+          <span class="time-chip blue">3:45pm</span>
+          <span class="dur-chip">75 min</span>
+          <span class="format-chip">5 groups of 4 · by journey stage</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="prompt-block">
+          <strong>Challenge question — read this exactly</strong>
+          "You've built the city as it is. Now: if a major earthquake hit this city tonight, where would it crack first? Build the fault lines. Not the cracks that already show — the ones that are hidden, waiting. Where is the city most fragile?"
+        </div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Each group finds fault lines in one stage of the developer journey. <strong>Group A</strong> — Getting Started (onboarding, access, env setup) · <strong>Group B</strong> — Build Loop: Backend &amp; Platform (CI/CD, build pipeline, AI-assisted dev) · <strong>Group C</strong> — Build Loop: Mobile (Mac build agents, signing, App Store) · <strong>Group D</strong> — Changing the City (change management, approvals, deployment) · <strong>Group E</strong> — When the City Floods (incidents, observability, data access, AI/ML). Build time: 20 min.</p>
+        <h4 class="sub" style="margin-top:14px;">Storytelling round — 4 groups present to full room, 10 min each</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Group presentation prompt</strong>
+          "Group [A/B/C/D] — walk us through your fault lines. Point to each one. What is it? How do we know it's real — is this something we know, something we believe, or something we don't know yet?"
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Reflection questions (full room, whiteboard clustering)</h4>
+        <ul class="dot-list">
+          <li>"Which fault line, if it broke, would affect the most people in the worst way?"</li>
+          <li>"Which of these did you suspect but have never said out loud in a meeting until today?"</li>
+          <li>"Which fault lines connect — where does Group A's crack run into Group D's? Where does Group C's release bottleneck show up in Group E's incident data?"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILD 5: DEVELOPER JOURNEY -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="left:6px;"></div>
+    <div class="session-card">
+      <div class="session-head">
+        <h3>Build 5 — The Developer Journey</h3>
+        <div class="session-meta">
+          <span class="time-chip blue">Day 2 · 9:15am</span>
+          <span class="dur-chip">85 min</span>
+          <span class="format-chip">5 groups of 4 · one scenario each</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="prompt-block">
+          <strong>Challenge question — read this exactly</strong>
+          "You did your pre-work — you talked to a real developer before today. Build their journey through ISTS. Not the happy path. The actual path they take: what they need, where they go, what slows them down, what they give up on, what they've learned to work around. Build that journey as a model."
+        </div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Each group builds one developer scenario from their pre-work conversations. Build time: 20 min · group · the whole group contributes.</p>
+        <h4 class="sub" style="margin-top:14px;">Storytelling round — 3 groups present, 15 min each</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Presentation prompt</strong>
+          "Walk us through this developer's journey. Point to each part of the model. Where does it go well? Where does it break down? What did your developer say that you couldn't have built until you heard it?"
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Reflection questions</h4>
+        <ul class="dot-list">
+          <li>"Where in this journey does the city fail its residents most?"</li>
+          <li>"What is the one moment in this journey where a better-designed system would change everything?"</li>
+          <li>"What did you learn from your pre-work conversation that surprised you — that you wouldn't have assumed?"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILD 6: USER WE RARELY SEE -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="left:6px;"></div>
+    <div class="session-card">
+      <div class="session-head">
+        <h3>Build 6 — The User We Rarely See</h3>
+        <div class="session-meta">
+          <span class="time-chip blue">Day 2 · 10:40am</span>
+          <span class="dur-chip">60 min</span>
+          <span class="format-chip">Individual + gallery walk</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="prompt-block">
+          <strong>Challenge question — read this exactly</strong>
+          "Build a model of a developer we rarely design for. Someone on the margins of what we imagine our typical user to be — the new hire on their first week, the contractor working across five systems, the senior engineer who has built workarounds for everything and stopped filing tickets. Build who they are and what they need."
+        </div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Build time: 12 min · individual · silent.</p>
+        <h4 class="sub" style="margin-top:14px;">Gallery walk — everyone circulates, 15 min</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Gallery walk instruction</strong>
+          "Leave your model on the table. Stand up and walk to someone else's model. Leave a sticky note: one observation about who this person is, one question about what they need. Visit as many models as you can in 15 minutes."
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Reflection questions (full room)</h4>
+        <ul class="dot-list">
+          <li>"Who appeared in multiple models today — a user who keeps showing up that we don't design for?"</li>
+          <li>"What did you see in someone else's model that you couldn't have built yourself?"</li>
+          <li>"If this person — the one in the model that got the most sticky notes — used ISTS every day, what would we have to change first?"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUILD 7: FUTURE CITY -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="left:6px;"></div>
+    <div class="session-card">
+      <div class="session-head">
+        <h3>Build 7 — The Future City</h3>
+        <div class="session-meta">
+          <span class="time-chip blue">Day 2 · 11:40am</span>
+          <span class="dur-chip">75 min</span>
+          <span class="format-chip">3 groups of 5</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="prompt-block">
+          <strong>Challenge question — read this exactly</strong>
+          "Build the city as it could be — three years from now. Not a wish list. Not a roadmap. A city that works for the people who live in it. What does it feel like to be a developer in this city? What has changed? What invisible infrastructure now just works? Build that city."
+        </div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Build time: 20 min · group. Each group focuses on one domain: infrastructure &amp; reliability · developer experience &amp; tooling · onboarding &amp; knowledge.</p>
+        <h4 class="sub" style="margin-top:14px;">Storytelling round — 3 groups present, 12 min each</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Presentation prompt</strong>
+          "Walk us through your future city. What is different? What did you have to let go of from the current model to build this one? What does a developer experience here that they don't experience today?"
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Reflection questions</h4>
+        <ul class="dot-list">
+          <li>"What part of this future city is already possible — and what is holding it back?"</li>
+          <li>"Which building from the Chicago tour this morning looks most like what you built here?"</li>
+          <li>"What would you have to stop doing to build this city?"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANDSCAPE / COLLECTIVE MODEL -->
+  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
+    <div class="tl-dot" style="background:var(--amber);border-color:var(--amber);left:6px;"></div>
+    <div class="session-card" style="border-left:3px solid var(--amber);">
+      <div class="session-head">
+        <h3>The Landscape — Collective Story</h3>
+        <div class="session-meta">
+          <span class="time-chip">Day 2 · 1:30pm</span>
+          <span class="dur-chip">30 min</span>
+          <span class="format-chip">Full group · models stay whole</span>
+        </div>
+      </div>
+      <div class="session-body">
+        <div class="info-block" style="margin-bottom:14px;"><strong>LSP Rule 7:</strong> Super stories and landscape models incorporate every participant's contribution. Models remain whole — they do not get broken apart or merged. Each model keeps its integrity inside the collective story.</div>
+        <div class="prompt-block">
+          <strong>Landscape prompt — read this exactly</strong>
+          "We're going to build one city out of all our individual future cities. Each group: bring your model to the center. Do not dismantle anything. Your model stays whole.<br><br>
+          Now — decide together where your city belongs in relation to the others. What is adjacent? What is upstream or downstream? What supports what? You're negotiating the map — take 10 minutes to place everything."
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Shared model instructions (Advanced LSP)</h4>
+        <div class="note-block" style="margin-top:8px;">
+          <strong>Step 1 — Place.</strong> Each group carries their model to the center table and places it in relation to the others. Talk to each other. Negotiate position, proximity, orientation. There is no right answer — the negotiation is the point.<br><br>
+          <strong>Step 2 — Connect.</strong> Using new bricks (not from existing models), add connections between models that represent real relationships: shared dependencies, handoffs, points of friction, points of support. These are new bricks — nothing is removed from any model.<br><br>
+          <strong>Step 3 — Walk.</strong> Everyone takes three steps clockwise to see the landscape from a different angle. Ask: "Does anything look different from here?"<br><br>
+          <strong>Step 4 — Name.</strong> Ask the room: "What is this city called? Give it a name that captures both where we are and where we're going."
+        </div>
+        <h4 class="sub" style="margin-top:14px;">Reflection questions (landscape)</h4>
+        <ul class="dot-list">
+          <li>"Where in this landscape is the Pritzker Pavilion — the thing that makes everything else possible but nobody sees?"</li>
+          <li>"Where is the fault line we found yesterday — does it still exist in this future city, or did we design past it?"</li>
+          <li>"What would a developer say if they could walk through this model — what would surprise them most?"</li>
+        </ul>
+        <div class="prompt-block" style="margin-top:12px;">
+          <strong>Facilitator close for the landscape</strong>
+          "We're not going to dismantle this. Take photos — every model stays whole. What we built here is the shared picture we've been working toward. Now we turn it into decisions."
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LSP RULES REVIEW -->
+  <div class="card" style="border-top:4px solid var(--red);margin-top:8px;">
+    <h3 style="margin-bottom:16px;">LSP Rules Review — Compliance Check</h3>
+    <p style="font-size:14px;color:var(--text-mid);margin-bottom:16px;">This plan reviewed against the 9 LSP rules. Flags and resolutions below.</p>
+    <table>
+      <thead><tr><th>Rule</th><th>Status</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1 — Warm-up first</strong></td><td><span class="badge badge-know">✓ Compliant</span></td><td>Tower build precedes all challenge questions</td></tr>
+        <tr><td><strong>2 — Build → story → reflection</strong></td><td><span class="badge badge-know">✓ Compliant</span></td><td>Every build above follows this exact sequence</td></tr>
+        <tr><td><strong>3 — 100% participation</strong></td><td><span class="badge badge-know">✓ Compliant</span></td><td>All scripts say "every person shares"; no volunteers-only language anywhere</td></tr>
+        <tr><td><strong>4 — Only the builder interprets</strong></td><td><span class="badge badge-know">✓ Compliant</span></td><td>All reflection prompts are directed at "your model" and asked to the builder</td></tr>
+        <tr><td><strong>5 — No right/wrong models</strong></td><td><span class="badge badge-know">✓ Compliant</span></td><td>Introduction explicitly names this; no competitive framing anywhere</td></tr>
+        <tr><td><strong>6 — Individual before shared</strong></td><td><span class="badge badge-know">✓ Compliant</span></td><td>Builds 1–3 are individual; group builds (4–7) come after individual models are established</td></tr>
+        <tr><td><strong>7 — Landscape models stay whole</strong></td><td><span class="badge badge-know">✓ Compliant</span></td><td>Landscape instructions explicitly state "models stay whole"; new bricks added for connections only</td></tr>
+        <tr><td><strong>8 — Realistic timings</strong></td><td><span class="badge badge-believe">⚠ Watch</span></td><td>With ~20 people, 2-min timeboxes are tight but workable. If the room runs slow on Build 3 share-outs, cut reflection questions — never cut individual sharing time. Landscape at 30 min may need 40 if the room engages deeply with placement.</td></tr>
+        <tr><td><strong>9 — Don't fill gaps with generic activities</strong></td><td><span class="badge badge-know">✓ Compliant</span></td><td>Every session is purpose-designed for this specific challenge. No generic icebreakers or team-building substitutes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
 </section>
 
 <!-- ═══════════ FACILITATION ═══════════ -->
@@ -1703,7 +2391,7 @@ I'll send a short pre-work assignment about two weeks before the offsite. It wil
 
 Details:
 - Date: [Date]
-- Day 1: Meet at [location] at 9:30am; we walk to the Chicago Architecture Center together
+- Day 1: Arrive at [location] by 9:00am; we walk to the Chicago Architecture Center together at 9:30am
 - Day 2: [Venue and address]
 - What to wear: Comfortable shoes for Day 1 (we'll be walking for about 2 hours)
 - What to bring: Yourself and whatever you actually know about the people who rely on ISTS every day
@@ -1787,7 +2475,7 @@ That's it. No slides, no preparation, no reading list.
 
 One more thing:
 
-On the morning of Day 1, we are walking about 2 hours through downtown Chicago. Please wear comfortable shoes. We meet at [location] at 9:30am.
+On the morning of Day 1, we are walking about 2 hours through downtown Chicago. Please wear comfortable shoes. We meet at [location] at 9:00am and walk to the Chicago Architecture Center together at 9:30am.
 
 See you [date].
 
@@ -1868,16 +2556,20 @@ See you [date].
 Quick logistics for tomorrow:
 
 Morning:
-- Meet at [location] at 9:30am sharp
+- Arrive at [location] by 9:00am sharp — we walk at 9:30am
 - We walk to the Chicago Architecture Center (111 E. Wacker Dr.) as a group
-- Tour begins at 10:00am — late arrivals cannot join mid-tour
+- We walk at 9:30am — late arrivals cannot join mid-tour
 - Wear comfortable shoes; the route is flat and about 2 miles round trip
 - [Add weather note if relevant: bring a layer / umbrella]
 
 Afternoon:
 - We return to [workshop venue] for lunch at approximately 12:30pm
-- Workshop sessions run until 5:00pm
+- Workshop sessions run until 5:30pm
 - Bring any notes from your pre-work conversation
+
+Evening (everyone):
+- Water taxi departs at 5:45pm — plan to join, this is part of the offsite
+- Dinner in Chinatown at 6:30pm — reservation is for the full group
 
 Day 2:
 - Meet at [workshop venue], [address]
@@ -1887,7 +2579,7 @@ Day 2:
 
 If you have questions or can't make it, contact [name] at [contact].
 
-See you at 9:30.
+See you at 9:00.
 
 [Your name]</textarea>
     </div>
@@ -1960,7 +2652,7 @@ See you at 9:30.
   <div class="section-header">
     <div class="section-eyebrow">Print Materials</div>
     <h2>Participant Cards</h2>
-    <p>Print one of each per participant. The observation card is distributed at 9:30am on Day 1. The reference card stays on the table for both days.</p>
+    <p>Print one of each per participant. The observation card is distributed at 9:00am on Day 1. The reference card stays on the table for both days.</p>
   </div>
 
   <div class="print-cards">
