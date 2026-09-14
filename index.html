@@ -1251,7 +1251,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div class="session-meta">
             <span class="time-chip">9:45am</span>
             <span class="dur-chip">85 min</span>
-            <span class="format-chip">5 groups — one journey scenario each</span>
+            <span class="format-chip">Groups · one journey scenario each</span>
           </div>
         </div>
         <div class="session-body">
@@ -1259,17 +1259,19 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             <strong>Build Prompt</strong>
             Build the journey of a real user or customer — someone you talked to before today. From the moment they need something to the moment they either have it or gave up trying. Build the actual path, not the happy path.
           </div>
-          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 20 min build → each group presents (12 min × 5 = 60 min) → 5 min full-group synthesis. Keep presentations tight — use a visible timer.</div>
-          <h4 class="sub">One scenario per group — assigned based on the top problems from Day 1</h4>
-          <div class="info-block" style="margin-bottom:12px;">Scenarios are assigned the morning of Day 2, based on the fault lines and themes that surfaced in Day 1. The facilitator selects the 5 most important problems to explore and assigns one per group. The examples below are starting suggestions — replace with what the room actually surfaced.</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
-            <div class="note-block"><strong>Suggestion: Getting Started</strong><br><span style="font-size:12px;color:var(--muted);">A new hire or user starting a new project: environment setup, access, tooling, first build</span></div>
-            <div class="note-block"><strong>Suggestion: Build Loop: Backend</strong><br><span style="font-size:12px;color:var(--muted);">A backend engineer's daily loop: write → CI → security scan → build artifact → iterate. Include AI-assisted dev moments.</span></div>
-            <div class="note-block"><strong>Suggestion: Build Loop: Mobile</strong><br><span style="font-size:12px;color:var(--muted);">A mobile developer's release journey: build on Mac agent → sign → TestFlight → App Store → wait → (can't hotfix)</span></div>
-            <div class="note-block"><strong>Suggestion: Change &amp; Deploy</strong><br><span style="font-size:12px;color:var(--muted);">An engineer getting code to production: change request → approvals → deploy → validate → rollback if needed</span></div>
-            <div class="note-block"><strong>Suggestion: Data &amp; Incident</strong><br><span style="font-size:12px;color:var(--muted);">Two moments: a data scientist requesting data access + a backend engineer being paged at 2am</span></div>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 20 min build → each group presents (12 min per group) → 5 min full-group synthesis. Keep presentations tight — use a visible timer.</div>
+          <h4 class="sub">Scenarios are determined by the top problems chosen on Day 1</h4>
+          <div class="info-block" style="margin-bottom:12px;border-left-color:var(--amber);background:var(--amber-bg);">
+            <strong>This session hinges entirely on Day 1.</strong> The problems the room identifies and votes on during the Day 1 fault lines session become the journey scenarios here. The facilitator assigns one top problem per group at the end of Day 1 (or during the Research Share-Out). Do not pre-assign scenarios before the offsite.
           </div>
-          <div class="info-block">Put Groups B and C back-to-back in the share-out order. The contrast — backend ships on merge, mobile ships when Apple approves — is one of the most productive tensions you can surface. Let the room sit with it before moving on.</div>
+          <h4 class="sub" style="color:var(--muted);font-weight:500;">Example scenarios — suggestions only, replace with Day 1 findings</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;opacity:0.75;">
+            <div class="note-block"><strong>e.g. Getting Started</strong><br><span style="font-size:12px;color:var(--muted);">A new hire or user starting a new project: environment setup, access, tooling, first build</span></div>
+            <div class="note-block"><strong>e.g. Build Loop: Backend</strong><br><span style="font-size:12px;color:var(--muted);">A backend engineer's daily loop: write → CI → security scan → build artifact → iterate</span></div>
+            <div class="note-block"><strong>e.g. Build Loop: Mobile</strong><br><span style="font-size:12px;color:var(--muted);">A mobile developer's release journey: build on Mac agent → sign → TestFlight → App Store → wait → (can't hotfix)</span></div>
+            <div class="note-block"><strong>e.g. Change &amp; Deploy</strong><br><span style="font-size:12px;color:var(--muted);">An engineer getting code to production: change request → approvals → deploy → validate → rollback if needed</span></div>
+            <div class="note-block"><strong>e.g. Data &amp; Incident</strong><br><span style="font-size:12px;color:var(--muted);">A data scientist requesting data access + a backend engineer being paged at 2am</span></div>
+          </div>
           <h4 class="sub">Discussion questions (full group, after all 5 present)</h4>
           <ul class="dot-list">
             <li>Where is effort highest in these journeys — and is it effort that produces value, or just friction?</li>
