@@ -747,7 +747,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <tr><td><strong>Session 2: What Stands in the Way?</strong></td><td>Individual obstacle build → full-circle share-out → cluster</td><td>Builds obstacle model in Miro frame; screen-shares and narrates during share-out; tech host adds their themes to shared whiteboard.</td></tr>
         <tr><td><strong>Day 1 Synthesis</strong></td><td>Physical dot vote on whiteboard themes</td><td>Miro voting on the same themes (tech host mirrors physical whiteboard themes into Miro before voting begins).</td></tr>
         <tr><td><strong>Session 3: User &amp; Customer Journey</strong></td><td>EventStorming — 5 groups map one scenario each on sticky-note timeline</td><td>Assigned to one of the five groups; builds EventStorming journey map in the provided FigJam board (orange = domain events, red = hotspots, yellow = actors).</td></tr>
-        <tr><td><strong>Session 4: Future City</strong></td><td>Physical group build</td><td>Assigned to a group; builds in Miro group frame.</td></tr>
+        <tr><td><strong>Session 4: Future City</strong></td><td>Individual LEGO build → group breakout (find similarities) → group builds district</td><td>Individual Miro frame for Step 1; group frame for Steps 2–3. During breakout, screen-share individual models so the group can compare.</td></tr>
         <tr><td><strong>Session 5: Opportunity Landscape</strong></td><td>Physical card placement on 2×2 wall</td><td>Miro 2×2 matrix frame — places and repositions cards digitally.</td></tr>
         <tr><td><strong>Session 6: Leverage</strong></td><td>Physical dot stickers on wall cards</td><td>Miro voting tool on same opportunity cards.</td></tr>
         <tr><td><strong>Session 7: Opportunity Statements</strong></td><td>Small group drafting, share-out aloud</td><td>Assigned to a group; co-drafts statement in Miro text frame or shared doc.</td></tr>
@@ -1307,9 +1307,10 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-body">
           <div class="prompt-block">
             <strong>Build Prompt</strong>
-            It is three years from now. ISTS is recognized as a model organization. Build your district of that city — the part you own. What does it feel like to live and work in it?
+            It is three years from now. ISTS is recognized as a model organization. Build your version of that city — the part of ISTS you know best. What does it feel like to live and work in it? Build experiences, relationships, and behaviors — not technology.
           </div>
           <p style="font-size:14px;color:var(--text-mid);">Build <strong>experiences, workflows, relationships, behaviors</strong> — not technology. If someone builds "a new portal," ask: <em>"What does a user feel when they use it?"</em></p>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (75 min):</strong> 15 min individual build (silent) → 10 min group breakout: compare models and find shared themes → 25 min group builds their district of the city → 5 groups present (5 min each) → 5 min cross-group synthesis.</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0;">
             <div class="note-block"><strong>Group A</strong> — Future of Getting Started<br><span style="font-size:12px;color:var(--muted);">Onboarding, access, provisioning — what does week one feel like?</span></div>
             <div class="note-block"><strong>Group B</strong> — Future Build Loop (Backend + AI)<br><span style="font-size:12px;color:var(--muted);">CI/CD, AI-assisted dev, build reliability — what does the daily loop feel like?</span></div>
@@ -1317,7 +1318,6 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             <div class="note-block"><strong>Group D</strong> — Future Change &amp; Deploy<br><span style="font-size:12px;color:var(--muted);">Change management, deployment, rollback — what does shipping feel like?</span></div>
             <div class="note-block"><strong>Group E</strong> — Future Operations, Data &amp; AI<br><span style="font-size:12px;color:var(--muted);">Observability, incidents, data access, ML platform — what does building with data feel like?</span></div>
           </div>
-          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (75 min):</strong> 20 min group build → 5 groups present (10 min each = 50 min) → 5 min cross-group synthesis: what futures do all five districts share?</div>
           <div class="info-block" style="margin-top:14px;">
             <strong>Tour anchors for the future city.</strong> The buildings give the room shared vocabulary for what good looks like — use them if groups need direction:
             <ul class="dot-list" style="margin-top:8px;">
@@ -1954,25 +1954,34 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-meta">
           <span class="time-chip blue">Day 2 · 11:40am</span>
           <span class="dur-chip">75 min</span>
-          <span class="format-chip">3 groups of 5</span>
+          <span class="format-chip">Individual → group breakout → group city build</span>
         </div>
       </div>
       <div class="session-body">
         <div class="prompt-block">
-          <strong>Challenge question — read this exactly</strong>
-          "Build the city as it could be — three years from now. Not a wish list. Not a roadmap. A city that works for the people who live in it. What does it feel like to be a user in this city? What has changed? What invisible infrastructure now just works? Build that city."
+          <strong>Step 1 — Individual build (15 min, silent) — read this exactly</strong>
+          "Build the city as it could be — three years from now. Not a wish list. Not a roadmap. A city that works for the people who live in it. Build the part of ISTS you know best. What does it feel like to be a user there? What has changed? What invisible infrastructure now just works? Build that — alone, in silence."
         </div>
-        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Build time: 20 min · group. Each group focuses on one domain: infrastructure &amp; reliability · developer experience &amp; tooling · onboarding &amp; knowledge.</p>
-        <h4 class="sub" style="margin-top:14px;">Storytelling round — 3 groups present, 12 min each</h4>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Step 2 — Group breakout: find the similarities (10 min) — read this exactly</strong>
+          "Stay in your groups. Each person: take 60 seconds to walk your group through your model. Then step back and look at what you all built. Where does the same thing show up in more than one model? What does your group keep building, even though you built separately? Those are the foundations of your district."
+        </div>
+        <div class="note-block" style="margin-top:8px;">Facilitate this as a discovery — groups should name shared themes themselves before being told. If a group is stuck: <em>"What did two or more of you build that plays the same role, even if it looks different?"</em></div>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Step 3 — Build the group's district (25 min) — read this exactly</strong>
+          "Now build your district of the future city together — using what you found in common as the foundation. Your models don't have to merge. But your district should tell one story. What does it feel like to live and work here? Build that."
+        </div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:10px;">Each group's domain: Getting Started · Build Loop (Backend + AI) · Build Loop (Mobile) · Change &amp; Deploy · Operations, Data &amp; AI.</p>
+        <h4 class="sub" style="margin-top:14px;">Presentation round — 5 groups present, 5 min each</h4>
         <div class="prompt-block" style="margin-top:8px;">
           <strong>Presentation prompt</strong>
-          "Walk us through your future city. What is different? What did you have to let go of from the current model to build this one? What does a user experience here that they don't experience today?"
+          "Walk us through your district. What did your group keep building independently — and what did that tell you? What does a user experience here that they don't experience today? What did you have to let go of from the current model to build this one?"
         </div>
-        <h4 class="sub" style="margin-top:14px;">Reflection questions</h4>
+        <h4 class="sub" style="margin-top:14px;">Cross-group synthesis (5 min)</h4>
         <ul class="dot-list">
-          <li>"What part of this future city is already possible — and what is holding it back?"</li>
-          <li>"Which building from the Chicago tour this morning looks most like what you built here?"</li>
-          <li>"What would you have to stop doing to build this city?"</li>
+          <li>"What theme appeared in every district — something every group built independently?"</li>
+          <li>"Where do two districts depend on each other? What's the road between them?"</li>
+          <li>"Where is the obstacle we named yesterday — does it still exist in this future city, or did we design past it?"</li>
         </ul>
       </div>
     </div>
@@ -2122,7 +2131,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           </div>
 
           <div class="note-block">
-            <strong>Session 4: Future City</strong> — Most common failure: people build technology. Redirect: <em>"What does a user feel when they use this? Can you add that to your model?"</em> If people say the future is too ambitious: <em>"It doesn't have to be fully built in three years — but the shape of it should be visible."</em>
+            <strong>Session 4: Future City</strong> — Most common failure: people build technology. Redirect mid-build: <em>"What does a user feel when they use this? Can you add that to your model?"</em> During the group breakout (Step 2), watch for groups that skip the similarity-finding and jump straight to building — slow them down: <em>"What did two or more of you build that plays the same role? Name it before you start the group build."</em> If people say the future is too ambitious: <em>"It doesn't have to be fully built in three years — but the shape of it should be visible."</em>
           </div>
 
           <div class="note-block">
