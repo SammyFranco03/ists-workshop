@@ -1241,18 +1241,27 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <div class="session-body">
           <div class="prompt-block">
             <strong>EventStorming — Build Prompt</strong>
-            Map the journey of a real user or customer — someone you talked to before today. From the moment they need something to the moment they either have it or gave up trying. Use EventStorming: place domain events left to right as a timeline, mark hotspots where things break down, and name the actors and systems involved. Build the actual path, not the happy path.
+            Map the journey of a real user or customer using EventStorming. Research has been distributed ahead of today — use it. Place domain events left to right as a timeline, tag each event with your evidence level, and mark hotspots where things break down or where your evidence runs out. Build the actual path, not the happy path.
           </div>
           <div class="note-block" style="margin-bottom:8px;">
             <strong>EventStorming color guide</strong>
             <ul class="dot-list" style="margin-top:6px;">
-              <li><strong style="color:#e67e22;">Orange sticky</strong> — Domain Event: something that happened (past tense). E.g. "PR Merged", "Change Ticket Opened", "Deployment Failed"</li>
-              <li><strong style="color:#e74c3c;">Red sticky</strong> — Hotspot: a pain point, blocker, or open question. Place it above the timeline.</li>
+              <li><strong style="color:#e67e22;">Orange sticky</strong> — Domain Event: something that happened (past tense). E.g. "PR Merged", "Change Ticket Opened", "Deployment Failed." Mark each event in the corner with its evidence level (see below).</li>
+              <li><strong style="color:#e74c3c;">Red sticky</strong> — Hotspot: a pain point, blocker, open question, or evidence gap. Place above the timeline. Every "We don't know yet" event gets one automatically.</li>
               <li><strong style="color:#f1c40f;">Yellow sticky</strong> — Actor: the person or team who triggers an event.</li>
               <li><strong style="color:#95a5a6;">Gray sticky</strong> — External System: a tool or platform the actor depends on.</li>
             </ul>
           </div>
-          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 7 min individual sticky writing (silent) → 13 min group wall assembly (place events left to right, add hotspots, resolve duplicates) → each group presents (12 min per group) → 5 min full-group synthesis. Keep presentations tight — use a visible timer.</div>
+          <div class="info-block" style="margin-bottom:8px;">
+            <strong>Evidence tagging — mark every orange event in the corner</strong>
+            <ul class="dot-list" style="margin-top:6px;">
+              <li><strong>✓ We know</strong> — backed by the research packet, a direct user interview, or firsthand observation</li>
+              <li><strong>~ We believe</strong> — reasonable assumption from team experience, but not directly verified</li>
+              <li><strong>? We don't know yet</strong> — guessing or conflicting views in the group. Place a red hotspot above it — this is a research gap.</li>
+            </ul>
+            <p style="font-size:12px;color:var(--text-mid);margin-top:6px;"><strong>New to the company?</strong> Use the research packet as your source and flag any event the group claims that isn't in it — those become hotspots.</p>
+          </div>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 7 min individual sticky writing, silent — write events and mark evidence level as you go → 13 min group wall assembly (sequence events, stack duplicates, add hotspots for every "?" and every disagreement) → each group presents (12 min per group) → 5 min full-group synthesis. Keep presentations tight — use a visible timer.</div>
           <div class="hybrid-block" style="margin-bottom:12px;">
             <strong>Virtual Attendees — FigJam boards</strong>
             Follow along and contribute during group builds and share-outs using the boards below.
@@ -1904,36 +1913,47 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
       <div class="session-body">
         <div class="prompt-block">
           <strong>Facilitator intro — read this exactly</strong>
-          "We're going to map user journeys using a technique called EventStorming. You'll work in groups. Each group has one scenario — a real user path through ISTS. Your job is to lay out what actually happens, left to right, as a timeline of events. Not the process as it's supposed to work. The actual path the user takes."
+          "We're going to map user journeys using a technique called EventStorming. You'll work in groups. Each group has one scenario — a real user path through ISTS. Your job is to lay out what actually happens, left to right, as a timeline of events. Not the process as it's supposed to work. The actual path the user takes. We sent you research ahead of today — that's your evidence. We're going to be honest about what we know, what we believe, and what we're still guessing."
         </div>
         <div class="note-block" style="margin:10px 0;">
           <strong>Set up the color coding before groups start — say this aloud:</strong>
           <ul class="dot-list" style="margin-top:6px;">
-            <li><strong>Orange sticky = Domain Event.</strong> Something that happened — always past tense. "PR Merged." "Access Denied." "Change Ticket Opened." Place these left to right as a timeline.</li>
-            <li><strong>Red sticky = Hotspot.</strong> A pain point, blocker, broken handoff, or question the group can't answer. Place above the timeline. These are gold.</li>
+            <li><strong>Orange sticky = Domain Event.</strong> Something that happened — always past tense. "PR Merged." "Access Denied." "Change Ticket Opened." Place these left to right as a timeline. Mark the evidence level in the corner as you write it.</li>
+            <li><strong>Red sticky = Hotspot.</strong> A pain point, blocker, broken handoff, or question the group can't answer. Also goes above any event tagged "We don't know yet." These are gold.</li>
             <li><strong>Yellow sticky = Actor.</strong> The person or team who triggered that event.</li>
             <li><strong>Gray sticky = External System.</strong> A tool or platform the actor depends on.</li>
           </ul>
         </div>
+        <div class="note-block" style="margin:0 0 10px;">
+          <strong>Introduce the evidence tags — say this aloud:</strong>
+          <p style="margin:6px 0 2px;font-size:13px;">"Every event gets a mark in the corner — don't skip this. It's the most important part."</p>
+          <ul class="dot-list" style="margin-top:4px;">
+            <li><strong>✓ We know</strong> — it's in the research packet, you heard it directly from a user, or you observed it yourself</li>
+            <li><strong>~ We believe</strong> — reasonable assumption from experience, but you haven't verified it with a user</li>
+            <li><strong>? We don't know yet</strong> — the group is guessing or disagreeing. Write the event, mark it ?, and put a red hotspot above it. Don't resolve it.</li>
+          </ul>
+          <p style="font-size:12px;color:var(--text-mid);margin-top:6px;"><strong>If you're new to the company:</strong> use the research packet as your primary source. If your group claims an event that isn't in it — that's a "?" and it gets a red hotspot. Your skepticism is an asset here.</p>
+        </div>
         <div class="prompt-block" style="margin-top:8px;">
           <strong>Step 1 — Individual sticky writing (7 min, silent) — read this exactly</strong>
-          "Working alone and in silence: write down every event in your user's journey — one event per orange sticky, past tense. Start from the moment they first need something. Don't edit, don't sequence yet. Just get every step out of your head and onto paper. Broken steps, waits, workarounds — all of it."
+          "Working alone and in silence: write down every event in your user's journey — one event per orange sticky, past tense. Pull from the research packet and from what you know firsthand. As you write each sticky, mark the corner: ✓ if you know it, ~ if you believe it, ? if you're guessing. Don't edit, don't sequence yet. Broken steps, waits, workarounds — all of it."
         </div>
         <div class="prompt-block" style="margin-top:8px;">
           <strong>Step 2 — Group wall assembly (13 min) — read this exactly</strong>
-          "Now bring your stickies to the wall. Place them left to right as a timeline — earliest event on the left, last on the right. When two people have the same event, stack them. When the group disagrees on the order or can't explain a step: put a red hotspot there. Don't resolve it — just mark it. Add yellow stickies for the actors and gray for the systems."
+          "Bring your stickies to the wall. Place them left to right — earliest event on the left. When two people have the same event, stack them. When someone has a ? or the group disagrees on an event: put a red hotspot above it. Don't resolve the disagreement — surface it. Add yellow stickies for actors and gray for systems. When you're done: look at the ratio of ✓ to ~ to ?. That ratio tells you how much of this journey you actually know."
         </div>
         <p style="font-size:13px;color:var(--text-mid);margin-top:10px;">Scenarios are assigned based on the top obstacles surfaced in Day 1. Assign one per group before Day 2 begins.</p>
         <h4 class="sub" style="margin-top:14px;">Presentation round — each group walks the room through their timeline, 12 min each</h4>
         <div class="prompt-block" style="margin-top:8px;">
           <strong>Presentation prompt</strong>
-          "Walk us left to right through the timeline. Point to each event. Tell us where it breaks down — read us your red hotspots. What did your user say that you couldn't have put on this board until you heard it?"
+          "Walk us left to right through the timeline. Point to each event. Tell us your evidence ratio — how many ✓, how many ~, how many ?. Read us your red hotspots. What in the research surprised you or changed how you built this? What did you think you knew that turned out to be a ~?"
         </div>
         <h4 class="sub" style="margin-top:14px;">Full-group synthesis questions</h4>
         <ul class="dot-list">
           <li>"Where in this journey does the city fail its residents most?"</li>
           <li>"Where are the handoffs — and what falls through the gaps between systems or teams?"</li>
           <li>"Which hotspot appeared in more than one group's timeline?"</li>
+          <li>"Which events did every group mark ~ or ? — things we all believe but none of us actually know?"</li>
           <li>"Where is the LondonHouse moment — the part that looks modern on the outside but something old and unmaintained is running underneath?"</li>
         </ul>
         <div class="note-block" style="margin-top:14px;border-left:3px solid var(--amber);">
@@ -2124,7 +2144,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           </div>
 
           <div class="note-block">
-            <strong>Session 3: User &amp; Customer Journey (EventStorming)</strong> — Watch for timelines that are too smooth. If a group's board has no red hotspots: <em>"Where does the user not know what to do next? Put that moment on a red sticky."</em> Handoffs between systems and teams are usually where the most hotspots land — push groups to name who owns each gap. The closing prompt (who is missing from these timelines?) is where the research agenda gets built: don't skip it.
+            <strong>Session 3: User &amp; Customer Journey (EventStorming)</strong> — Watch for timelines with no red hotspots and no "?" tags — that's a group that skipped the evidence check. Redirect: <em>"How many of those events are ✓ We know versus ~ We believe? Go back and mark them."</em> Handoffs between systems are where most "?" tags land. New employees are assets here — if they're quiet, prompt them: <em>"Is that step in the research packet? If not, it's a question mark."</em> The closing prompt (who is missing from these timelines?) is where the research agenda gets built: don't skip it.
           </div>
 
           <div class="note-block">
