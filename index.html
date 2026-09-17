@@ -1244,13 +1244,14 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             Map the journey of a real user or customer using EventStorming. Research has been distributed ahead of today — use it. Place domain events left to right as a timeline, tag each event with your evidence level, and mark hotspots where things break down or where your evidence runs out. Build the actual path, not the happy path.
           </div>
           <div class="note-block" style="margin-bottom:8px;">
-            <strong>EventStorming color guide</strong>
+            <strong>EventStorming color guide — swim lanes, top to bottom</strong>
             <ul class="dot-list" style="margin-top:6px;">
-              <li><strong style="color:#e67e22;">Orange sticky</strong> — Domain Event: something that happened (past tense). E.g. "PR Merged", "Change Ticket Opened", "Deployment Failed." Mark each event in the corner with its evidence level (see below).</li>
-              <li><strong style="color:#e74c3c;">Red sticky</strong> — Hotspot: a pain point, blocker, open question, or evidence gap. Place above the timeline. Every "We don't know yet" event gets one automatically.</li>
-              <li><strong style="color:#f1c40f;">Yellow sticky</strong> — Actor: the person or team who triggers an event.</li>
-              <li><strong style="color:#95a5a6;">Gray sticky</strong> — External System: a tool or platform the actor depends on.</li>
+              <li><strong style="color:#e67e22;">Orange sticky — Domain Event</strong> (top lane): something that happened, past tense. "PR Merged." "Access Denied." "Deployment Failed." Place left to right as a timeline. Mark evidence level in the corner.</li>
+              <li><strong style="color:#e74c3c;">Pink/Red sticky — Pain Point</strong> (second lane, below events): a blocker, broken handoff, or frustration the user hits. Every "We don't know yet" event also drops one here.</li>
+              <li><strong style="color:#16a085;">Teal/Green sticky — System or Tool</strong> (third lane): the platform or tool involved at that step. E.g. "ServiceNow", "GitHub Actions", "Artifactory."</li>
+              <li><strong style="color:#27ae60;">Bright Green sticky — Opportunity</strong> (bottom lane): a chance to improve — something the group spots as fixable. Add these during wall assembly when a hotspot has an obvious solution direction.</li>
             </ul>
+            <p style="font-size:12px;color:var(--text-mid);margin-top:6px;">Actors (the person taking each step) go above the orange lane as a label or icon — one per column of events.</p>
           </div>
           <div class="info-block" style="margin-bottom:8px;">
             <strong>Evidence tagging — mark every orange event in the corner</strong>
@@ -1267,7 +1268,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             Follow along and contribute during group builds and share-outs using the boards below.
             <ul class="dot-list" style="margin-top:6px;">
               <li><a href="https://www.figma.com/board/2TRGCznrHzmgcgXuHocOTy" target="_blank" style="color:var(--teal);font-weight:600;">Customer Journey + Research Gaps →</a> — EventStorming journey map with research opportunities for underrepresented users</li>
-              <li><a href="https://www.figma.com/board/lRSE4zXxjhHPuUNEeaHwnV" target="_blank" style="color:var(--teal);font-weight:600;">Change &amp; Deploy Journey →</a> — standalone journey for the Change &amp; Deploy scenario</li>
+              <li><a href="https://www.figma.com/board/za9AZnWc0tauDF9hmxZFw7" target="_blank" style="color:var(--teal);font-weight:600;">Change &amp; Deploy Journey →</a> — swim-lane EventStorming map: events → pain points → systems → opportunities</li>
             </ul>
           </div>
           <h4 class="sub">Scenarios are determined by the top problems chosen on Day 1</h4>
@@ -1916,13 +1917,15 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           "We're going to map user journeys using a technique called EventStorming. You'll work in groups. Each group has one scenario — a real user path through ISTS. Your job is to lay out what actually happens, left to right, as a timeline of events. Not the process as it's supposed to work. The actual path the user takes. We sent you research ahead of today — that's your evidence. We're going to be honest about what we know, what we believe, and what we're still guessing."
         </div>
         <div class="note-block" style="margin:10px 0;">
-          <strong>Set up the color coding before groups start — say this aloud:</strong>
-          <ul class="dot-list" style="margin-top:6px;">
-            <li><strong>Orange sticky = Domain Event.</strong> Something that happened — always past tense. "PR Merged." "Access Denied." "Change Ticket Opened." Place these left to right as a timeline. Mark the evidence level in the corner as you write it.</li>
-            <li><strong>Red sticky = Hotspot.</strong> A pain point, blocker, broken handoff, or question the group can't answer. Also goes above any event tagged "We don't know yet." These are gold.</li>
-            <li><strong>Yellow sticky = Actor.</strong> The person or team who triggered that event.</li>
-            <li><strong>Gray sticky = External System.</strong> A tool or platform the actor depends on.</li>
+          <strong>Set up the swim lanes and color coding before groups start — say this aloud:</strong>
+          <p style="font-size:13px;margin:6px 0 4px;">"Your wall is going to have four horizontal swim lanes, top to bottom:"</p>
+          <ul class="dot-list" style="margin-top:4px;">
+            <li><strong>Orange sticky = Domain Event (top lane).</strong> Something that happened — always past tense. "PR Merged." "Access Denied." "Deployment Failed." Place these left to right as a timeline. Mark the evidence level in the corner as you write it.</li>
+            <li><strong>Pink/Red sticky = Pain Point (second lane).</strong> A blocker, broken handoff, or frustration the user hits. Place it directly below the event that caused it. Every "?" event drops one here automatically.</li>
+            <li><strong>Teal/Green sticky = System or Tool (third lane).</strong> The platform or tool involved at that step — "ServiceNow", "GitHub Actions", "Artifactory." Place below the pain point lane.</li>
+            <li><strong>Bright Green sticky = Opportunity (bottom lane).</strong> Something the group spots as fixable. Don't force it — only add these when the group naturally sees a direction. Place below the system lane.</li>
           </ul>
+          <p style="font-size:13px;margin-top:6px;">"Actors — the person taking each step — go above the orange lane as a label. One actor label per section of the timeline."</p>
         </div>
         <div class="note-block" style="margin:0 0 10px;">
           <strong>Introduce the evidence tags — say this aloud:</strong>
