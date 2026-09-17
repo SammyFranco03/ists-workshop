@@ -1204,8 +1204,29 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             <strong>Facilitator framing</strong>
             "We sent research ahead of today. Let's surface what we found. What did you hear from users and customers? What surprised you? What confirmed something you already suspected? What do we still not know?"
           </div>
-          <div class="note-block" style="margin-top:12px;"><strong>Keep the evidence bar active.</strong> As each finding is shared, ask the room: is this a <em>We know</em>, a <em>We believe</em>, or a <em>We don't know yet</em>? Capture on the whiteboard. These findings feed directly into the journey scenario assignments.</div>
-          <div class="info-block" style="margin-top:12px;">Use the last 5 minutes to cluster findings on the whiteboard by theme — these themes become the raw material for the HMW session that follows immediately.</div>
+          <div class="note-block" style="margin-top:12px;"><strong>Keep the evidence bar active.</strong> As each finding is shared, ask the room: is this a <em>We know</em>, a <em>We believe</em>, or a <em>We don't know yet</em>? Tag it on the wall before moving on.</div>
+
+          <div style="border:2px solid var(--teal);border-radius:8px;padding:16px;margin-top:12px;background:#F2FAFA;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--teal);text-transform:uppercase;margin-bottom:12px;">Evidence Tagging — LEGO Dot System</div>
+            <p style="font-size:13px;color:var(--text-mid);margin-bottom:12px;">As each finding lands on the wall, place a colored 1×1 round plate (dot) on the sticky. Use the same system throughout the workshop — on research findings, user models, and solution models.</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+              <div style="background:#fff;border-radius:6px;padding:10px;border-left:4px solid #22c55e;">
+                <div style="font-size:12px;font-weight:700;color:#16a34a;margin-bottom:4px;">Green dot — We know</div>
+                <p style="font-size:12px;color:var(--text-mid);margin:0;">Confirmed by research, data, or direct observation. This block of the city is mapped.</p>
+              </div>
+              <div style="background:#fff;border-radius:6px;padding:10px;border-left:4px solid #eab308;">
+                <div style="font-size:12px;font-weight:700;color:#a16207;margin-bottom:4px;">Yellow dot — We believe</div>
+                <p style="font-size:12px;color:var(--text-mid);margin:0;">Strong assumption based on experience or pattern — not yet confirmed by evidence.</p>
+              </div>
+              <div style="background:#fff;border-radius:6px;padding:10px;border-left:4px solid #ef4444;">
+                <div style="font-size:12px;font-weight:700;color:#b91c1c;margin-bottom:4px;">Red dot — We don't know yet</div>
+                <p style="font-size:12px;color:var(--text-mid);margin:0;">Gap in understanding. This block is uncharted. Red dots become the research agenda.</p>
+              </div>
+            </div>
+            <p style="font-size:12px;color:var(--muted);margin-top:10px;margin-bottom:0;"><strong>If flags are available:</strong> green/yellow/red flags planted in the model read well from across the table and photograph clearly — like planning permits or hazard markers in the city.</p>
+          </div>
+
+          <div class="info-block" style="margin-top:12px;">Use the last 10 minutes to cluster findings by theme — red dots signal gaps the HMW questions should target. These themes become the raw material for "What Is the City Being Asked to Fix?" that follows.</div>
         </div>
       </div>
     </div>
@@ -1270,6 +1291,15 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
             "Before you build the solution, build the person you're solving for. What do they need to do? What motivates them? What values do they hold — including the ones we just named? What would bring them joy if this worked? Build that person — not a stick figure, not a label. A model that shows who they are."
           </div>
           <p style="font-size:14px;color:var(--text-mid);margin-top:8px;">If someone starts building a system or interface: <em>"Before we build what changes — who is the person using it? Can you build them first?"</em></p>
+          <div class="note-block" style="margin-top:8px;">
+            <strong>Tag the user model with evidence dots before moving to the solution build.</strong> Place dots directly on the model:
+            <ul class="dot-list" style="margin-top:6px;">
+              <li><strong>Green dot</strong> — parts of the user you know from the research (confirmed need, confirmed motivation)</li>
+              <li><strong>Yellow dot</strong> — parts you believe but haven't confirmed (assumed motivation, assumed workflow)</li>
+              <li><strong>Red dot</strong> — things about the user you don't know yet (open questions your solution is betting on)</li>
+            </ul>
+            Red dots on the user model are the assumptions your solution is making. Name them when you present.
+          </div>
           <div class="prompt-block" style="margin-top:8px;">
             <strong>Step 2 — Build the solution (10 min, individual, silent)</strong>
             "Now build the solution — in LEGO. Not a description. Not a process diagram. A model that shows how the experience would work for the user you just built. What does the user do? What happens? What is different from today?"
@@ -1753,6 +1783,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         </div>
       </div>
       <div class="session-body">
+        <div class="note-block" style="margin-bottom:10px;"><strong>Before this session:</strong> the research wall should already have green / yellow / red evidence dots from the share-out. Point to the red dots when framing — those are the gaps the HMW questions should target first.</div>
         <div class="prompt-block">
           <strong>Facilitator framing — read this exactly</strong>
           "We just heard the research. Now we're going to turn it into design problems. A How Might We question frames a user pain as an opportunity. It starts with 'How might we…' It names a specific user. It names a specific problem. And it leaves room for more than one solution. We're not solving yet — we're framing."
@@ -1805,6 +1836,9 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           "Before you build the solution, build the person you're solving for. What do they need to do? What motivates them? What values do they hold — including the ones we just named? What would bring them joy if this problem was solved? Build that person — not a label, not a stick figure. A model that shows who they are. You have 10 minutes."
         </div>
         <div class="note-block" style="margin-top:8px;">If someone builds a system instead of a person: <em>"Who uses that? Can you build them first — before we build what changes?"</em> The user model stays on the table as a reference throughout the entire session.</div>
+        <div class="note-block" style="margin-top:8px;">
+          <strong>Tag the user model with evidence dots before moving to Step 2.</strong> Green dot = we know this about the user from research. Yellow dot = we believe this but haven't confirmed it. Red dot = we don't know this yet — it's an assumption the solution is betting on. Name the red dots when presenting.
+        </div>
         <div class="prompt-block" style="margin-top:8px;">
           <strong>Step 2 — Build the solution (10 min, individual, silent) — read this exactly</strong>
           "Now build your solution — alone, in silence. Not the system. The experience. What does the user you just built actually do? What happens? What is different from today? You have 10 minutes."
