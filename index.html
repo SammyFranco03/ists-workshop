@@ -746,7 +746,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
         <tr><td><strong>Session 1: Dream City</strong></td><td>Individual build → share-out → landscape exercise</td><td>Miro — individual Dream City frame → shares during 2-min share-out → positions frame in shared landscape canvas.</td></tr>
         <tr><td><strong>Session 2: What Stands in the Way?</strong></td><td>Individual obstacle build → full-circle share-out → cluster</td><td>Builds obstacle model in Miro frame; screen-shares and narrates during share-out; tech host adds their themes to shared whiteboard.</td></tr>
         <tr><td><strong>Day 1 Synthesis</strong></td><td>Physical dot vote on whiteboard themes</td><td>Miro voting on the same themes (tech host mirrors physical whiteboard themes into Miro before voting begins).</td></tr>
-        <tr><td><strong>Session 3: User &amp; Customer Journey</strong></td><td>Physical group build — 5 scenarios</td><td>Assigned to one of the five groups; builds scenario in Miro group frame.</td></tr>
+        <tr><td><strong>Session 3: User &amp; Customer Journey</strong></td><td>EventStorming — 5 groups map one scenario each on sticky-note timeline</td><td>Assigned to one of the five groups; builds EventStorming journey map in the provided FigJam board (orange = domain events, red = hotspots, yellow = actors).</td></tr>
         <tr><td><strong>Session 4: Future City</strong></td><td>Physical group build</td><td>Assigned to a group; builds in Miro group frame.</td></tr>
         <tr><td><strong>Session 5: Opportunity Landscape</strong></td><td>Physical card placement on 2×2 wall</td><td>Miro 2×2 matrix frame — places and repositions cards digitally.</td></tr>
         <tr><td><strong>Session 6: Leverage</strong></td><td>Physical dot stickers on wall cards</td><td>Miro voting tool on same opportunity cards.</td></tr>
@@ -1235,15 +1235,24 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           <div class="session-meta">
             <span class="time-chip">9:45am</span>
             <span class="dur-chip">85 min</span>
-            <span class="format-chip">Groups · one journey scenario each</span>
+            <span class="format-chip">Groups · EventStorming · one scenario each</span>
           </div>
         </div>
         <div class="session-body">
           <div class="prompt-block">
-            <strong>Build Prompt</strong>
-            Build the journey of a real user or customer — someone you talked to before today. From the moment they need something to the moment they either have it or gave up trying. Build the actual path, not the happy path.
+            <strong>EventStorming — Build Prompt</strong>
+            Map the journey of a real user or customer — someone you talked to before today. From the moment they need something to the moment they either have it or gave up trying. Use EventStorming: place domain events left to right as a timeline, mark hotspots where things break down, and name the actors and systems involved. Build the actual path, not the happy path.
           </div>
-          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 20 min build → each group presents (12 min per group) → 5 min full-group synthesis. Keep presentations tight — use a visible timer.</div>
+          <div class="note-block" style="margin-bottom:8px;">
+            <strong>EventStorming color guide</strong>
+            <ul class="dot-list" style="margin-top:6px;">
+              <li><strong style="color:#e67e22;">Orange sticky</strong> — Domain Event: something that happened (past tense). E.g. "PR Merged", "Change Ticket Opened", "Deployment Failed"</li>
+              <li><strong style="color:#e74c3c;">Red sticky</strong> — Hotspot: a pain point, blocker, or open question. Place it above the timeline.</li>
+              <li><strong style="color:#f1c40f;">Yellow sticky</strong> — Actor: the person or team who triggers an event.</li>
+              <li><strong style="color:#95a5a6;">Gray sticky</strong> — External System: a tool or platform the actor depends on.</li>
+            </ul>
+          </div>
+          <div class="note-block" style="margin-bottom:12px;"><strong>Timing (85 min):</strong> 20 min EventStorming build → each group presents (12 min per group) → 5 min full-group synthesis. Keep presentations tight — use a visible timer.</div>
           <div class="hybrid-block" style="margin-bottom:12px;">
             <strong>Virtual Attendees — FigJam boards</strong>
             Follow along and contribute during group builds and share-outs using the boards below.
@@ -1880,69 +1889,54 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
     </div>
   </div>
 
-  <!-- BUILD 5: DEVELOPER JOURNEY -->
+  <!-- BUILD 5: DEVELOPER JOURNEY — EVENTSTORMING -->
   <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
     <div class="tl-dot" style="left:6px;"></div>
     <div class="session-card">
       <div class="session-head">
-        <h3>Build 5 — The User &amp; Customer Journey</h3>
+        <h3>Build 5 — EventStorming: The User &amp; Customer Journey</h3>
         <div class="session-meta">
           <span class="time-chip blue">Day 2 · 9:15am</span>
           <span class="dur-chip">85 min</span>
-          <span class="format-chip">5 groups of 4 · one scenario each</span>
+          <span class="format-chip">5 groups · one scenario each · EventStorming</span>
         </div>
       </div>
       <div class="session-body">
         <div class="prompt-block">
-          <strong>Challenge question — read this exactly</strong>
-          "You did your pre-work — you talked to a real user or customer before today. Build their journey through ISTS. Not the happy path. The actual path they take: what they need, where they go, what slows them down, what they give up on, what they've learned to work around. Build that journey as a model."
+          <strong>Facilitator intro — read this exactly</strong>
+          "We're going to map user journeys using a technique called EventStorming. You'll work in groups. Each group has one scenario — a real user path through ISTS. Your job is to lay out what actually happens, left to right, as a timeline of events. Not the process as it's supposed to work. The actual path the user takes."
         </div>
-        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Scenarios are assigned based on the top obstacles surfaced in Day 1. The facilitator selects the top-voted obstacles and assigns one per group before Day 2 begins. Build time: 20 min · group · the whole group contributes.</p>
-        <h4 class="sub" style="margin-top:14px;">Storytelling round — 3 groups present, 15 min each</h4>
+        <div class="note-block" style="margin:10px 0;">
+          <strong>Set up the color coding before groups start — say this aloud:</strong>
+          <ul class="dot-list" style="margin-top:6px;">
+            <li><strong>Orange sticky = Domain Event.</strong> Something that happened — always past tense. "PR Merged." "Access Denied." "Change Ticket Opened." Place these left to right as a timeline.</li>
+            <li><strong>Red sticky = Hotspot.</strong> A pain point, blocker, broken handoff, or question the group can't answer. Place above the timeline. These are gold.</li>
+            <li><strong>Yellow sticky = Actor.</strong> The person or team who triggered that event.</li>
+            <li><strong>Gray sticky = External System.</strong> A tool or platform the actor depends on.</li>
+          </ul>
+        </div>
+        <div class="prompt-block" style="margin-top:8px;">
+          <strong>Group build prompt — read this exactly</strong>
+          "You talked to a real user before today. Map their journey as an EventStorming timeline. Start with the first thing that happens when they need something. Keep going until they either have it — or gave up. Every broken step, every wait, every workaround gets a sticky. When you hit something the group disagrees on or can't explain: that's a red hotspot. Don't resolve it — surface it."
+        </div>
+        <p style="font-size:13px;color:var(--text-mid);margin-top:10px;">Scenarios are assigned based on the top obstacles surfaced in Day 1. Assign one per group before Day 2 begins. Build time: 20 min · group · the whole group contributes.</p>
+        <h4 class="sub" style="margin-top:14px;">Presentation round — each group walks the room through their timeline, 12 min each</h4>
         <div class="prompt-block" style="margin-top:8px;">
           <strong>Presentation prompt</strong>
-          "Walk us through this user's journey. Point to each part of the model. Where does it go well? Where does it break down? What did your user or customer say that you couldn't have built until you heard it?"
+          "Walk us left to right through the timeline. Point to each event. Tell us where it breaks down — read us your red hotspots. What did your user say that you couldn't have put on this board until you heard it?"
         </div>
-        <h4 class="sub" style="margin-top:14px;">Reflection questions</h4>
+        <h4 class="sub" style="margin-top:14px;">Full-group synthesis questions</h4>
         <ul class="dot-list">
           <li>"Where in this journey does the city fail its residents most?"</li>
-          <li>"What is the one moment in this journey where a better-designed system would change everything?"</li>
-          <li>"What did you learn from your pre-work conversation that surprised you — that you wouldn't have assumed?"</li>
+          <li>"Where are the handoffs — and what falls through the gaps between systems or teams?"</li>
+          <li>"Which hotspot appeared in more than one group's timeline?"</li>
+          <li>"Where is the LondonHouse moment — the part that looks modern on the outside but something old and unmaintained is running underneath?"</li>
         </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- BUILD 6: USER WE RARELY SEE -->
-  <div class="tl-item" style="padding-left:28px;position:relative;margin-bottom:32px;">
-    <div class="tl-dot" style="left:6px;"></div>
-    <div class="session-card">
-      <div class="session-head">
-        <h3>Build 6 — The User We Rarely See</h3>
-        <div class="session-meta">
-          <span class="time-chip blue">Day 2 · 10:40am</span>
-          <span class="dur-chip">60 min</span>
-          <span class="format-chip">Individual → full-circle share-out</span>
+        <div class="note-block" style="margin-top:14px;border-left:3px solid var(--amber);">
+          <strong>Closing prompt — who is missing from these timelines?</strong>
+          <p style="margin:6px 0 4px;font-size:13px;">"Look at the journeys on the wall. Whose experience isn't here? Who do we have assumptions about but rarely talk to — the new developer who figured it out alone, the platform engineer maintaining services nobody thanks, the security partner experienced as a blocker, the on-call engineer woken at 2am?"</p>
+          <p style="font-size:13px;margin:0;">"For each person surfaced: add one line to the whiteboard. <em>Before we build anything for this person, we need to know…</em> That becomes our research agenda."</p>
         </div>
-      </div>
-      <div class="session-body">
-        <div class="prompt-block">
-          <strong>Challenge question — read this exactly</strong>
-          "Build a model of a user or customer we rarely design for. Someone on the margins of what we imagine our typical user to be — the new hire on their first week, the contractor working across five systems, the senior engineer who has built workarounds for everything and stopped filing tickets. Build who they are and what they need."
-        </div>
-        <p style="font-size:13px;color:var(--text-mid);margin-top:12px;">Build time: 12 min · individual · silent.</p>
-        <h4 class="sub" style="margin-top:14px;">Full-circle share-out — every model gets a voice, 30 min</h4>
-        <div class="prompt-block" style="margin-top:8px;">
-          <strong>Share-out instruction</strong>
-          "We're going to hear from every person. You have 90 seconds. Tell us: who is this person, what do they need, and what do we not know about them. Start with your model — point to it as you speak."
-        </div>
-        <div class="note-block" style="margin-top:8px;"><strong style="color:var(--red);">LSP Rule 3 — 100% participation:</strong> Every model gets a voice. Do not select or highlight only 3–4 models. Every person presents their own model — the builder always interprets their own build.</div>
-        <h4 class="sub" style="margin-top:14px;">Reflection questions (full room)</h4>
-        <ul class="dot-list">
-          <li>"Who appeared in multiple models today — a user who keeps showing up that we don't design for?"</li>
-          <li>"What did you see in someone else's model that you couldn't have built yourself?"</li>
-          <li>"If this person — the one in the model that got the most sticky notes — used ISTS every day, what would we have to change first?"</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -2117,7 +2111,7 @@ h4.sub { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6
           </div>
 
           <div class="note-block">
-            <strong>Session 3: User &amp; Customer Journey</strong> — Watch for models that are too smooth. If the journey is a clean flow with no friction: <em>"Where does the user not know what to do next? Show me that moment."</em> Handoffs are usually the most important finding.
+            <strong>Session 3: User &amp; Customer Journey (EventStorming)</strong> — Watch for timelines that are too smooth. If a group's board has no red hotspots: <em>"Where does the user not know what to do next? Put that moment on a red sticky."</em> Handoffs between systems and teams are usually where the most hotspots land — push groups to name who owns each gap. The closing prompt (who is missing from these timelines?) is where the research agenda gets built: don't skip it.
           </div>
 
           <div class="note-block">
